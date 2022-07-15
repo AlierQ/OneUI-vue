@@ -4,10 +4,15 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import {provide, ref} from 'vue';
+
 export default {
   name: 'App',
-  components: {
-  }
-}
+  setup() {
+    const asideVisible = ref(false)
+    // 提供 asideVisible 后代子孙都能够访问到
+    provide('asideVisible',asideVisible)
+  },
+};
 </script>
