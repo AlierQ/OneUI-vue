@@ -18,7 +18,9 @@
         </li>
       </ul>
     </aside>
-    <div class="main">主内容</div>
+    <div class="main">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -42,25 +44,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-aside {
-  background: lightblue;
-  width: 150px;
-  padding: 16px;
-  > h2 {
-    margin-bottom: 4px;
-  }
-
-  > ul {
-    > li {
-      padding: 4px 0;
+.content{
+  display: flex;
+  aside {
+    background: lightblue;
+    width: 150px;
+    padding: 16px;
+    > h2 {
+      margin-bottom: 4px;
     }
-  }
 
-  @media (max-width: 500px){
-    padding-top: 70px;
-    position: fixed;
-    top: 0;
-    left: 0;
+    > ul {
+      > li {
+        padding: 4px 0;
+      }
+    }
+
+    @media (max-width: 500px){
+      padding-top: 70px;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
   }
 }
 </style>
