@@ -1,7 +1,7 @@
 <template>
   <div class="top-nav">
-    <span class="toggle-menu"></span>
-    <div class="logo" @click="toggleMenu">Logo</div>
+    <span class="toggle-menu" @click="toggleMenu"></span>
+    <div class="logo" >Logo</div>
     <div class="menu">
       <ul>
         <li>menu1</li>
@@ -57,8 +57,8 @@ export default {
       }
     }
   }
-  .toggle-menu{
-    display: inline-block;
+  > .toggle-menu{
+    display: none;
     width: 24px;
     height: 24px;
     background: red;
@@ -73,6 +73,9 @@ export default {
     }
     >.logo{
       margin: 0 auto;
+    }
+    >.toggle-menu{
+      display: inline-block;
     }
   }
 }
