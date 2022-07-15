@@ -1,6 +1,6 @@
 import {createApp} from 'vue';
 import App from './App.vue';
-import './index.css';
+import './index.scss';
 // 引入路由，这里使用hash模式
 import {createWebHashHistory, createRouter} from 'vue-router';
 import Home from './views/Home.vue'
