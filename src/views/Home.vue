@@ -1,5 +1,4 @@
 <template>
-  这里是主页
   <div class="top-nav">
     <div class="logo"></div>
     <div class="menu"></div>
@@ -21,5 +20,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 </style>
