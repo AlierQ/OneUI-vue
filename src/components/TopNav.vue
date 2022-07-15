@@ -18,10 +18,15 @@ export default {
 
 <style lang="scss" scoped>
 .top-nav{
-  border: 1px solid red;
+  background: pink;
+  border: 1px solid pink;
   display: flex;
   justify-content: space-between;
   padding: 10px 10px;
+  height: 50px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
   .logo{}
   >.menu{
     >ul{
