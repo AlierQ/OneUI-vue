@@ -1,5 +1,6 @@
 <template>
   <div class="top-nav">
+    <span class="toggle-menu"></span>
     <div class="logo" @click="toggleMenu">Logo</div>
     <div class="menu">
       <ul>
@@ -36,12 +37,16 @@ export default {
   background: pink;
   border: 1px solid pink;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px 10px;
   height: 50px;
   align-items: center;
   position: relative;
   z-index: 10;
+
+  > .logo{
+    margin-right: auto;
+  }
 
   > .menu {
     > ul {
@@ -50,6 +55,24 @@ export default {
       > li {
         padding: 0 10px;
       }
+    }
+  }
+  .toggle-menu{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: red;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @media (max-width: 500px) {
+    >.menu{
+      display: none;
+    }
+    >.logo{
+      margin: 0 auto;
     }
   }
 }
