@@ -1,7 +1,23 @@
 <template>
   <TopNav></TopNav>
   <div class="content">
-    <aside>侧边栏</aside>
+    <aside>
+      <h2>组件列表</h2>
+      <ul>
+        <li>
+          <router-link to="/document/switch">Switch 组件</router-link>
+        </li>
+        <li>
+          <router-link to="/document/button">Button 组件</router-link>
+        </li>
+        <li>
+          <router-link to="/document/dialog">Dialog 组件</router-link>
+        </li>
+        <li>
+          <router-link to="/document/tabs">Tabs 组件</router-link>
+        </li>
+      </ul>
+    </aside>
     <div class="main">主内容</div>
   </div>
 </template>
