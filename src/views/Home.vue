@@ -1,7 +1,12 @@
 <template>
   <div class="top-nav">
     <div class="logo"></div>
-    <div class="menu"></div>
+    <div class="menu">
+      <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+      </ul>
+    </div>
   </div>
   <div class="banner">
     <h1>UI</h1>
@@ -20,4 +25,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>
