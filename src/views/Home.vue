@@ -1,6 +1,6 @@
 <template>
   <div class="top-nav">
-    <div class="logo"></div>
+    <div class="logo">Logo</div>
     <div class="menu">
       <ul>
         <li>menu1</li>
@@ -25,5 +25,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  .top-nav{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    .logo{}
+    >.menu{
+      >ul{
+        display: flex;
+        >li{
+          padding: 0 10px;
+        }
+      }
+    }
+  }
 </style>
