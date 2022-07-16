@@ -2,10 +2,11 @@
   <div>
     <h3>示例1</h3>
     <div class="show">
-      <Button>Default</Button>
-      <Button type="primary">Primary</Button>
-      <Button type="dashed">Dashed</Button>
-      <Button type="text">Text</Button>
+      &nbsp;
+      <Button>Default</Button>&nbsp;
+      <Button type="primary">Primary</Button>&nbsp;
+      <Button type="dashed">Dashed</Button>&nbsp;
+      <Button type="text">Text</Button>&nbsp;
     </div>
   </div>
 </template>
@@ -35,10 +36,9 @@ div {
   //background: yellow;
   overflow: auto;
   .show{
-    margin-left: 10px;
-    display: flex;
-    justify-content: space-between;
-    width: 300px;
+    padding: 10px 0;
+    overflow: hidden;
+    //border: 1px solid red;
   }
 }
 </style>
