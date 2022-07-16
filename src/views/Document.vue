@@ -68,7 +68,6 @@ export default {
       //border: 1px solid #2c3e50;
       flex-grow: 1;
       display: flex;
-
     }
 
     aside {
@@ -94,8 +93,6 @@ export default {
         height: 100vh;
       }
     }
-
-
   }
 }
 </style>

@@ -2,11 +2,11 @@
 import {createWebHashHistory, createRouter} from 'vue-router';
 import Home from './views/Home.vue';
 import Document from './views/Document.vue';
-import Switch from './components/Switch.vue';
-import Button from './components/Button.vue';
-import Dialog from './components/Dialog.vue';
-import Tabs from './components/Tabs.vue';
-
+import Switch from './components/SwitchPage.vue';
+import Button from './components/ButtonPage.vue';
+import Dialog from './components/DialogPage.vue';
+import Tabs from './components/TabsPage.vue';
+import DocumentDemo from './components/DocumentDemo.vue'
 const history = createWebHashHistory();
 export const router = createRouter({
   history,
@@ -21,19 +21,23 @@ export const router = createRouter({
       // 嵌套路由
       children: [
         {
-          path: '/document/switch',
+          path: '',
+          component: DocumentDemo,
+        },
+        {
+          path: 'switch',
           component: Switch,
         },
         {
-          path: '/document/button',
+          path: 'button',
           component: Button,
         },
         {
-          path: '/document/dialog',
+          path: 'dialog',
           component: Dialog,
         },
         {
-          path: '/document/tabs',
+          path: 'tabs',
           component: Tabs,
         }
       ]
