@@ -57,6 +57,19 @@ button {
 
     > span {
       left: calc(100% - #{$span-height} - 2px);
+      animation: pang 0.2s;
+    }
+
+    @keyframes pang {
+      0% {
+        width: $span-height
+      }
+      50% {
+        width: $span-height + 2px
+      }
+      100% {
+        width: $span-height
+      }
     }
   }
 
