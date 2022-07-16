@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Switch v-model:value="isOpen" ></Switch>
+    <Switch v-model:value="isOpen"
+            active-color="#fb5430"
+            inactive-color="#add8e6"
+            point-color="#499c54"
+    ></Switch>
   </div>
 </template>
 

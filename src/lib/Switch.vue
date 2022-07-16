@@ -1,17 +1,29 @@
 <template>
   <button :class="{on:value}"
+          :style="{
+            '--active-color':activeColor,
+            '--inactive-color':inactiveColor,
+            '--point-color':pointColor,
+          }"
           @click="toggle">
     <span></span>
   </button>
 </template>
 
 <script lang="ts">
-import {ref} from 'vue';
-
 export default {
   props: {
     value: {
       type: Boolean
+    },
+    activeColor: {
+      type: String
+    },
+    inactiveColor: {
+      type: String
+    },
+    pointColor: {
+      type: String
     }
   },
   setup(props, content) {
@@ -26,16 +38,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$button-bg-color-on: #409eff;
-$button-bg-color-off: #dcdfe6;
-$span-bg-color: #fff;
+$point-color: var(--point-color, #ffffff);
+$active-color: var(--active-color, #409eff);
+$inactive-color: var(--inactive-color, #dcdfe6);
 $button-height: 22px;
 $span-height: $button-height - 4px;
 button {
   height: $button-height;
   width: $button-height*2;
   border: none;
-  background: $button-bg-color-off;
+  background: $inactive-color;
   border-radius: $button-height / 2;
   position: relative;
   transition: all .5s ease;
@@ -46,14 +58,14 @@ button {
     left: 2px;
     height: $span-height;
     width: $span-height;
-    background: $span-bg-color;
+    background: $point-color;
     border-radius: $span-height / 2;
     right: 2px;
     transition: all .2s ease;
   }
 
   &.on {
-    background: $button-bg-color-on;
+    background: $active-color;
 
     > span {
       left: calc(100% - #{$span-height} - 2px);
