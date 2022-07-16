@@ -1,56 +1,15 @@
 <template>
   <div>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
-    Switch组件 <br>
+    <Switch></Switch>
   </div>
 </template>
 
 <script lang="ts">
+import Switch from '../lib/Switch.vue'
 export default {
-  name: 'Switch'
+  components:{
+    Switch
+  }
 };
 </script>
 
