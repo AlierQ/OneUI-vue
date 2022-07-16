@@ -1,12 +1,11 @@
 <template>
   <div>
     <h3>示例1</h3>
-    <div>
-      <Button @click="onClick"
-              @focus="onClick"
-              @mouseover="onClick"
-              aaa="111">你好
-      </Button>
+    <div class="show">
+      <Button>Default</Button>
+      <Button type="primary">Primary</Button>
+      <Button type="dashed">Dashed</Button>
+      <Button type="text">Text</Button>
     </div>
   </div>
 </template>
@@ -35,5 +34,11 @@ div {
   width: 100%;
   //background: yellow;
   overflow: auto;
+  .show{
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+  }
 }
 </style>

@@ -1,28 +1,28 @@
 <template>
-  <div :aaa="aaa" @click="onClick">
-    啦啦啦
-  </div>
-  <button v-bind="rest">
+  <button class="basic">
     <slot></slot>
   </button>
 </template>
 
 <script lang="ts">
 export default {
-  // 不继承属性
-  inheritAttrs:false,
   name: 'Button',
-  setup(props,context){
-    const {aaa,onClick, ...rest} = context.attrs
-    return {
-      aaa,
-      onClick,
-      rest
-    }
+  props: {
+    type: String
+  },
+  setup(props, context) {
   }
 };
 </script>
 
 <style lang="scss" scoped>
-
+.basic {
+  background: skyblue;
+  height: 30px;
+  line-height: 30px;
+  border: none;
+  border-radius: 4px;
+  padding:0 15px;
+  cursor: pointer;
+}
 </style>
