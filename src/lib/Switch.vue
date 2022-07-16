@@ -31,42 +31,28 @@ import {computed} from 'vue';
 
 export default {
   props: {
-    value: {
-      type: Boolean
-    },
-    activeColor: {
-      type: String
-    },
-    inactiveColor: {
-      type: String
-    },
-    pointColor: {
-      type: String
-    },
-    activeText: {
-      type: String
-    },
-    inactiveText: {
-      type: String
-    },
-    textColor: {
-      type: String
-    },
+    value: Boolean,
+    activeColor: String,
+    inactiveColor: String,
+    pointColor: String,
+    activeText: String,
+    inactiveText: String,
+    textColor: String,
     disabled: {
       type: String,
-      default:'false'
+      default: 'false'
     },
   },
   setup(props, content) {
     const toggle = () => {
       content.emit('update:value', !props.value);
     };
-    let isDisabled = computed(()=>{
+    let isDisabled = computed(() => {
       if (props.disabled === '' || props.disabled === 'true')
-        return true
+        return true;
       else if (props.disabled === 'false')
-        return false
-    })
+        return false;
+    });
     return {
       toggle,
       isDisabled
@@ -133,13 +119,13 @@ button {
 
     @keyframes pang {
       0% {
-        width: $span-height
+        padding-left: 0
       }
       50% {
-        width: $span-height + 2px
+        padding-left: 6px
       }
       100% {
-        width: $span-height
+        padding-left: 0
       }
     }
   }

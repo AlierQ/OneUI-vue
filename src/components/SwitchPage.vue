@@ -25,8 +25,8 @@ import {ref} from 'vue';
 
 export default {
   setup() {
-    const state1 = ref(false);
-    const state2 = ref(false);
+    const state1 = ref(true);
+    const state2 = ref(true);
     const state3 = ref(false);
     const state4 = ref(true);
     return {
