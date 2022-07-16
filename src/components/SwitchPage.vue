@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Switch :value.sync="isOpen" @update:value="isOpen = $event"></Switch>
+    <Switch v-model:value="isOpen" ></Switch>
   </div>
 </template>
 
