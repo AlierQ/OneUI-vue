@@ -8,22 +8,31 @@
             inactive-color="#add8e6"
             point-color="#499c54">
     </Switch>
+    <h3>文字描述样式</h3>
+    <Switch v-model:value="state3"
+            active-text="关闭"
+            inactive-text="开启"
+            text-color="#ffc0cb">
+    </Switch>
   </div>
 </template>
 
 <script lang="ts">
-import Switch from '../lib/Switch.vue'
+import Switch from '../lib/Switch.vue';
 import {ref} from 'vue';
+
 export default {
-  setup(){
-    const state1 = ref(false)
-    const state2 = ref(false)
+  setup() {
+    const state1 = ref(false);
+    const state2 = ref(false);
+    const state3 = ref(false);
     return {
       state1,
       state2,
-    }
+      state3,
+    };
   },
-  components:{
+  components: {
     Switch
   }
 };

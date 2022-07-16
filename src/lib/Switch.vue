@@ -1,4 +1,10 @@
 <template>
+  <span class="text"
+        v-if="activeText"
+        :class="{checked:!value}"
+        :style="{'--text-color':textColor}">
+    {{ activeText }}
+  </span>
   <button :class="{on:value}"
           :style="{
             '--active-color':activeColor,
@@ -8,6 +14,12 @@
           @click="toggle">
     <span></span>
   </button>
+  <span class="text"
+        v-if="inactiveText"
+        :class="{checked:value}"
+        :style="{'--text-color':textColor}">
+    {{ inactiveText }}
+  </span>
 </template>
 
 <script lang="ts">
@@ -24,7 +36,16 @@ export default {
     },
     pointColor: {
       type: String
-    }
+    },
+    activeText: {
+      type: String
+    },
+    inactiveText: {
+      type: String
+    },
+    textColor: {
+      type: String
+    },
   },
   setup(props, content) {
     const toggle = () => {
@@ -41,9 +62,30 @@ export default {
 $point-color: var(--point-color, #ffffff);
 $active-color: var(--active-color, #409eff);
 $inactive-color: var(--inactive-color, #dcdfe6);
+$text-color: var(--text-color, #409eff);
 $button-height: 22px;
 $span-height: $button-height - 4px;
+.text {
+  color: #333333;
+  display: inline-block;
+  height: $button-height;
+  vertical-align: middle;
+
+  &:nth-of-type(1) {
+    padding-right: 10px;
+  }
+
+  &:nth-of-type(2) {
+    padding-left: 10px;
+  }
+
+  &.checked {
+    color: $text-color;
+  }
+}
+
 button {
+  vertical-align: middle;
   height: $button-height;
   width: $button-height*2;
   border: none;
@@ -52,7 +94,7 @@ button {
   position: relative;
   transition: all .5s ease;
 
-  span {
+  > span {
     position: absolute;
     top: 2px;
     left: 2px;
