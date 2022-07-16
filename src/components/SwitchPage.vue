@@ -1,10 +1,13 @@
 <template>
   <div>
-    <Switch v-model:value="isOpen"
+    <h3>默认样式</h3>
+    <Switch v-model:value="state1"></Switch>
+    <h3>自定义样式</h3>
+    <Switch v-model:value="state2"
             active-color="#fb5430"
             inactive-color="#add8e6"
-            point-color="#499c54"
-    ></Switch>
+            point-color="#499c54">
+    </Switch>
   </div>
 </template>
 
@@ -13,9 +16,11 @@ import Switch from '../lib/Switch.vue'
 import {ref} from 'vue';
 export default {
   setup(){
-    const isOpen = ref(false)
+    const state1 = ref(false)
+    const state2 = ref(false)
     return {
-      isOpen
+      state1,
+      state2,
     }
   },
   components:{
