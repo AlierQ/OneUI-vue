@@ -2,16 +2,30 @@
   <div>
     <h3>示例1</h3>
     <div>
-      <Button>你好</Button>
+      <Button @click="onClick"
+              @focus="onClick"
+              @mouseover="onClick"
+              aaa="111">你好
+      </Button>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Button from '../lib/Button.vue'
+import Button from '../lib/Button.vue';
+
 export default {
-  components:{
+  components: {
     Button
+  },
+  setup() {
+    const onClick = () => {
+      console.log('点击了按钮');
+    };
+
+    return {
+      onClick
+    };
   }
 };
 </script>
