@@ -21,7 +21,10 @@ export default {
     // 引入router
     // 路由却换时执行的函数
     router.afterEach(() => {
-      asideVisible.value = false;
+      // pc端不关闭左侧菜单
+      if (width <= 500) {
+        asideVisible.value = false;
+      }
     });
   },
 };
