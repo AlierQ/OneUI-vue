@@ -14,6 +14,8 @@
             inactive-text="开启"
             text-color="#ffc0cb">
     </Switch>
+    <h3>禁用样式</h3>
+    <Switch v-model:value="state4" disabled="true"></Switch>
   </div>
 </template>
 
@@ -26,10 +28,12 @@ export default {
     const state1 = ref(false);
     const state2 = ref(false);
     const state3 = ref(false);
+    const state4 = ref(true);
     return {
       state1,
       state2,
       state3,
+      state4,
     };
   },
   components: {

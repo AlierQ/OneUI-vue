@@ -5,7 +5,11 @@
         :style="{'--text-color':textColor}">
     {{ activeText }}
   </span>
-  <button :class="{on:value}"
+  <button :class="{
+            on:value,
+            disabled:(disabled===''||disabled==='true')
+          }"
+          :disabled="isDisabled"
           :style="{
             '--active-color':activeColor,
             '--inactive-color':inactiveColor,
@@ -23,6 +27,8 @@
 </template>
 
 <script lang="ts">
+import {computed} from 'vue';
+
 export default {
   props: {
     value: {
@@ -46,13 +52,24 @@ export default {
     textColor: {
       type: String
     },
+    disabled: {
+      type: String,
+      default:'false'
+    },
   },
   setup(props, content) {
     const toggle = () => {
       content.emit('update:value', !props.value);
     };
+    let isDisabled = computed(()=>{
+      if (props.disabled === '' || props.disabled === 'true')
+        return true
+      else if (props.disabled === 'false')
+        return false
+    })
     return {
-      toggle
+      toggle,
+      isDisabled
     };
   }
 };
@@ -129,6 +146,11 @@ button {
 
   &:focus {
     outline: none;
+  }
+
+  &.disabled {
+    opacity: .8;
+    cursor: not-allowed;
   }
 }
 </style>
