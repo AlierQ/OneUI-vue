@@ -1,5 +1,5 @@
 <template>
-  <button :class="{on:isOn}"
+  <button :class="{on:value}"
           @click="toggle">
     <span></span>
   </button>
@@ -9,17 +9,18 @@
 import {ref} from 'vue';
 
 export default {
-  setup() {
-    const isOn = ref(false);
-
-    const toggle = ()=>{
-      // 使用ref进行生命的变量，通过变量.value来进行修改
-      isOn.value = !isOn.value
+  props: {
+    value: {
+      type: Boolean
     }
-    return{
-      isOn,
+  },
+  setup(props, content) {
+    const toggle = () => {
+      content.emit('update:value', !props.value);
+    };
+    return {
       toggle
-    }
+    };
   }
 };
 </script>
@@ -51,11 +52,16 @@ button {
     transition: all .2s ease;
   }
 
-  &.on{
+  &.on {
     background: $button-bg-color-on;
+
     > span {
       left: calc(100% - #{$span-height} - 2px);
     }
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 </style>

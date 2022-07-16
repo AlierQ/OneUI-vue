@@ -1,12 +1,19 @@
 <template>
   <div>
-    <Switch></Switch>
+    <Switch :value.sync="isOpen" @update:value="isOpen = $event"></Switch>
   </div>
 </template>
 
 <script lang="ts">
 import Switch from '../lib/Switch.vue'
+import {ref} from 'vue';
 export default {
+  setup(){
+    const isOpen = ref(false)
+    return {
+      isOpen
+    }
+  },
   components:{
     Switch
   }
