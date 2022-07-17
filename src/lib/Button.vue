@@ -35,14 +35,27 @@ export default {
   padding: 0 15px;
   cursor: pointer;
   vertical-align: middle;
-}
-
-.type-button {
-  border: 1px solid #dcdee2;
+  white-space: nowrap;
   transition: all .4s;
 
   &.transparent {
     background: transparent;
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 4px #84c1fb;
+  }
+}
+
+.type-button {
+  border: 1px solid #dcdee2;
+
+  &.transparent {
     border: 1px solid #ffffff;
     color: white;
   }
@@ -51,12 +64,6 @@ export default {
     border: 1px solid #409eff;
     color: #409eff;
   }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 4px #84c1fb;
-  }
-
 }
 
 .type-primary {
@@ -65,7 +72,6 @@ export default {
   color: white;
 
   &.transparent {
-    background: transparent;
     border: 1px solid #409eff;
     color: #409eff;
 
@@ -77,20 +83,13 @@ export default {
   &:hover {
     background: #5cadff;
   }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 4px #84c1fb;
-  }
 }
 
 .type-dashed {
   border: 1px dashed #dcdee2;
-  transition: all .4s;
   color: #515a6e;
 
   &.transparent {
-    background: transparent;
     border: 1px dashed white;
     color: white;
   }
@@ -99,21 +98,12 @@ export default {
     border: 1px dashed #409eff;
     color: #409eff;
   }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 4px #84c1fb;
-  }
-
-
 }
 
 .type-text {
-  transition: all .4s;
   color: #515a6e;
 
   &.transparent {
-    background: transparent;
     color: white;
   }
 
@@ -121,22 +111,17 @@ export default {
     color: #409eff;
   }
 
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 4px #84c1fb;
-  }
 }
 
 .type-info {
-  transition: all .4s;
   background: #2db7f5;
   color: #ffffff;
 
   &.transparent {
-    background: transparent;
     border: 1px solid #2db7f5;
     color: #2db7f5;
-    &:hover{
+
+    &:hover {
       background: rgba(245, 249, 254, .5);
     }
   }
@@ -145,10 +130,6 @@ export default {
     background: #57c5f7;
   }
 
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 4px #84c1fb;
-  }
 }
 
 .type-success {
@@ -157,10 +138,10 @@ export default {
   color: #ffffff;
 
   &.transparent {
-    background: transparent;
     border: 1px solid #19be6b;
     color: #19be6b;
-    &:hover{
+
+    &:hover {
       background: rgba(245, 249, 254, .5);
     }
   }
@@ -169,10 +150,6 @@ export default {
     background: #47cb89;
   }
 
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 4px #84c1fb;
-  }
 }
 
 .type-warning {
@@ -181,10 +158,10 @@ export default {
   color: #ffffff;
 
   &.transparent {
-    background: transparent;
     border: 1px solid #ff9900;
     color: #ff9900;
-    &:hover{
+
+    &:hover {
       background: rgba(245, 249, 254, .5);
     }
   }
@@ -193,10 +170,6 @@ export default {
     background: #ffad33;
   }
 
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 4px #84c1fb;
-  }
 }
 
 .type-error {
@@ -205,10 +178,10 @@ export default {
   color: #ffffff;
 
   &.transparent {
-    background: transparent;
     border: 1px solid #ed4014;
     color: #ed4014;
-    &:hover{
+
+    &:hover {
       background: rgba(245, 249, 254, .5);
     }
   }
@@ -217,10 +190,6 @@ export default {
     background: #f16643;
   }
 
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 4px #84c1fb;
-  }
 }
 
 </style>
