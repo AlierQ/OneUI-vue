@@ -6,7 +6,7 @@ module.exports = {
   },
   hostname: '127.0.0.1', // 默认是 localhost
   port: '8000', // 默认是 3000 端口
-  open: true, // 浏览器自动打开
+  open: false, // 浏览器是否自动打开
   https: false, // 是否开启 https
   ssr: false, // 服务端渲染
   base: './', // 生产环境下的公共路径
