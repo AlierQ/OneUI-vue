@@ -8,7 +8,7 @@
   <button class="one-switch-basic"
           :class="{
             ['one-switch-on']:value,
-            ['one-switch-disabled']:(disabled===''||disabled==='true')
+            ['one-switch-disabled']:isDisabled
           }"
           :disabled="isDisabled"
           :style="{
@@ -49,10 +49,7 @@ export default {
       content.emit('update:value', !props.value);
     };
     let isDisabled = computed(() => {
-      if (props.disabled === '' || props.disabled === 'true')
-        return true;
-      else if (props.disabled === 'false')
-        return false;
+      return props.disabled === '' || props.disabled === 'true';
     });
     return {
       toggle,

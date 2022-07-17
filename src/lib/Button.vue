@@ -3,15 +3,17 @@
           :class="{
               [`one-button-type-${type}`]:type,
               [`one-button-size-${size}`]:size,
-              ['one-button-transparent']:transparent===''||transparent==='true',
-              ['one-button-disabled']:disabled===''||disabled==='true',
+              ['one-button-transparent']:isTransparent,
+              ['one-button-disabled']:isDisabled,
           }"
-          :disabled="(disabled===''||disabled==='true')?true:false">
+          :disabled="isDisabled">
     <slot></slot>
   </button>
 </template>
 
 <script lang="ts">
+import {computed} from 'vue';
+
 export default {
   name: 'Button',
   props: {
@@ -25,6 +27,19 @@ export default {
     },
     transparent: String,
     disabled: String,
+  },
+  setup(props, context) {
+    const isDisabled = computed(() => {
+      return props.disabled === '' || props.disabled === 'true';
+    });
+    const isTransparent = computed(() => {
+      return props.transparent === '' || props.transparent === 'true';
+    });
+
+    return {
+      isDisabled,
+      isTransparent
+    };
   }
 };
 </script>
