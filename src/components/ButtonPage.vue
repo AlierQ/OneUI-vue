@@ -16,6 +16,19 @@
       <Button type="warning">Warning</Button>&nbsp;
       <Button type="error">Error</Button>&nbsp;
     </div>
+    <h3>透明样式</h3>
+    <div class="show" style="background: #bec8c8">
+      &nbsp;
+      <Button transparent>Default</Button>&nbsp;
+      <Button type="primary" transparent>Primary</Button>&nbsp;
+      <Button type="dashed" transparent>Dashed</Button>&nbsp;
+      <Button type="text" transparent>Text</Button>&nbsp;
+      <br><br>&nbsp;
+      <Button type="info" transparent>Info</Button>&nbsp;
+      <Button type="success" transparent>Success</Button>&nbsp;
+      <Button type="warning" transparent>Warning</Button>&nbsp;
+      <Button type="error" transparent>Error</Button>
+    </div>
   </div>
 </template>
 
