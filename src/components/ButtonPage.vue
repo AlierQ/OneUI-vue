@@ -51,6 +51,20 @@
       <Button type="warning" transparent disabled>Warning</Button>&nbsp;
       <Button type="error" transparent disabled>Error</Button>
     </div>
+    <h3>按钮的大小</h3>
+    <div class="show">
+      &nbsp;
+      <Button size="big">Default</Button>&nbsp;
+      <Button type="primary" size="normal" >Primary</Button>&nbsp;
+      <Button type="dashed" size="small">Dashed</Button>&nbsp;
+      <Button type="text"  disabled>Text</Button>&nbsp;
+    </div>
+    <div class="show" style="background: #bec8c8">&nbsp;
+      <Button @click="onClick" size="small" type="info" transparent >Info</Button>&nbsp;
+      <Button type="dashed" size="small" transparent disabled>Success</Button>&nbsp;
+      <Button type="warning" size="normal" transparent disabled>Warning</Button>&nbsp;
+      <Button type="error" size="big" transparent>Error</Button>
+    </div>
   </div>
 </template>
 

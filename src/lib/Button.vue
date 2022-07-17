@@ -2,6 +2,7 @@
   <button class="one-button-basic"
           :class="{
               [`one-button-type-${type}`]:type,
+              [`one-button-size-${size}`]:size,
               ['one-button-transparent']:transparent===''||transparent==='true',
               ['one-button-disabled']:disabled===''||disabled==='true',
           }"
@@ -18,6 +19,10 @@ export default {
       type: String,
       default: 'button'
     },
+    size: {
+      type: String,
+      default: 'normal'
+    },
     transparent: String,
     disabled: String,
   }
@@ -27,9 +32,7 @@ export default {
 <style lang="scss">
 .one-button-basic {
   background: white;
-  height: 30px;
   color: #515a6e;
-  line-height: 30px;
   border: none;
   border-radius: 4px;
   padding: 0 15px;
@@ -37,6 +40,24 @@ export default {
   vertical-align: middle;
   white-space: nowrap;
   transition: all .4s;
+
+  &.one-button-size-big {
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+  }
+
+  &.one-button-size-normal {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+  }
+
+  &.one-button-size-small {
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+  }
 
   &.one-button-transparent {
     background: transparent;
