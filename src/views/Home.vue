@@ -1,7 +1,7 @@
 <template>
   <TopNav class="top-nav"></TopNav>
   <div class="banner">
-    <h1>UI</h1>
+    <h1>One UI</h1>
     <h2>一个厉害的UI框架</h2>
     <p>
       <a href="">Github</a>
