@@ -2,8 +2,10 @@
   <button class="one-button-basic"
           :class="{
               [`one-button-type-${type}`]:type,
-              ['one-button-transparent']:transparent===''||transparent===true
-          }">
+              ['one-button-transparent']:transparent===''||transparent==='true',
+              ['one-button-disabled']:disabled===''||disabled==='true',
+          }"
+          :disabled="(disabled===''||disabled==='true')?true:false">
     <slot></slot>
   </button>
 </template>
@@ -16,10 +18,8 @@ export default {
       type: String,
       default: 'button'
     },
-    transparent: String
-  },
-  setup(props, context) {
-    console.log('transparent:' + props.transparent);
+    transparent: String,
+    disabled: String,
   }
 };
 </script>
@@ -42,6 +42,10 @@ export default {
     background: transparent;
   }
 
+  &.one-button-disabled {
+    cursor: not-allowed;
+  }
+
   &::-moz-focus-inner {
     border: 0;
   }
@@ -58,11 +62,21 @@ export default {
   &.one-button-transparent {
     border: 1px solid #ffffff;
     color: white;
+
+    &.one-button-disabled {
+      background: none;
+    }
   }
 
   &:hover {
     border: 1px solid #409eff;
     color: #409eff;
+  }
+
+  &.one-button-disabled {
+    background: #f7f7f7;
+    border: 1px solid #dcdee2;
+    color: #dcdee2;
   }
 }
 
@@ -78,10 +92,22 @@ export default {
     &:hover {
       background: rgba(245, 249, 254, .5);
     }
+
+    &.one-button-disabled {
+      background: none;
+      //border: 1px solid #dcdee2;
+      //color: #dcdee2;
+    }
   }
 
   &:hover {
     background: #5cadff;
+  }
+
+  &.one-button-disabled {
+    background: #f7f7f7;
+    border: 1px solid #dcdee2;
+    color: #dcdee2;
   }
 }
 
@@ -92,11 +118,21 @@ export default {
   &.one-button-transparent {
     border: 1px dashed white;
     color: white;
+
+    &.one-button-disabled {
+      background: none;
+    }
   }
 
   &:hover {
     border: 1px dashed #409eff;
     color: #409eff;
+  }
+
+  &.one-button-disabled {
+    background: #f7f7f7;
+    border: 1px dashed #dcdee2;
+    color: #dcdee2;
   }
 }
 
@@ -109,6 +145,10 @@ export default {
 
   &:hover {
     color: #409eff;
+  }
+
+  &.one-button-disabled {
+    color: #dcdee2;
   }
 
 }
@@ -124,12 +164,21 @@ export default {
     &:hover {
       background: rgba(245, 249, 254, .5);
     }
+
+    &.one-button-disabled {
+      background: none;
+    }
   }
 
   &:hover {
     background: #57c5f7;
   }
 
+  &.one-button-disabled {
+    background: #f7f7f7;
+    border: 1px solid #dcdee2;
+    color: #dcdee2;
+  }
 }
 
 .one-button-type-success {
@@ -144,12 +193,21 @@ export default {
     &:hover {
       background: rgba(245, 249, 254, .5);
     }
+
+    &.one-button-disabled {
+      background: none;
+    }
   }
 
   &:hover {
     background: #47cb89;
   }
 
+  &.one-button-disabled {
+    background: #f7f7f7;
+    border: 1px solid #dcdee2;
+    color: #dcdee2;
+  }
 }
 
 .one-button-type-warning {
@@ -164,12 +222,21 @@ export default {
     &:hover {
       background: rgba(245, 249, 254, .5);
     }
+
+    &.one-button-disabled {
+      background: none;
+    }
   }
 
   &:hover {
     background: #ffad33;
   }
 
+  &.one-button-disabled {
+    background: #f7f7f7;
+    border: 1px solid #dcdee2;
+    color: #dcdee2;
+  }
 }
 
 .one-button-type-error {
@@ -184,12 +251,21 @@ export default {
     &:hover {
       background: rgba(245, 249, 254, .5);
     }
+
+    &.one-button-disabled {
+      background: none;
+    }
   }
 
   &:hover {
     background: #f16643;
   }
 
+  &.one-button-disabled {
+    background: #f7f7f7;
+    border: 1px solid #dcdee2;
+    color: #dcdee2;
+  }
 }
 
 </style>

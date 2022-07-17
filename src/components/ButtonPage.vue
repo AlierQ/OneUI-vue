@@ -29,6 +29,28 @@
       <Button type="warning" transparent>Warning</Button>&nbsp;
       <Button type="error" transparent>Error</Button>
     </div>
+    <h3>禁用按钮</h3>
+    <div class="show">
+      &nbsp;
+      <Button disabled @click="onClick">Default</Button>&nbsp;
+      <Button type="primary" disabled>Primary</Button>&nbsp;
+      <Button type="dashed" disabled>Dashed</Button>&nbsp;
+      <Button type="text" disabled>Text</Button>&nbsp;
+      <Button type="success" disabled>Success</Button>&nbsp;
+    </div>
+    <h3>透明禁用样式</h3>
+    <div class="show" style="background: #bec8c8">
+      &nbsp;
+      <Button transparent disabled>Default</Button>&nbsp;
+      <Button type="primary" transparent disabled>Primary</Button>&nbsp;
+      <Button type="dashed" transparent disabled>Dashed</Button>&nbsp;
+      <Button type="text" transparent disabled>Text</Button>&nbsp;
+      <br><br>&nbsp;
+      <Button @click="onClick" type="info" transparent disabled>Info</Button>&nbsp;
+      <Button type="success" transparent disabled>Success</Button>&nbsp;
+      <Button type="warning" transparent disabled>Warning</Button>&nbsp;
+      <Button type="error" transparent disabled>Error</Button>
+    </div>
   </div>
 </template>
 
@@ -56,7 +78,8 @@ div {
   width: 100%;
   //background: yellow;
   overflow: auto;
-  .show{
+
+  .show {
     padding: 10px 0;
     overflow: hidden;
     //border: 1px solid red;
