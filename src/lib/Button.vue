@@ -77,4 +77,64 @@ export default {
     box-shadow: 0 0 4px #84c1fb;
   }
 }
+.type-info{
+  transition: all .4s;
+  background: #2db7f5;
+  color: #ffffff;
+  &:hover{
+    background: #57c5f7;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 0 0 4px #84c1fb;
+  }
+}
+.type-success{
+  transition: all .4s;
+  background: #19be6b;
+  color: #ffffff;
+  &:hover{
+    background: #47cb89;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 0 0 4px #84c1fb;
+  }
+}
+.type-success{
+  transition: all .4s;
+  background: #19be6b;
+  color: #ffffff;
+  &:hover{
+    background: #47cb89;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 0 0 4px #84c1fb;
+  }
+}
+.type-warning{
+  transition: all .4s;
+  background: #ff9900;
+  color: #ffffff;
+  &:hover{
+    background: #ffad33;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 0 0 4px #84c1fb;
+  }
+}
+.type-error{
+  transition: all .4s;
+  background: #ed4014;
+  color: #ffffff;
+  &:hover{
+    background: #f16643;
+  }
+  &:focus{
+    outline: none;
+    box-shadow: 0 0 4px #84c1fb;
+  }
+}
 </style>

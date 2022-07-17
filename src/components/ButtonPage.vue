@@ -1,12 +1,20 @@
 <template>
   <div>
-    <h3>示例1</h3>
+    <h3>基本按钮</h3>
     <div class="show">
       &nbsp;
       <Button>Default</Button>&nbsp;
       <Button type="primary">Primary</Button>&nbsp;
       <Button type="dashed">Dashed</Button>&nbsp;
       <Button type="text">Text</Button>&nbsp;
+    </div>
+    <h3>颜色按钮</h3>
+    <div class="show">
+      &nbsp;
+      <Button type="info">Info</Button>&nbsp;
+      <Button type="success">Success</Button>&nbsp;
+      <Button type="warning">Warning</Button>&nbsp;
+      <Button type="error">Error</Button>&nbsp;
     </div>
   </div>
 </template>
