@@ -10,7 +10,7 @@
             ['one-switch-on']:value,
             ['one-switch-disabled']:isDisabled
           }"
-          :disabled="isDisabled"
+          :disabled="isDisabled.toString()"
           :style="{
             '--active-color':activeColor,
             '--inactive-color':inactiveColor,
@@ -48,7 +48,7 @@ export default {
     const toggle = () => {
       content.emit('update:value', !props.value);
     };
-    let isDisabled = computed(() => {
+    const isDisabled = computed(() => {
       return props.disabled === '' || props.disabled === 'true';
     });
     return {

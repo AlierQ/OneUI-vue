@@ -1,12 +1,7 @@
 <template>
   <button class="one-button-basic"
-          :class="{
-              [`one-button-type-${type}`]:type,
-              [`one-button-size-${size}`]:size,
-              ['one-button-transparent']:isTransparent,
-              ['one-button-disabled']:isDisabled,
-          }"
-          :disabled="isDisabled">
+          :class="classes"
+          :disabled="isDisabled.toString()">
     <slot></slot>
   </button>
 </template>
@@ -35,10 +30,17 @@ export default {
     const isTransparent = computed(() => {
       return props.transparent === '' || props.transparent === 'true';
     });
-
+    const classes = computed(() => {
+      return {
+        [`one-button-type-${props.type}`]:props.type,
+        [`one-button-size-${props.size}`]:props.size,
+        ['one-button-transparent']:isTransparent.value,
+        ['one-button-disabled']:isDisabled.value,
+      }
+    });
     return {
-      isDisabled,
-      isTransparent
+      classes,
+      isDisabled
     };
   }
 };
