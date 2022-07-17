@@ -1,14 +1,14 @@
 <template>
-  <span class="text"
+  <span class="one-switch-text"
         v-if="activeText"
         :class="{checked:!value}"
         :style="{'--text-color':textColor}">
     {{ activeText }}
   </span>
-  <button class="switch-basic"
+  <button class="one-switch-basic"
           :class="{
-            on:value,
-            disabled:(disabled===''||disabled==='true')
+            ['one-switch-on']:value,
+            ['one-switch-disabled']:(disabled===''||disabled==='true')
           }"
           :disabled="isDisabled"
           :style="{
@@ -17,9 +17,9 @@
             '--point-color':pointColor,
           }"
           @click="toggle">
-    <span class="switch-point"></span>
+    <span class="one-switch-point"></span>
   </button>
-  <span class="text"
+  <span class="one-switch-text"
         v-if="inactiveText"
         :class="{checked:value}"
         :style="{'--text-color':textColor}">
@@ -69,7 +69,7 @@ $inactive-color: var(--inactive-color, #dcdfe6);
 $text-color: var(--text-color, #409eff);
 $button-height: 22px;
 $span-height: $button-height - 4px;
-.text {
+.one-switch-text {
   color: #333333;
   display: inline-block;
   height: $button-height;
@@ -88,7 +88,7 @@ $span-height: $button-height - 4px;
   }
 }
 
-.switch-basic {
+.one-switch-basic {
   vertical-align: middle;
   height: $button-height;
   width: $button-height*2;
@@ -98,7 +98,7 @@ $span-height: $button-height - 4px;
   position: relative;
   transition: all .5s ease;
 
-  > .switch-point {
+  > .one-switch-point {
     position: absolute;
     top: 2px;
     left: 2px;
@@ -110,10 +110,10 @@ $span-height: $button-height - 4px;
     transition: all .2s ease;
   }
 
-  &.on {
+  &.one-switch-on {
     background: $active-color;
 
-    > .switch-point {
+    > .one-switch-point {
       left: calc(100% - #{$span-height} - 2px);
       animation: pang 0.2s;
     }
@@ -131,13 +131,13 @@ $span-height: $button-height - 4px;
     }
   }
 
-  &:focus {
-    outline: none;
-  }
-
-  &.disabled {
+  &.one-switch-disabled {
     opacity: .8;
     cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
   }
 }
 </style>
