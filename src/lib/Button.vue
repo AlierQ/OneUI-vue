@@ -1,5 +1,5 @@
 <template>
-  <button class="basic"
+  <button class="button-basic"
           :class="{
               [`type-${type}`]:type,
               transparent:transparent===''||transparent===true
@@ -24,8 +24,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.basic {
+<style lang="scss">
+.button-basic {
   background: white;
   height: 30px;
   color: #515a6e;

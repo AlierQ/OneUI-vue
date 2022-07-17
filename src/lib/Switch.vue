@@ -5,7 +5,8 @@
         :style="{'--text-color':textColor}">
     {{ activeText }}
   </span>
-  <button :class="{
+  <button class="switch-basic"
+          :class="{
             on:value,
             disabled:(disabled===''||disabled==='true')
           }"
@@ -16,7 +17,7 @@
             '--point-color':pointColor,
           }"
           @click="toggle">
-    <span></span>
+    <span class="switch-point"></span>
   </button>
   <span class="text"
         v-if="inactiveText"
@@ -61,7 +62,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $point-color: var(--point-color, #ffffff);
 $active-color: var(--active-color, #409eff);
 $inactive-color: var(--inactive-color, #dcdfe6);
@@ -87,7 +88,7 @@ $span-height: $button-height - 4px;
   }
 }
 
-button {
+.switch-basic {
   vertical-align: middle;
   height: $button-height;
   width: $button-height*2;
@@ -97,7 +98,7 @@ button {
   position: relative;
   transition: all .5s ease;
 
-  > span {
+  > .switch-point {
     position: absolute;
     top: 2px;
     left: 2px;
@@ -112,7 +113,7 @@ button {
   &.on {
     background: $active-color;
 
-    > span {
+    > .switch-point {
       left: calc(100% - #{$span-height} - 2px);
       animation: pang 0.2s;
     }
