@@ -1,8 +1,8 @@
 <template>
-  <button class="button-basic"
+  <button class="one-button-basic"
           :class="{
-              [`type-${type}`]:type,
-              transparent:transparent===''||transparent===true
+              [`one-button-type-${type}`]:type,
+              ['one-button-transparent']:transparent===''||transparent===true
           }">
     <slot></slot>
   </button>
@@ -25,7 +25,7 @@ export default {
 </script>
 
 <style lang="scss">
-.button-basic {
+.one-button-basic {
   background: white;
   height: 30px;
   color: #515a6e;
@@ -38,7 +38,7 @@ export default {
   white-space: nowrap;
   transition: all .4s;
 
-  &.transparent {
+  &.one-button-transparent {
     background: transparent;
   }
 
@@ -52,10 +52,10 @@ export default {
   }
 }
 
-.type-button {
+.one-button-type-button {
   border: 1px solid #dcdee2;
 
-  &.transparent {
+  &.one-button-transparent {
     border: 1px solid #ffffff;
     color: white;
   }
@@ -66,12 +66,12 @@ export default {
   }
 }
 
-.type-primary {
+.one-button-type-primary {
   background: #409eff;
   transition: all .4s;
   color: white;
 
-  &.transparent {
+  &.one-button-transparent {
     border: 1px solid #409eff;
     color: #409eff;
 
@@ -85,11 +85,11 @@ export default {
   }
 }
 
-.type-dashed {
+.one-button-type-dashed {
   border: 1px dashed #dcdee2;
   color: #515a6e;
 
-  &.transparent {
+  &.one-button-transparent {
     border: 1px dashed white;
     color: white;
   }
@@ -100,10 +100,10 @@ export default {
   }
 }
 
-.type-text {
+.one-button-type-text {
   color: #515a6e;
 
-  &.transparent {
+  &.one-button-transparent {
     color: white;
   }
 
@@ -113,11 +113,11 @@ export default {
 
 }
 
-.type-info {
+.one-button-type-info {
   background: #2db7f5;
   color: #ffffff;
 
-  &.transparent {
+  &.one-button-transparent {
     border: 1px solid #2db7f5;
     color: #2db7f5;
 
@@ -132,12 +132,12 @@ export default {
 
 }
 
-.type-success {
+.one-button-type-success {
   transition: all .4s;
   background: #19be6b;
   color: #ffffff;
 
-  &.transparent {
+  &.one-button-transparent {
     border: 1px solid #19be6b;
     color: #19be6b;
 
@@ -152,12 +152,12 @@ export default {
 
 }
 
-.type-warning {
+.one-button-type-warning {
   transition: all .4s;
   background: #ff9900;
   color: #ffffff;
 
-  &.transparent {
+  &.one-button-transparent {
     border: 1px solid #ff9900;
     color: #ff9900;
 
@@ -172,12 +172,12 @@ export default {
 
 }
 
-.type-error {
+.one-button-type-error {
   transition: all .4s;
   background: #ed4014;
   color: #ffffff;
 
-  &.transparent {
+  &.one-button-transparent {
     border: 1px solid #ed4014;
     color: #ed4014;
 
