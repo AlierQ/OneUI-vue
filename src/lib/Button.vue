@@ -1,7 +1,7 @@
 <template>
   <button class="one-button-basic"
           :class="classes"
-          :disabled="isDisabled.toString()">
+          :disabled="isDisabled || isLoading">
     <span v-if="isLoading" class="one-button-loading-indicator"></span>
     <slot></slot>
   </button>
@@ -33,7 +33,8 @@ export default {
       return props.transparent === '' || props.transparent === 'true';
     });
     const isLoading = computed(() => {
-      return props.loading === '' || props.loading === 'true';
+      // 加载和禁用同时出现的时候加载样式不生效
+      return (props.loading === '' || props.loading === 'true') && !isDisabled.value;
     });
     const classes = computed(() => {
       return {

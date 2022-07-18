@@ -3,7 +3,7 @@
     <h3>基本按钮</h3>
     <div class="show">
       &nbsp;
-      <Button>Default</Button>&nbsp;
+      <Button @click="onClick">Default</Button>&nbsp;
       <Button type="primary">Primary</Button>&nbsp;
       <Button type="dashed">Dashed</Button>&nbsp;
       <Button type="text">Text</Button>&nbsp;
@@ -33,7 +33,7 @@
     <div class="show">
       &nbsp;
       <Button disabled @click="onClick">Default</Button>&nbsp;
-      <Button type="primary" disabled>Primary</Button>&nbsp;
+      <Button type="primary" loading disabled>Primary</Button>&nbsp;
       <Button type="dashed" disabled>Dashed</Button>&nbsp;
       <Button type="text" disabled>Text</Button>&nbsp;
       <Button type="success" disabled>Success</Button>&nbsp;
@@ -54,7 +54,7 @@
     <h3>按钮的大小</h3>
     <div class="show">
       &nbsp;
-      <Button size="big">Default</Button>&nbsp;
+      <Button @click="onClick" size="big">Default</Button>&nbsp;
       <Button type="primary" size="normal">Primary</Button>&nbsp;
       <Button type="dashed" size="small">Dashed</Button>&nbsp;
       <Button type="text" disabled>Text</Button>&nbsp;
@@ -75,7 +75,7 @@
     </div>
     <div class="show">
       &nbsp;
-      <Button loading type="info">Info</Button>&nbsp;
+      <Button loading @click="onClick" type="info">Info</Button>&nbsp;
       <Button loading type="success">Success</Button>&nbsp;
       <Button loading type="warning">Warning</Button>&nbsp;
       <Button loading type="error">Error</Button>&nbsp;
@@ -87,7 +87,7 @@
       <Button loading type="dashed" transparent>Dashed</Button>&nbsp;
       <Button loading type="text" transparent>Text</Button>&nbsp;
       <br><br>&nbsp;
-      <Button loading type="info" transparent>Info</Button>&nbsp;
+      <Button loading type="info" @click="onClick" transparent>Info</Button>&nbsp;
       <Button loading type="success" transparent>Success</Button>&nbsp;
       <Button loading type="warning" transparent>Warning</Button>&nbsp;
       <Button loading type="error" transparent>Error</Button>
