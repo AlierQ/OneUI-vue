@@ -4,7 +4,7 @@
       <div class="one-model-overlay" @click="onClickOverlay"></div>
       <div class="one-model-wrapper">
         <div class="one-model">
-          <header>这里是标题 <span @click="close" class="one-model-close"></span></header>
+          <header v-if="modelTitle">{{modelTitle}}<span @click="close" class="one-model-close"></span></header>
           <main>
             <slot></slot>
           </main>
@@ -49,7 +49,6 @@ export default {
       context.emit('update:visible', !props.visible);
     };
     const ok = () => {
-      console.log('props.ok:' + props.onOk);
       if (props.onOk!==undefined) {
         if (props.onOk() !== false) {
           close();
