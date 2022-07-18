@@ -6,6 +6,9 @@
              model-title="这是标题"
              @on-ok="ok"
              @on-cancel="cancel">
+        <p>Content of dialog</p>
+        <p>Content of dialog</p>
+        <p>Content of dialog</p>
       </Model>
     </div>
   </div>
