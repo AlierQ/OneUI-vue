@@ -4,7 +4,7 @@
       <div class="one-model-shade"></div>
       <div class="one-model-wrapper">
         <div class="one-model">
-          <header>这里是标题</header>
+          <header>这里是标题 <span class="one-model-close"></span></header>
           <main>
             <slot></slot>
           </main>
@@ -62,11 +62,43 @@ export default {
     background: rgba(55, 55, 55, .6);
   }
 
+  &-close {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    vertical-align: middle;
+    color: #999;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background: #999;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+
   > header {
     font-size: 16px;
     color: #17233d;
     padding: 14px 16px;
     border-bottom: 1px solid #e8eaec;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
   }
 
   > main {
