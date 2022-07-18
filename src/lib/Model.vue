@@ -6,7 +6,7 @@
         <div class="one-model">
           <header v-if="modelTitle">{{ modelTitle }}<span @click="close" class="one-model-close"></span></header>
           <main>
-            <slot></slot>
+            <slot name="content"></slot>
           </main>
           <footer>
             <Button @click="cancel" class="one-model-ok" type="text">取消</Button>
