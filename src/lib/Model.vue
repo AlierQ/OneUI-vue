@@ -1,10 +1,10 @@
 <template>
   <template v-if="visible">
-    <div>
+    <Teleport to="body">
       <div class="one-model-overlay" @click="onClickOverlay"></div>
       <div class="one-model-wrapper">
         <div class="one-model">
-          <header v-if="modelTitle">{{modelTitle}}<span @click="close" class="one-model-close"></span></header>
+          <header v-if="modelTitle">{{ modelTitle }}<span @click="close" class="one-model-close"></span></header>
           <main>
             <slot></slot>
           </main>
@@ -14,7 +14,7 @@
           </footer>
         </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 
 </template>
@@ -25,6 +25,7 @@ import Button from './Button.vue';
 export default {
   name: 'Model',
   components: {Button},
+  emits: ['on-ok', 'on-cancel', 'update:visible'],
   props: {
     visible: {
       type: Boolean,
@@ -49,7 +50,7 @@ export default {
       context.emit('update:visible', !props.visible);
     };
     const ok = () => {
-      if (props.onOk!==undefined) {
+      if (props.onOk !== undefined) {
         if (props.onOk() !== false) {
           close();
         }
