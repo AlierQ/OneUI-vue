@@ -131,8 +131,8 @@ export default {
 
     &.one-button-loading {
       &:hover {
-
-        cursor: default;
+        border: 1px solid white;
+        //cursor: default;
       }
     }
 
@@ -144,7 +144,7 @@ export default {
     &.one-button-loading {
       &:hover {
         color: white;
-        cursor: default;
+        //cursor: default;
       }
     }
   }
@@ -169,7 +169,7 @@ export default {
     &:hover {
       border: 1px solid #dcdee2;
       color: #515a6e;
-      cursor: default;
+      //cursor: default;
     }
   }
 }
@@ -200,7 +200,7 @@ export default {
       background: rgba(245, 249, 254, .5);
 
       &:hover {
-        cursor: default;
+        //cursor: default;
       }
     }
   }
@@ -224,7 +224,7 @@ export default {
     background: #5cadff;
 
     &:hover {
-      cursor: default;
+      //cursor: default;
     }
   }
 }
@@ -251,7 +251,7 @@ export default {
       &:hover {
         color: white;
         border: 1px dashed white;
-        cursor: default;
+        //cursor: default;
       }
     }
   }
@@ -276,7 +276,7 @@ export default {
     &:hover {
       border: 1px dashed #bec8c8;
       color: #515a6e;
-      cursor: default;
+      //cursor: default;
     }
   }
 }
@@ -295,7 +295,7 @@ export default {
     &.one-button-loading {
       &:hover {
         color: white;
-        cursor: default;
+        //cursor: default;
       }
     }
   }
@@ -316,7 +316,7 @@ export default {
   &.one-button-loading {
     &:hover {
       color: #515a6e;
-      cursor: default;
+      //cursor: default;
     }
   }
 }
@@ -346,7 +346,7 @@ export default {
       background: rgba(245, 249, 254, .5);
 
       &:hover {
-        cursor: default;
+        //cursor: default;
       }
     }
   }
@@ -370,7 +370,7 @@ export default {
     background: #57c5f7;
 
     &:hover {
-      cursor: default;
+      //cursor: default;
     }
   }
 }
@@ -401,7 +401,7 @@ export default {
       background: rgba(245, 249, 254, .5);
 
       &:hover {
-        cursor: default;
+        //cursor: default;
       }
     }
   }
@@ -425,7 +425,7 @@ export default {
     background: #47cb89;
 
     &:hover {
-      cursor: default;
+      //cursor: default;
     }
   }
 
@@ -457,7 +457,7 @@ export default {
       background: rgba(245, 249, 254, .5);
 
       &:hover {
-        cursor: default;
+        //cursor: default;
       }
     }
   }
@@ -481,7 +481,7 @@ export default {
     background: #ffad33;
 
     &:hover {
-      cursor: default;
+      //cursor: default;
     }
   }
 }
@@ -512,7 +512,7 @@ export default {
       background: rgba(245, 249, 254, .5);
 
       &:hover {
-        cursor: default;
+        //cursor: default;
       }
     }
   }
@@ -536,7 +536,7 @@ export default {
     background: #f16643;
 
     &:hover {
-      cursor: default;
+      //cursor: default;
     }
   }
 }
