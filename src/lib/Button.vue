@@ -2,6 +2,7 @@
   <button class="one-button-basic"
           :class="classes"
           :disabled="isDisabled.toString()">
+    <span v-if="isLoading" class="one-button-loading-indicator"></span>
     <slot></slot>
   </button>
 </template>
@@ -22,6 +23,7 @@ export default {
     },
     transparent: String,
     disabled: String,
+    loading: String,
   },
   setup(props, context) {
     const isDisabled = computed(() => {
@@ -30,17 +32,22 @@ export default {
     const isTransparent = computed(() => {
       return props.transparent === '' || props.transparent === 'true';
     });
+    const isLoading = computed(() => {
+      return props.loading === '' || props.loading === 'true';
+    });
     const classes = computed(() => {
       return {
-        [`one-button-type-${props.type}`]:props.type,
-        [`one-button-size-${props.size}`]:props.size,
-        ['one-button-transparent']:isTransparent.value,
-        ['one-button-disabled']:isDisabled.value,
-      }
+        [`one-button-type-${props.type}`]: props.type,
+        [`one-button-size-${props.size}`]: props.size,
+        ['one-button-transparent']: isTransparent.value,
+        ['one-button-disabled']: isDisabled.value,
+        ['one-button-loading']: isLoading.value,
+      };
     });
     return {
       classes,
-      isDisabled
+      isDisabled,
+      isLoading
     };
   }
 };
@@ -49,7 +56,6 @@ export default {
 <style lang="scss">
 .one-button-basic {
   background: white;
-  color: #515a6e;
   border: none;
   border-radius: 4px;
   padding: 0 15px;
@@ -92,10 +98,23 @@ export default {
     outline: none;
     box-shadow: 0 0 4px #84c1fb;
   }
+
+  > .one-button-loading-indicator {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    vertical-align: text-top;
+    animation: one-loading-spin 1s infinite linear;
+  }
 }
 
 .one-button-type-button {
   border: 1px solid #dcdee2;
+  color: #515a6e;
 
   &.one-button-transparent {
     border: 1px solid #ffffff;
@@ -103,6 +122,30 @@ export default {
 
     &.one-button-disabled {
       background: none;
+    }
+
+    & > .one-button-loading-indicator {
+      background: none;
+      border-color: white white white transparent;
+    }
+
+    &.one-button-loading {
+      &:hover {
+
+        cursor: default;
+      }
+    }
+
+    & > .one-button-loading-indicator {
+      background: none;
+      border-color: white white white transparent;
+    }
+
+    &.one-button-loading {
+      &:hover {
+        color: white;
+        cursor: default;
+      }
     }
   }
 
@@ -115,6 +158,19 @@ export default {
     background: #f7f7f7;
     border: 1px solid #dcdee2;
     color: #dcdee2;
+  }
+
+  & > .one-button-loading-indicator {
+    background: white;
+    border-color: #c5c8ce #c5c8ce #c5c8ce transparent;
+  }
+
+  &.one-button-loading {
+    &:hover {
+      border: 1px solid #dcdee2;
+      color: #515a6e;
+      cursor: default;
+    }
   }
 }
 
@@ -133,8 +189,19 @@ export default {
 
     &.one-button-disabled {
       background: none;
-      //border: 1px solid #dcdee2;
-      //color: #dcdee2;
+    }
+
+    & > .one-button-loading-indicator {
+      background: none;
+      border-color: #409eff #409eff #409eff transparent;
+    }
+
+    &.one-button-loading {
+      background: rgba(245, 249, 254, .5);
+
+      &:hover {
+        cursor: default;
+      }
     }
   }
 
@@ -146,6 +213,19 @@ export default {
     background: #f7f7f7;
     border: 1px solid #dcdee2;
     color: #dcdee2;
+  }
+
+  & > .one-button-loading-indicator {
+    background: #5cadff;
+    border-color: white white white transparent;
+  }
+
+  &.one-button-loading {
+    background: #5cadff;
+
+    &:hover {
+      cursor: default;
+    }
   }
 }
 
@@ -160,6 +240,20 @@ export default {
     &.one-button-disabled {
       background: none;
     }
+
+    & > .one-button-loading-indicator {
+      background: none;
+      border-color: white white white transparent;
+    }
+
+    &.one-button-loading {
+
+      &:hover {
+        color: white;
+        border: 1px dashed white;
+        cursor: default;
+      }
+    }
   }
 
   &:hover {
@@ -172,6 +266,19 @@ export default {
     border: 1px dashed #dcdee2;
     color: #dcdee2;
   }
+
+  & > .one-button-loading-indicator {
+    background: white;
+    border-color: #c5c8ce #c5c8ce #c5c8ce transparent;
+  }
+
+  &.one-button-loading {
+    &:hover {
+      border: 1px dashed #bec8c8;
+      color: #515a6e;
+      cursor: default;
+    }
+  }
 }
 
 .one-button-type-text {
@@ -179,6 +286,18 @@ export default {
 
   &.one-button-transparent {
     color: white;
+
+    & > .one-button-loading-indicator {
+      background: none;
+      border-color: white white white transparent;
+    }
+
+    &.one-button-loading {
+      &:hover {
+        color: white;
+        cursor: default;
+      }
+    }
   }
 
   &:hover {
@@ -189,6 +308,17 @@ export default {
     color: #dcdee2;
   }
 
+  & > .one-button-loading-indicator {
+    background: white;
+    border-color: #c5c8ce #c5c8ce #c5c8ce transparent;
+  }
+
+  &.one-button-loading {
+    &:hover {
+      color: #515a6e;
+      cursor: default;
+    }
+  }
 }
 
 .one-button-type-info {
@@ -206,6 +336,19 @@ export default {
     &.one-button-disabled {
       background: none;
     }
+
+    & > .one-button-loading-indicator {
+      background: none;
+      border-color: #2db7f5 #2db7f5 #2db7f5 transparent;
+    }
+
+    &.one-button-loading {
+      background: rgba(245, 249, 254, .5);
+
+      &:hover {
+        cursor: default;
+      }
+    }
   }
 
   &:hover {
@@ -216,6 +359,19 @@ export default {
     background: #f7f7f7;
     border: 1px solid #dcdee2;
     color: #dcdee2;
+  }
+
+  & > .one-button-loading-indicator {
+    background: #57c5f7;
+    border-color: white white white transparent;
+  }
+
+  &.one-button-loading {
+    background: #57c5f7;
+
+    &:hover {
+      cursor: default;
+    }
   }
 }
 
@@ -235,6 +391,19 @@ export default {
     &.one-button-disabled {
       background: none;
     }
+
+    & > .one-button-loading-indicator {
+      background: none;
+      border-color: #19be6b #19be6b #19be6b transparent;
+    }
+
+    &.one-button-loading {
+      background: rgba(245, 249, 254, .5);
+
+      &:hover {
+        cursor: default;
+      }
+    }
   }
 
   &:hover {
@@ -246,6 +415,20 @@ export default {
     border: 1px solid #dcdee2;
     color: #dcdee2;
   }
+
+  & > .one-button-loading-indicator {
+    background: #47cb89;
+    border-color: white white white transparent;
+  }
+
+  &.one-button-loading {
+    background: #47cb89;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
 }
 
 .one-button-type-warning {
@@ -264,6 +447,19 @@ export default {
     &.one-button-disabled {
       background: none;
     }
+
+    & > .one-button-loading-indicator {
+      background: none;
+      border-color: #ff9900 #ff9900 #ff9900 transparent;
+    }
+
+    &.one-button-loading {
+      background: rgba(245, 249, 254, .5);
+
+      &:hover {
+        cursor: default;
+      }
+    }
   }
 
   &:hover {
@@ -274,6 +470,19 @@ export default {
     background: #f7f7f7;
     border: 1px solid #dcdee2;
     color: #dcdee2;
+  }
+
+  & > .one-button-loading-indicator {
+    background: #ffad33;
+    border-color: white white white transparent;
+  }
+
+  &.one-button-loading {
+    background: #ffad33;
+
+    &:hover {
+      cursor: default;
+    }
   }
 }
 
@@ -293,6 +502,19 @@ export default {
     &.one-button-disabled {
       background: none;
     }
+
+    & > .one-button-loading-indicator {
+      background: none;
+      border-color: #ed4014 #ed4014 #ed4014 transparent;
+    }
+
+    &.one-button-loading {
+      background: rgba(245, 249, 254, .5);
+
+      &:hover {
+        cursor: default;
+      }
+    }
   }
 
   &:hover {
@@ -303,6 +525,28 @@ export default {
     background: #f7f7f7;
     border: 1px solid #dcdee2;
     color: #dcdee2;
+  }
+
+  & > .one-button-loading-indicator {
+    background: #f16643;
+    border-color: white white white transparent;
+  }
+
+  &.one-button-loading {
+    background: #f16643;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+
+@keyframes one-loading-spin {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
   }
 }
 

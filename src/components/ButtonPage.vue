@@ -55,15 +55,42 @@
     <div class="show">
       &nbsp;
       <Button size="big">Default</Button>&nbsp;
-      <Button type="primary" size="normal" >Primary</Button>&nbsp;
+      <Button type="primary" size="normal">Primary</Button>&nbsp;
       <Button type="dashed" size="small">Dashed</Button>&nbsp;
-      <Button type="text"  disabled>Text</Button>&nbsp;
+      <Button type="text" disabled>Text</Button>&nbsp;
     </div>
     <div class="show" style="background: #bec8c8">&nbsp;
-      <Button @click="onClick" size="small" type="info" transparent >Info</Button>&nbsp;
+      <Button @click="onClick" size="small" type="info" transparent>Info</Button>&nbsp;
       <Button type="dashed" size="small" transparent disabled>Success</Button>&nbsp;
       <Button type="warning" size="normal" transparent disabled>Warning</Button>&nbsp;
       <Button type="error" size="big" transparent>Error</Button>
+    </div>
+    <h3>加载中样式</h3>
+    <div class="show">
+      &nbsp;
+      <Button loading>Default</Button>&nbsp;
+      <Button loading type="primary">Primary</Button>&nbsp;
+      <Button loading type="dashed">Dashed</Button>&nbsp;
+      <Button loading type="text">Text</Button>&nbsp;
+    </div>
+    <div class="show">
+      &nbsp;
+      <Button loading type="info">Info</Button>&nbsp;
+      <Button loading type="success">Success</Button>&nbsp;
+      <Button loading type="warning">Warning</Button>&nbsp;
+      <Button loading type="error">Error</Button>&nbsp;
+    </div>
+    <div class="show" style="background: #bec8c8">
+      &nbsp;
+      <Button loading transparent>Default</Button>&nbsp;
+      <Button loading type="primary" transparent>Primary</Button>&nbsp;
+      <Button loading type="dashed" transparent>Dashed</Button>&nbsp;
+      <Button loading type="text" transparent>Text</Button>&nbsp;
+      <br><br>&nbsp;
+      <Button loading type="info" transparent>Info</Button>&nbsp;
+      <Button loading type="success" transparent>Success</Button>&nbsp;
+      <Button loading type="warning" transparent>Warning</Button>&nbsp;
+      <Button loading type="error" transparent>Error</Button>
     </div>
   </div>
 </template>
