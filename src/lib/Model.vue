@@ -1,7 +1,7 @@
 <template>
   <template v-if="visible">
     <div>
-      <div class="one-model-overlay"></div>
+      <div class="one-model-overlay" @click="onClickOverlay"></div>
       <div class="one-model-wrapper">
         <div class="one-model">
           <header>这里是标题 <span @click="close" class="one-model-close"></span></header>
@@ -9,8 +9,8 @@
             <slot></slot>
           </main>
           <footer>
-            <Button @click="ok" class="one-model-ok" type="text">取消</Button>
-            <Button @click="cancel" class="one-model-cancel" type="primary">确定</Button>
+            <Button @click="cancel" class="one-model-ok" type="text">取消</Button>
+            <Button @click="ok" class="one-model-cancel" type="primary">确定</Button>
           </footer>
         </div>
       </div>
@@ -33,23 +33,54 @@ export default {
     modelTitle: {
       type: String
     },
+    clickOverlay: {
+      type: Boolean,
+      default: true
+    },
+    onOk: {
+      type: Function
+    },
+    onCancel: {
+      type: Function
+    }
   },
   setup(props, context) {
     const close = () => {
       context.emit('update:visible', !props.visible);
     };
     const ok = () => {
-      close()
+      console.log('props.ok:' + props.onOk);
+      if (props.onOk!==undefined) {
+        if (props.onOk() !== false) {
+          close();
+        }
+      } else {
+        context.emit('on-ok', !props.visible);
+        close();
+      }
     };
     const cancel = () => {
-      close()
+      if (props.onCancel) {
+        if (props.onCancel() !== false) {
+          close();
+        }
+      } else {
+        context.emit('on-cancel', !props.visible);
+        close();
+      }
+
+    };
+    const onClickOverlay = () => {
+      if (props.clickOverlay)
+        close();
     };
 
 
     return {
       ok,
       close,
-      cancel
+      cancel,
+      onClickOverlay
     };
   }
 };

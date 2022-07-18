@@ -4,10 +4,16 @@
     <div>
       <Model
         v-model:visible="visible"
+        :click-overlay="false"
         model-title="这是标题"
+        @on-ok="ok"
+        @on-cancel="cancel"
+
+        :on-ok="ok"
+        :on-cancel="cancel"
       >
-        <!--        @on-ok="ok"
-                @on-cancel="cancel"-->
+        <!-- @开头是执行自定义事件回调后无条件关闭model对话框 -->
+        <!-- :开头可以通过自定义事件回调的返回值控制model对话框是否关闭 -->
         <p>Content of dialog</p>
         <p>Content of dialog</p>
         <p>Content of dialog</p>
@@ -29,12 +35,13 @@ export default {
     const visible = ref(false);
     const ok = () => {
       console.log('点击了确定');
+      return false;
     };
     const cancel = () => {
       console.log('点击了取消');
+      return false;
     };
     const toggle = () => {
-      console.log('点击了');
       visible.value = !visible.value;
     };
 
