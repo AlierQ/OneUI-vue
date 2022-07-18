@@ -4,13 +4,13 @@
       <div class="one-model-shade"></div>
       <div class="one-model-wrapper">
         <div class="one-model">
-          <header>这里是标题 <span class="one-model-close"></span></header>
+          <header>这里是标题 <span @click="close" class="one-model-close"></span></header>
           <main>
             <slot></slot>
           </main>
           <footer>
-            <Button class="one-model-ok" type="text">取消</Button>
-            <Button class="one-model-cancel" type="primary">确定</Button>
+            <Button @click="ok" class="one-model-ok" type="text">取消</Button>
+            <Button @click="cancel" class="one-model-cancel" type="primary">确定</Button>
           </footer>
         </div>
       </div>
@@ -32,7 +32,25 @@ export default {
     },
     modelTitle: {
       type: String
-    }
+    },
+  },
+  setup(props, context) {
+    const close = () => {
+      context.emit('update:visible', !props.visible);
+    };
+    const ok = () => {
+      close()
+    };
+    const cancel = () => {
+      close()
+    };
+
+
+    return {
+      ok,
+      close,
+      cancel
+    };
   }
 };
 </script>

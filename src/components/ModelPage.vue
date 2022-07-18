@@ -3,7 +3,7 @@
     <h3>Model 对话框</h3>
     <div>
       <Model
-        :visible="visible"
+        v-model:visible="visible"
         model-title="这是标题"
       >
         <!--        @on-ok="ok"
