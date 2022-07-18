@@ -57,6 +57,8 @@ export default {
       openModel({
         title: '这里是动态加载对话框的标题',
         content: '这里是内容',
+        clickOverlay:false,
+        // 这里传入的 onOk 和 onCancel 可以通过返回值控制model对话框是否关闭
         onOk: () => {
           console.log('点击了确定');
         },

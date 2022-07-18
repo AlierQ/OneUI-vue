@@ -2,7 +2,7 @@ import Model from './Model.vue';
 import {createApp, h} from 'vue';
 
 export const openModel = (options) => {
-  const {title, content, onOk, onCancel} = options;
+  const {title, content, onOk, onCancel,clickOverlay} = options;
   const div = document.createElement('div');
   document.body.appendChild(div);
   const clear = () => {
@@ -20,6 +20,7 @@ export const openModel = (options) => {
         {
           visible: true,
           modelTitle: title,
+          clickOverlay,
           // 监听事件 update:visible
           'onUpdate:visible': (newVisible) => {
             if (newVisible === false) {
@@ -27,7 +28,7 @@ export const openModel = (options) => {
             }
           },
           onOk,
-          onCancel
+          onCancel,
         },
         {content: () => content});
     }
