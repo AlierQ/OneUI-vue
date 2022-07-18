@@ -1,17 +1,13 @@
 <template>
-  <div>Dialog组件</div>
+  <div></div>
 </template>
 
 <script lang="ts">
 export default {
-  name: 'Dialog'
+  name: 'Model'
 };
 </script>
 
 <style lang="scss" scoped>
-div {
-  width: 100%;
-  background: yellow;
-  overflow: auto;
-}
+
 </style>

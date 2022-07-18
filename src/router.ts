@@ -4,7 +4,7 @@ import Home from './views/Home.vue';
 import Document from './views/Document.vue';
 import Switch from './components/SwitchPage.vue';
 import Button from './components/ButtonPage.vue';
-import Dialog from './components/DialogPage.vue';
+import Dialog from './components/ModelPage.vue';
 import Tabs from './components/TabsPage.vue';
 import DocumentDemo from './components/DocumentDemo.vue'
 const history = createWebHashHistory();
