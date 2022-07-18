@@ -1,17 +1,22 @@
 <template>
-  <div class="one-model-shade"></div>
-  <div class="one-model-wrapper">
-    <div class="one-model">
-      <header>这里是标题</header>
-      <main>
-        <slot></slot>
-      </main>
-      <footer>
-        <Button class="one-model-ok" type="text">取消</Button>
-        <Button class="one-model-cancel" type="primary">确定</Button>
-      </footer>
+  <template v-if="visible">
+    <div>
+      <div class="one-model-shade"></div>
+      <div class="one-model-wrapper">
+        <div class="one-model">
+          <header>这里是标题</header>
+          <main>
+            <slot></slot>
+          </main>
+          <footer>
+            <Button class="one-model-ok" type="text">取消</Button>
+            <Button class="one-model-cancel" type="primary">确定</Button>
+          </footer>
+        </div>
+      </div>
     </div>
-  </div>
+  </template>
+
 </template>
 
 <script lang="ts">
@@ -19,7 +24,16 @@ import Button from './Button.vue';
 
 export default {
   name: 'Model',
-  components: {Button}
+  components: {Button},
+  props: {
+    visible: {
+      type: Boolean,
+      default: false
+    },
+    modelTitle: {
+      type: String
+    }
+  }
 };
 </script>
 
@@ -29,6 +43,7 @@ export default {
   width: 520px;
   border-radius: 6px;
   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+
   &-wrapper {
     position: absolute;
     top: 12%;
@@ -53,12 +68,14 @@ export default {
     padding: 14px 16px;
     border-bottom: 1px solid #e8eaec;
   }
-  > main{
+
+  > main {
     font-size: 14px;
     color: #515a6e;
     padding: 16px;
     line-height: 1.5;
   }
+
   > footer {
     padding: 12px 18px 12px 18px;
     border-top: 1px solid #e8eaec;
