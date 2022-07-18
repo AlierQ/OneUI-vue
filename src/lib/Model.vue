@@ -1,7 +1,7 @@
 <template>
   <template v-if="visible">
     <div>
-      <div class="one-model-shade"></div>
+      <div class="one-model-overlay"></div>
       <div class="one-model-wrapper">
         <div class="one-model">
           <header>这里是标题 <span @click="close" class="one-model-close"></span></header>
@@ -70,7 +70,7 @@ export default {
     z-index: 11;
   }
 
-  &-shade {
+  &-overlay {
     width: 100%;
     height: 100%;
     position: absolute;
