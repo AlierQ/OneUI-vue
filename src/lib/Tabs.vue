@@ -14,11 +14,9 @@
       </div>
       <div class="one-tabs-content">
         <!--  这里用component动态添加Tabs中的Tab，相当于插槽  -->
-        <component v-for="(tag,index) in defaults"
-                   :key="index"
-                   :is="tag"
-                   class="one-tabs-content-item"
-                   :class="{selected:tag.props.title === selected}">
+        <component :is="current"
+                   :key="current.props.title"
+                   class="one-tabs-content-item">
         </component>
       </div>
     </div>
@@ -27,7 +25,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
-import {onMounted, ref, watchEffect} from 'vue';
+import {computed, onMounted, ref, watchEffect} from 'vue';
 
 export default {
   components: {Tab},
@@ -44,18 +42,18 @@ export default {
     // 获取到nav容器
     const nav = ref<HTMLDivElement>(null);
 
-    onMounted(()=>{
-      watchEffect(()=>{
-          // 计算位置（当前nav item的left减去父容器的left）
-          const site = selectedItem.value.getBoundingClientRect().left - nav.value.getBoundingClientRect().left;
-          // 获取宽度
-          const {width} = selectedItem.value.getBoundingClientRect();
-          // 设置下面选中条的宽度
-          indicator.value.style.width = width + 'px';
-          // 设置位置
-          indicator.value.style.left = site + 'px';
-      })
-    })
+    onMounted(() => {
+      watchEffect(() => {
+        // 计算位置（当前nav item的left减去父容器的left）
+        const site = selectedItem.value.getBoundingClientRect().left - nav.value.getBoundingClientRect().left;
+        // 获取宽度
+        const {width} = selectedItem.value.getBoundingClientRect();
+        // 设置下面选中条的宽度
+        indicator.value.style.width = width + 'px';
+        // 设置位置
+        indicator.value.style.left = site + 'px';
+      });
+    });
 
     // context.slots.default() 存放的时Tabs内部放的所有组件
     const defaults = context.slots.default();
@@ -67,6 +65,12 @@ export default {
       }
     });
 
+    // 获取到选择标签对应的内容
+    const current = computed(() => {
+      return defaults.find(tag => tag.props.title === props.selected);
+    });
+
+    console.log(current);
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });
@@ -86,6 +90,7 @@ export default {
       titles,
       indicator,
       nav,
+      current,
       selectedItem,
       select,
     };
@@ -133,14 +138,6 @@ export default {
 
   &-content {
     padding: 4px 0;
-
-    &-item {
-      display: none;
-
-      &.selected {
-        display: block;
-      }
-    }
   }
 }
 </style>
