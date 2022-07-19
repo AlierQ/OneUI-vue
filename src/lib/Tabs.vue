@@ -1,8 +1,14 @@
 <template>
   <div>
-    <div v-for="(title,index) in titles" :key="index">{{ title }}</div>
-    <!--  这里用component动态添加Tabs中的Tab，相当于插槽  -->
-    <component v-for="(tag,index) in defaults" :key="index" :is="tag"></component>
+    <div class="one-tabs">
+      <div class="one-tabs-nav">
+        <div class="one-tabs-nav-item" v-for="(title,index) in titles" :key="index">{{ title }}</div>
+      </div>
+      <div class="on-tabs-content">
+        <!--  这里用component动态添加Tabs中的Tab，相当于插槽  -->
+        <component class="one-tabs-content-item" v-for="(tag,index) in defaults" :key="index" :is="tag"></component>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,5 +42,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.one-tabs {
+  $blue: #409eff;
+  $color: #333;
+  $border-color: #d9d9d9;
 
+  &-nav {
+    display: flex;
+    color: $color;
+    border-bottom: 1px solid $border-color;
+
+
+    &-item {
+      padding: 8px 16px;
+      cursor: pointer;
+      margin-right: 16px;
+      transition: all 0.3s;
+      font-size: 14px;
+
+      &:hover {
+        color: #409eff;
+      }
+
+      &.selected {
+        color: $blue;
+      }
+    }
+  }
+
+  &-content {
+    padding: 8px 0;
+  }
+}
 </style>
