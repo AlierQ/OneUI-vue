@@ -1,14 +1,16 @@
 <template>
   <div>
     <div class="one-tabs">
-      <div class="one-tabs-nav">
+      <div class="one-tabs-nav" ref="nav">
         <div v-for="(title,index) in titles"
              :key="index"
+             :ref="el=>{if (el) navItems[index] = el}"
              class="one-tabs-nav-item"
              :class="{selected:title === selected}"
              @click="select(title)">
           {{ title }}
         </div>
+        <div class="one-tabs-nav-indicator" ref="indicator"></div>
       </div>
       <div class="one-tabs-content">
         <!--  这里用component动态添加Tabs中的Tab，相当于插槽  -->
@@ -25,6 +27,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
+import {onMounted, onUpdated, ref} from 'vue';
 
 export default {
   components: {Tab},
@@ -34,6 +37,33 @@ export default {
     }
   },
   setup(props, context) {
+    // 获取到所有的nav
+    const navItems = ref<HTMLDivElement[]>([]);
+    // 获取到下面的状态条
+    const indicator = ref<HTMLDivElement>(null);
+    // 获取到nav容器
+    const nav = ref<HTMLDivElement>(null);
+
+    const updateIndicator = () => {
+      // console.log(navItems);
+      const divs = navItems.value;
+      // 获取当前选中的元素（含有selected）
+      const result = divs.filter((div) => {
+        return div.classList.contains('selected');
+      })[0];
+      // 计算位置（当前nav item的left减去父容器的left）
+      const site = ref(result.getBoundingClientRect().left - nav.value.getBoundingClientRect().left);
+      // 获取宽度
+      const {width} = result.getBoundingClientRect();
+      // 设置下面选中条的宽度
+      indicator.value.style.width = width + 'px';
+      // 设置位置
+      indicator.value.style.marginLeft = site.value + 'px';
+    };
+
+    onMounted(updateIndicator);
+    onUpdated(updateIndicator);
+
     // console.log({...context});
     // context.slots.default() 存放的时Tabs内部放的所有组件
     const defaults = context.slots.default();
@@ -60,9 +90,12 @@ export default {
     };
 
     return {
+      navItems,
       defaults,
       titles,
-      select
+      indicator,
+      nav,
+      select,
     };
   }
 };
@@ -78,7 +111,7 @@ export default {
     display: flex;
     color: $color;
     border-bottom: 1px solid $border-color;
-
+    position: relative;
 
     &-item {
       padding: 8px 16px;
@@ -88,17 +121,27 @@ export default {
       font-size: 14px;
 
       &:hover {
-        color: #409eff;
+        color: $blue;
       }
 
       &.selected {
         color: $blue;
       }
     }
+
+    &-indicator {
+      position: absolute;
+      height: 3px;
+      background: $blue;
+      left: 0;
+      bottom: -1px;
+      transition: all .25s;
+    }
   }
 
   &-content {
     padding: 4px 0;
+
     &-item {
       display: none;
 

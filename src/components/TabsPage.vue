@@ -21,13 +21,13 @@ export default {
     Tabs,
     Tab
   },
-  setup(props, context) {
+  setup() {
     const tabsData = ref([
       {title: '导航1', content: '内容1'},
       {title: '导航2', content: '内容2'},
       {title: '导航3', content: '内容3'},
     ]);
-    const selected = ref('导航1');
+    const selected = ref('导航2');
     return {
       selected,
       tabsData
