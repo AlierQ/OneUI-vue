@@ -33,6 +33,12 @@ export default {
       return tag.props.title;
     });
 
+    // 限制 Tab 的 title 不能够重复
+    let set = [...new Set(titles)];
+    if (titles.length !== set.length){
+      throw new Error('Tab title should be different in Tabs');
+    }
+
     return {
       defaults,
       titles
