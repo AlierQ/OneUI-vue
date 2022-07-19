@@ -1,5 +1,7 @@
 <template>
-  <div>tab组件</div>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts">
