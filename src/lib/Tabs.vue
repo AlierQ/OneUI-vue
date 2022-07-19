@@ -4,7 +4,7 @@
       <div class="one-tabs-nav" ref="nav">
         <div v-for="(title,index) in titles"
              :key="index"
-             :ref="el=>{if (el) navItems[index] = el}"
+             :ref="el=>{if (title === selected) selectedItem = el}"
              class="one-tabs-nav-item"
              :class="{selected:title === selected}"
              @click="select(title)">
@@ -37,24 +37,18 @@ export default {
     }
   },
   setup(props, context) {
-    // 获取到所有的nav
-    const navItems = ref<HTMLDivElement[]>([]);
+    // 获取到被选中的nav item
+    const selectedItem = ref<HTMLDivElement>(null);
     // 获取到下面的状态条
     const indicator = ref<HTMLDivElement>(null);
     // 获取到nav容器
     const nav = ref<HTMLDivElement>(null);
 
     const updateIndicator = () => {
-      // console.log(navItems);
-      const divs = navItems.value;
-      // 获取当前选中的元素（含有selected）
-      const result = divs.filter((div) => {
-        return div.classList.contains('selected');
-      })[0];
       // 计算位置（当前nav item的left减去父容器的left）
-      const site = ref(result.getBoundingClientRect().left - nav.value.getBoundingClientRect().left);
+      const site = ref(selectedItem.value.getBoundingClientRect().left - nav.value.getBoundingClientRect().left);
       // 获取宽度
-      const {width} = result.getBoundingClientRect();
+      const {width} = selectedItem.value.getBoundingClientRect();
       // 设置下面选中条的宽度
       indicator.value.style.width = width + 'px';
       // 设置位置
@@ -64,7 +58,6 @@ export default {
     onMounted(updateIndicator);
     onUpdated(updateIndicator);
 
-    // console.log({...context});
     // context.slots.default() 存放的时Tabs内部放的所有组件
     const defaults = context.slots.default();
     // 通过其身上的.type属性就能获取到该组件信息，从而可以判断使用的是什么标签或者组件
@@ -90,7 +83,7 @@ export default {
     };
 
     return {
-      navItems,
+      selectedItem,
       defaults,
       titles,
       indicator,
@@ -104,8 +97,8 @@ export default {
 <style lang="scss">
 .one-tabs {
   $blue: #409eff;
-  $color: #333;
-  $border-color: #d9d9d9;
+  $color: #17233d;
+  $border-color: #dcdee2;
 
   &-nav {
     display: flex;
