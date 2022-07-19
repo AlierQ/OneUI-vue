@@ -176,6 +176,7 @@ export default {
 }
 
 .one-button-type-primary {
+  border: 1px solid #409eff;
   background: #409eff;
   transition: all .4s;
   color: white;
@@ -200,9 +201,6 @@ export default {
     &.one-button-loading {
       background: rgba(245, 249, 254, .5);
 
-      &:hover {
-        //cursor: default;
-      }
     }
   }
 

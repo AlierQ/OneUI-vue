@@ -1,29 +1,34 @@
 <template>
-  <div class="doc">
-    <TopNav class=".top-nav"></TopNav>
-    <div class="content">
-      <aside v-if="asideVisible">
-        <h2>组件列表</h2>
-        <ul>
-          <li>
-            <router-link to="/document/switch">Switch 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/document/button">Button 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/document/dialog">Model 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/document/tabs">Tabs 组件</router-link>
-          </li>
-        </ul>
-      </aside>
-      <div class="main">
-        <router-view></router-view>
+  <transition name="fade">
+    <div class="doc">
+      <TopNav class=".top-nav"></TopNav>
+      <div class="content">
+        <transition name="aside">
+          <aside v-if="asideVisible">
+            <h2>组件列表</h2>
+            <ul>
+              <li>
+                <router-link to="/document/switch">Switch 组件</router-link>
+              </li>
+              <li>
+                <router-link to="/document/button">Button 组件</router-link>
+              </li>
+              <li>
+                <router-link to="/document/dialog">Model 组件</router-link>
+              </li>
+              <li>
+                <router-link to="/document/tabs">Tabs 组件</router-link>
+              </li>
+            </ul>
+          </aside>
+        </transition>
+        <div class="main">
+          <router-view></router-view>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
+
 </template>
 
 <script lang="ts">
@@ -47,19 +52,16 @@ export default {
 
 <style lang="scss" scoped>
 .doc {
-  //border: 1px solid red;
   height: 100vh;
   display: flex;
   flex-direction: column;
 
   .top-nav {
-    //border: 1px solid #000;
     box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
   }
 
   .content {
     flex-grow: 1;
-    //border: 1px solid green;
     display: flex;
     overflow: auto;
 
@@ -69,10 +71,9 @@ export default {
       flex-grow: 1;
       display: flex;
 
-      &:deep(>div) {
+      &:deep(> div) {
         width: 100%;
-        margin-top: 12px;
-        margin-left: 12px;
+        margin: 12px;
         border-radius: 4px;
         padding: 32px;
         background: #ffffff;
@@ -107,5 +108,13 @@ export default {
       }
     }
   }
+}
+
+.aside-enter-active, .aside-leave-active {
+  transition: margin-left .25s ease;
+}
+
+.aside-enter-from, .aside-leave-to {
+  margin-left: -200px;
 }
 </style>

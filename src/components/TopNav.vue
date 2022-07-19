@@ -1,14 +1,18 @@
 <template>
   <div class="top-nav">
-    <span class="toggle-menu" @click="toggleMenu"></span>
+    <span class="toggle-menu" @click="toggleMenu">
+      <svg class="iconpark-icon"><use href="#hamburger-button"></use></svg>
+    </span>
     <router-link class="logo" to="/">
       <span class="color-lump"></span>
       <span class="logo-one">One</span> <span class="logo-ui">UI</span>
     </router-link>
     <div class="menu">
       <ul>
-        <li>menu1</li>
-        <li>menu2</li>
+        <li>
+          <router-link to="document">文档</router-link>
+        </li>
+        <li></li>
       </ul>
     </div>
   </div>
@@ -90,11 +94,14 @@ export default {
     display: none;
     width: 24px;
     height: 24px;
-    background: red;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
+    > svg{
+      width: 30px;
+      height: 30px;
+    }
   }
 
   @media (max-width: 500px) {
