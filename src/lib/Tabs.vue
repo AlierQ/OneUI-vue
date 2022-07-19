@@ -27,7 +27,7 @@
 
 <script lang="ts">
 import Tab from './Tab.vue';
-import {ref, watchEffect} from 'vue';
+import {onMounted, ref, watchEffect} from 'vue';
 
 export default {
   components: {Tab},
@@ -44,20 +44,18 @@ export default {
     // 获取到nav容器
     const nav = ref<HTMLDivElement>(null);
 
-    const updateIndicator = () => {
-      if (selectedItem.value && nav.value) {
-        // 计算位置（当前nav item的left减去父容器的left）
-        const site = selectedItem.value.getBoundingClientRect().left - nav.value.getBoundingClientRect().left;
-        // 获取宽度
-        const {width} = selectedItem.value.getBoundingClientRect();
-        // 设置下面选中条的宽度
-        indicator.value.style.width = width + 'px';
-        // 设置位置
-        indicator.value.style.left = site + 'px';
-      }
-    };
-
-    watchEffect(updateIndicator);
+    onMounted(()=>{
+      watchEffect(()=>{
+          // 计算位置（当前nav item的left减去父容器的left）
+          const site = selectedItem.value.getBoundingClientRect().left - nav.value.getBoundingClientRect().left;
+          // 获取宽度
+          const {width} = selectedItem.value.getBoundingClientRect();
+          // 设置下面选中条的宽度
+          indicator.value.style.width = width + 'px';
+          // 设置位置
+          indicator.value.style.left = site + 'px';
+      })
+    })
 
     // context.slots.default() 存放的时Tabs内部放的所有组件
     const defaults = context.slots.default();
