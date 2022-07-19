@@ -2,11 +2,22 @@
   <div>
     <div class="one-tabs">
       <div class="one-tabs-nav">
-        <div class="one-tabs-nav-item" v-for="(title,index) in titles" :key="index">{{ title }}</div>
+        <div v-for="(title,index) in titles"
+             :key="index"
+             class="one-tabs-nav-item"
+             :class="{selected:title === selected}"
+             @click="select(title)">
+          {{ title }}
+        </div>
       </div>
-      <div class="on-tabs-content">
+      <div class="one-tabs-content">
         <!--  这里用component动态添加Tabs中的Tab，相当于插槽  -->
-        <component class="one-tabs-content-item" v-for="(tag,index) in defaults" :key="index" :is="tag"></component>
+        <component v-for="(tag,index) in defaults"
+                   :key="index"
+                   :is="tag"
+                   class="one-tabs-content-item"
+                   :class="{selected:tag.props.title === selected}">
+        </component>
       </div>
     </div>
   </div>
@@ -17,6 +28,11 @@ import Tab from './Tab.vue';
 
 export default {
   components: {Tab},
+  props: {
+    selected: {
+      type: String
+    }
+  },
   setup(props, context) {
     // console.log({...context});
     // context.slots.default() 存放的时Tabs内部放的所有组件
@@ -35,19 +51,24 @@ export default {
 
     // 限制 Tab 的 title 不能够重复
     let set = [...new Set(titles)];
-    if (titles.length !== set.length){
+    if (titles.length !== set.length) {
       throw new Error('Tab title should be different in Tabs');
     }
 
+    const select = (title: string) => {
+      context.emit('update:selected', title);
+    };
+
     return {
       defaults,
-      titles
+      titles,
+      select
     };
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .one-tabs {
   $blue: #409eff;
   $color: #333;
@@ -77,7 +98,14 @@ export default {
   }
 
   &-content {
-    padding: 8px 0;
+    padding: 4px 0;
+    &-item {
+      display: none;
+
+      &.selected {
+        display: block;
+      }
+    }
   }
 }
 </style>
