@@ -1,7 +1,10 @@
 <template>
   <div class="top-nav">
     <span class="toggle-menu" @click="toggleMenu"></span>
-    <div class="logo">Logo</div>
+    <router-link class="logo" to="/">
+      <span class="color-lump"></span>
+      <span class="logo-one">One</span> <span class="logo-ui">UI</span>
+    </router-link>
     <div class="menu">
       <ul>
         <li>menu1</li>
@@ -34,18 +37,43 @@ export default {
 
 <style lang="scss" scoped>
 .top-nav {
-  background: pink;
-  border: 1px solid pink;
+  background: #f5f6f6;
   display: flex;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0 20px;
   min-height: 60px;
   align-items: center;
   position: relative;
   z-index: 10;
 
   > .logo {
+    position: relative;
+    cursor: pointer;
     margin-right: auto;
+    font-family: opensans, system-ui;
+    margin-top: 8px;
+
+    > .color-lump {
+      position: absolute;
+      background: #409eff;
+      right: 0;
+      top: -8px;
+      border-radius: 3px;
+      width: 28px;
+      height: 12px;
+    }
+
+    > .logo-one {
+      font-size: 24px;
+      color: #409eff;
+      font-weight: 600;
+    }
+
+    > .logo-ui {
+      font-size: 26px;
+      color: #17233d;
+      font-weight: 600;
+    }
   }
 
   > .menu {
@@ -74,7 +102,8 @@ export default {
       display: none;
     }
     > .logo {
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
     }
     > .toggle-menu {
       display: inline-block;

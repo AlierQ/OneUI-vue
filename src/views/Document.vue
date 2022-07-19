@@ -54,6 +54,7 @@ export default {
 
   .top-nav {
     //border: 1px solid #000;
+    box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
   }
 
   .content {
@@ -65,14 +66,26 @@ export default {
     .main {
       height: 100%;
       overflow: hidden;
-      //border: 1px solid #2c3e50;
       flex-grow: 1;
       display: flex;
+
+      &:deep(>div) {
+        width: 100%;
+        margin-top: 12px;
+        margin-left: 12px;
+        border-radius: 4px;
+        padding: 32px;
+        background: #ffffff;
+        overflow: auto;
+      }
     }
 
     aside {
-      background: lightblue;
-      width: 150px;
+      background: #f5f6f6;
+      box-shadow: 2px 0 8px 0 rgb(29 35 41 / 5%);
+      width: 200px;
+      min-width: 200px;
+      max-width: 200px;
       padding: 16px;
 
       > h2 {

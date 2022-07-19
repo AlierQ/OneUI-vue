@@ -1,54 +1,14 @@
 <template>
-  <TopNav class="top-nav"></TopNav>
-  <div class="banner">
-    <h1>One UI</h1>
-    <h2>一个厉害的UI框架</h2>
-    <p>
-      <a href="">Github</a>
-      <router-link to="/document">开始</router-link>
-    </p>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
-    lalal <br>
+  <div class="container">
+    <TopNav class="top-nav"></TopNav>
+    <div class="banner">
+      <h1>One UI</h1>
+      <h2>一个厉害的UI框架</h2>
+      <p>
+        <a href="">Github</a>
+        <router-link to="/document">开始</router-link>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -62,27 +22,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .top-nav {
   &:deep(.toggle-menu) {
     display: none;
   }
+  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
 }
 
 .banner {
-  //border: 1px solid blue;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 400px;
   padding-top: 100px;
+
   > p {
     margin: 5px 0;
     display: flex;
 
-
     > a {
       display: inline-block;
-      border: 1px solid red;
+      border: 1px solid #f5f6f6;
       height: 32px;
       padding: 0 20px;
       line-height: 32px;

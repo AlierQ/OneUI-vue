@@ -45,6 +45,11 @@ export default {
 <style lang="scss" scoped>
 div {
   width: 100%;
+  margin-top: 12px;
+  margin-left: 12px;
+  border-radius: 4px;
+  padding: 32px;
+  background: #ffffff;
   overflow: auto;
 }
 </style>

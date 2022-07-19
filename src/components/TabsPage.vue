@@ -37,8 +37,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
-  width: 100%;
-  overflow: auto;
-}
+
 </style>

@@ -115,15 +115,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-div {
-  width: 100%;
-  //background: yellow;
-  overflow: auto;
-
-  .show {
-    padding: 10px 0;
-    overflow: hidden;
-    //border: 1px solid red;
-  }
+.show {
+  padding: 10px 0;
+  overflow: hidden;
 }
 </style>
