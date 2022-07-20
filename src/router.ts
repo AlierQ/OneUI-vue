@@ -6,7 +6,11 @@ import Switch from './components/SwitchPage.vue';
 import Button from './components/ButtonPage.vue';
 import Dialog from './components/ModelPage.vue';
 import Tabs from './components/TabsPage.vue';
-import DocumentDemo from './components/DocumentDemo.vue'
+import Introduce from './views/Introduce.vue';
+import Started from './views/Introduce.vue';
+import Install from './views/Introduce.vue';
+import DocumentDemo from './components/DocumentDemo.vue';
+
 const history = createWebHashHistory();
 export const router = createRouter({
   history,
@@ -23,6 +27,18 @@ export const router = createRouter({
         {
           path: '',
           component: DocumentDemo,
+        },
+        {
+          path: 'introduce',
+          component: Introduce,
+        },
+        {
+          path: 'started',
+          component: Started,
+        },
+        {
+          path: 'install',
+          component: Install,
         },
         {
           path: 'switch',
