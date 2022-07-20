@@ -7,8 +7,8 @@ import Button from './components/ButtonPage.vue';
 import Dialog from './components/ModelPage.vue';
 import Tabs from './components/TabsPage.vue';
 import Introduce from './views/Introduce.vue';
-import Started from './views/Introduce.vue';
-import Install from './views/Introduce.vue';
+import Started from './views/Started.vue';
+import Install from './views/Install.vue';
 import DocumentDemo from './components/DocumentDemo.vue';
 
 const history = createWebHashHistory();

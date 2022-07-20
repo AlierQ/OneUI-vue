@@ -7,9 +7,15 @@
           <aside v-if="asideVisible">
             <h2>文档</h2>
             <ul>
-              <li><router-link to="/document/introduce">介绍</router-link></li>
-              <li><router-link to="/document/install">安装</router-link></li>
-              <li><router-link to="/document/started">开始使用</router-link></li>
+              <li>
+                <router-link to="/document/introduce">介绍</router-link>
+              </li>
+              <li>
+                <router-link to="/document/install">安装</router-link>
+              </li>
+              <li>
+                <router-link to="/document/started">开始使用</router-link>
+              </li>
             </ul>
             <h2>组件列表</h2>
             <ul>
@@ -122,5 +128,10 @@ export default {
 
 .aside-enter-from, .aside-leave-to {
   margin-left: -200px;
+}
+
+.router-link-active {
+  color: #409eff;
+  text-decoration: underline;
 }
 </style>

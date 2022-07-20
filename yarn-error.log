@@ -1,5 +1,5 @@
 Arguments: 
-  D:\Program Files\nodejs\node.exe D:\Software\Yarn\bin\yarn.js
+  D:\Program Files\nodejs\node.exe D:\Software\Yarn\bin\yarn.js add github-markdown-css
 
 PATH: 
   D:\Software\Cmder\vendor\git-for-windows\mingw64\bin;D:\Software\Cmder\vendor\git-for-windows\usr\bin;C:\Users\10293\bin;C:\Program Files\Common Files\Oracle\Java\javapath;D:\Program Files (x86)\VMware\VMware Workstation\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\Anaconda3;D:\Anaconda3\Scripts;D:\Anaconda3\Library\bin;D:\Java\jdk1.8.0_201\bin;D:\mysql-5.7.21\bin;D:\apache-tomcat-8.5.61\bi;D:\apache-tomcat-8.5.61\lib";D:\Anaconda3\envs\deepstudy\Lib\site-packages\qt5_tools;D:\Program Files\Git\cmd;D:\Software\Cmder\bin;C:\Users\10293\AppData\Roaming\nvm;D:\Program Files\nodejs;D:\Software\Yarn\bin;D:\Program Files\wkhtmltopdf\bin;C:\Users\10293\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Bandizip;D:\Program Files (x86)\Microsoft VS Code\bin;D:\Program Files\JetBrains\IntelliJ IDEA 2020.1\bin;D:\Program Files\JetBrains\WebStorm 2021.3.1\bin;C:\Users\10293\AppData\Roaming\nvm;D:\Program Files\nodejs;C:\Users\10293\AppData\Local\Yarn\bin;D:\桌面\饥人谷前端\Code\项目\Vue3造轮子\ui\node_modules\.bin
@@ -68,11 +68,6 @@ Lockfile:
     version "7.18.8"
     resolved "https://registry.npmmirror.com/@babel/parser/-/parser-7.18.8.tgz#822146080ac9c62dac0823bb3489622e0bc1cbdf"
     integrity sha512-RSKRfYX20dyH+elbJK2uqAkVyucL+xXzhqlMD5/ZXx+dAAwpyB7HsvnHe/ZUGOF+xLr5Wx9/JoXVTj6BQE2/oA==
-  
-  "@icon-park/vue-next@^1.4.2":
-    version "1.4.2"
-    resolved "https://registry.npmmirror.com/@icon-park/vue-next/-/vue-next-1.4.2.tgz#818c048100401620e8112beb2636f10171b195cc"
-    integrity sha512-+QklF255wkfBOabY+xw6FAI0Bwln/RhdwCunNy/9sKdKuChtaU67QZqU67KGAvZUTeeBgsL+yaHHxqfQeGZXEQ==
   
   "@jridgewell/gen-mapping@^0.3.0":
     version "0.3.2"
@@ -1386,6 +1381,11 @@ Lockfile:
     resolved "https://registry.npmmirror.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
     integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
   
+  neo-async@^2.6.2:
+    version "2.6.2"
+    resolved "https://registry.npmmirror.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
+    integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
+  
   node-forge@^0.10.0:
     version "0.10.0"
     resolved "https://registry.npmmirror.com/node-forge/-/node-forge-0.10.0.tgz#32dea2afb3e9926f02ee5ce8794902691a676bf3"
@@ -1701,6 +1701,14 @@ Lockfile:
     version "5.2.1"
     resolved "https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.2.1.tgz#1eaf9fa9bdb1fdd4ec75f58f9cdb4e6b7827eec6"
     integrity sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==
+  
+  sass-loader@^13.0.2:
+    version "13.0.2"
+    resolved "https://registry.npmmirror.com/sass-loader/-/sass-loader-13.0.2.tgz#e81a909048e06520e9f2ff25113a801065adb3fe"
+    integrity sha512-BbiqbVmbfJaWVeOOAu2o7DhYWtcNmTfvroVgFXa6k2hHheMxNAeDHLNoDy/Q5aoaVlz0LH+MbMktKwm9vN/j8Q==
+    dependencies:
+      klona "^2.0.4"
+      neo-async "^2.6.2"
   
   sass@1.26.10:
     version "1.26.10"
