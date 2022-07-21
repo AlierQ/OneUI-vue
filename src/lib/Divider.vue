@@ -7,7 +7,11 @@
        :class="{['one-divider-text-dashed']:isDashed}">
     <span ref="textContent"
           class="one-divider-text"
-          :style="{'--line-width':lineWidth + 'px'}">
+          :class="direction"
+          :style="{
+            '--left-width':leftWidth + 'px',
+            '--right-width':rightWidth + 'px',
+          }">
       <slot></slot>
     </span>
   </div>
@@ -20,6 +24,10 @@ export default {
   props: {
     dashed: {
       type: String
+    },
+    direction: {
+      type: String,
+      default: 'center'
     }
   },
   setup(props, context) {
@@ -38,11 +46,13 @@ export default {
 
     const textContainer = ref<HTMLDivElement>(null);
     const textContent = ref<HTMLSpanElement>(null);
-    const lineWidth = ref(null);
+    const leftWidth = ref(null);
+    const rightWidth = ref(null);
     onMounted(() => {
       if (textContainer.value !== null) {
         if (textContent.value !== null) {
-          lineWidth.value = (textContainer.value.getBoundingClientRect().width - textContent.value.getBoundingClientRect().width) / 2;
+          leftWidth.value = textContent.value.getBoundingClientRect().x - textContainer.value.getBoundingClientRect().x;
+          rightWidth.value = textContainer.value.getBoundingClientRect().width - textContent.value.getBoundingClientRect().width - leftWidth.value;
         }
       }
     });
@@ -51,7 +61,8 @@ export default {
       isText,
       textContainer,
       textContent,
-      lineWidth
+      leftWidth,
+      rightWidth,
     };
   }
 };
@@ -74,34 +85,46 @@ export default {
   position: relative;
 
   > .one-divider-text {
-    $line-width: var(--line-width, 70px);
+    $left-width: var(--left-width);
+    $right-width: var(--right-width);
     display: inline-block;
     position: absolute;
     font-size: 16px;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     vertical-align: middle;
     padding: 0 10px;
     background: transparent;
 
+    &.center {
+      left: 50%;
+    }
+
+    &.left {
+      left: 5%;
+    }
+
+    &.right {
+      right: 5%;
+    }
+
     &:before {
       content: '';
       position: absolute;
-      left: 100%;
+      right: 100%;
       top: 50%;
       transform: translateY(-50%);
-      width: $line-width;
+      width: $left-width;
       border-top: 1px solid #e8eaec;
     }
 
     &:after {
       content: '';
       position: absolute;
-      right: 100%;
+      left: 100%;
       top: 50%;
       transform: translateY(-50%);
-      width: $line-width;
+      width: $right-width;
       border-top: 1px solid #e8eaec;
     }
   }

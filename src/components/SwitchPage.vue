@@ -7,7 +7,7 @@
     <Card>
       <CradBody>
         <Switch v-model:value="state1"></Switch>
-        <Divider>基本</Divider>
+        <Divider direction="left">基本</Divider>
         <p>这里是内容</p>
         <p>这里是内容</p>
         <p>这里是内容</p>
