@@ -8,7 +8,8 @@
       <CradBody>
         <Switch v-model:value="state1"></Switch>
         <Divider direction="left">基本</Divider>
-        <p>这里是内容</p>
+        <p>传入一个value，开关按钮value值会改变</p>
+        <Divider dashed></Divider>
         <p>这里是内容</p>
         <p>这里是内容</p>
         <p>这里是内容</p>

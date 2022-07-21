@@ -89,7 +89,7 @@ export default {
     $right-width: var(--right-width);
     display: inline-block;
     position: absolute;
-    font-size: 16px;
+    font-size: 14px;
     top: 50%;
     transform: translateY(-50%);
     vertical-align: middle;

@@ -38,7 +38,9 @@ export default {
   border: 1px solid #e8eaec;
   width: 100%;
   border-radius: 4px;
-  font-size: 14px;
+  &:deep(*){
+    font-size: 14px;
+  }
   line-height: 1.4;
   transition: all .25s;
 
