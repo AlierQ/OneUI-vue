@@ -1,13 +1,18 @@
 <template>
-  <div>安装</div>
+  <div>
+    <article class="markdown-body" v-html="md"></article>
+  </div>
 </template>
 
+
 <script lang="ts">
+import md from '../markdown/install.md';
+
 export default {
-  name: 'Install'
+  setup() {
+    return {
+      md
+    };
+  }
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>
