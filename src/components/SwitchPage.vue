@@ -1,5 +1,21 @@
 <template>
   <div>
+    <h1>Switch 开关</h1>
+    <h2>描述</h2>
+    <p>在两种状态间切换时用到的开关选择器</p>
+    <h3>代码示例</h3>
+    <Card>
+      <CardTitle>
+        这里是标题
+      </CardTitle>
+      <CradBody>
+        <p>这里是内容</p>
+        <p>这里是内容</p>
+        <p>这里是内容</p>
+        <p>这里是内容</p>
+        <p>这里是内容</p>
+      </CradBody>
+    </Card>
     <h3>默认样式</h3>
     <Switch v-model:value="state1"></Switch>
     <h3>自定义样式</h3>
@@ -22,6 +38,9 @@
 <script lang="ts">
 import Switch from '../lib/Switch.vue';
 import {ref} from 'vue';
+import Card from '../lib/Card.vue';
+import CardTitle from '../lib/CardTitle.vue';
+import CradBody from '../lib/CardBody.vue';
 
 export default {
   setup() {
@@ -37,19 +56,26 @@ export default {
     };
   },
   components: {
+    CradBody,
+    CardTitle,
+    Card,
     Switch
   }
 };
 </script>
 
 <style lang="scss" scoped>
-div {
-  width: 100%;
-  margin-top: 12px;
-  margin-left: 12px;
-  border-radius: 4px;
-  padding: 32px;
-  background: #ffffff;
-  overflow: auto;
+
+h1 {
+  margin: 15px 0;
 }
+
+h2 {
+  margin: 10px 0;
+}
+
+h3 {
+  margin: 10px 0;
+}
+
 </style>
