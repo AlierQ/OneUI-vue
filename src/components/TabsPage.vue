@@ -8,18 +8,62 @@
         <Tab title="导航3">内容3</Tab>
       </Tabs>
     </div>
+    <h3>MenuGroup展示</h3>
+    <div>
+      <Menu class="group">
+        <MenuTitle name="xxx">
+          内容管理1
+        </MenuTitle>
+        <Submenu name="xxx">
+          <MenuItem>菜单项1</MenuItem>
+          <MenuItem>菜单项2</MenuItem>
+        </Submenu>
+        <MenuTitle name="yyy">
+          内容管理2
+        </MenuTitle>
+        <Submenu name="yyy">
+          <MenuItem>菜单项4</MenuItem>
+          <MenuItem>菜单项5</MenuItem>
+        </Submenu>
+        <MenuTitle name="zzz">
+          内容管理2
+        </MenuTitle>
+        <Submenu name="zzz">
+          <MenuGroup title="菜单组1">
+            <MenuItem>菜单项1</MenuItem>
+            <MenuItem>菜单项2</MenuItem>
+          </MenuGroup><MenuGroup title="菜单组2">
+            <MenuItem>菜单项1</MenuItem>
+            <MenuItem>菜单项2</MenuItem>
+          </MenuGroup>
+        </Submenu>
+      </Menu>
+
+      <br>
+
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Tabs from '../lib/Tabs.vue';
 import Tab from '../lib/Tab.vue';
+import Menu from '../lib/Menu.vue';
+import MenuItem from '../lib/MenuItem.vue';
+import MenuGroup from '../lib/MenuGroup.vue';
+import Submenu from '../lib/Submenu.vue';
+import MenuTitle from '../lib/MenuTitle.vue';
 import {ref} from 'vue';
 
 export default {
   components: {
     Tabs,
-    Tab
+    Tab,
+    Menu,
+    MenuItem,
+    MenuGroup,
+    MenuTitle,
+    Submenu
   },
   setup() {
     const tabsData = ref([
@@ -37,5 +81,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.group {
+  width: 240px;
+}
 </style>
