@@ -5,10 +5,9 @@
     <p>在两种状态间切换时用到的开关选择器</p>
     <h3>代码示例</h3>
     <Card>
-      <CardTitle>
-        这里是标题
-      </CardTitle>
       <CradBody>
+        <Switch v-model:value="state1"></Switch>
+        <Divider>基本</Divider>
         <p>这里是内容</p>
         <p>这里是内容</p>
         <p>这里是内容</p>
@@ -41,6 +40,7 @@ import {ref} from 'vue';
 import Card from '../lib/Card.vue';
 import CardTitle from '../lib/CardTitle.vue';
 import CradBody from '../lib/CardBody.vue';
+import Divider from '../lib/Divider.vue';
 
 export default {
   setup() {
@@ -56,6 +56,7 @@ export default {
     };
   },
   components: {
+    Divider,
     CradBody,
     CardTitle,
     Card,

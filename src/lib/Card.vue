@@ -1,9 +1,9 @@
 <template>
   <div class="one-card-basic">
-    <div class="one-cardtitle-basic">
+    <div v-if="title" class="one-cardtitle-basic">
       <component :is="title"></component>
     </div>
-    <div class="one-cardbody-basic">
+    <div v-if="body" class="one-cardbody-basic">
       <component :is="body"></component>
     </div>
   </div>
