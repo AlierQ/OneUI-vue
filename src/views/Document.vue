@@ -1,45 +1,41 @@
 <template>
-  <transition name="fade">
-    <div class="doc">
-      <TopNav class=".top-nav"></TopNav>
-      <div class="content">
-        <transition name="aside">
-          <aside v-if="asideVisible">
-            <h2>文档</h2>
-            <ul>
-              <li>
-                <router-link to="/document/introduce">介绍</router-link>
-              </li>
-              <li>
-                <router-link to="/document/install">安装</router-link>
-              </li>
-              <li>
-                <router-link to="/document/started">开始使用</router-link>
-              </li>
-            </ul>
-            <h2>组件列表</h2>
-            <ul>
-              <li>
-                <router-link to="/document/switch">Switch 组件</router-link>
-              </li>
-              <li>
-                <router-link to="/document/button">Button 组件</router-link>
-              </li>
-              <li>
-                <router-link to="/document/dialog">Model 组件</router-link>
-              </li>
-              <li>
-                <router-link to="/document/tabs">Tabs 组件</router-link>
-              </li>
-            </ul>
-          </aside>
-        </transition>
-        <div class="main">
-          <router-view></router-view>
-        </div>
+  <div class="doc">
+    <TopNav class=".top-nav"></TopNav>
+    <div class="content">
+      <aside v-if="asideVisible">
+        <h2>文档</h2>
+        <ul>
+          <li>
+            <router-link to="/document/introduce">介绍</router-link>
+          </li>
+          <li>
+            <router-link to="/document/install">安装</router-link>
+          </li>
+          <li>
+            <router-link to="/document/started">开始使用</router-link>
+          </li>
+        </ul>
+        <h2>组件列表</h2>
+        <ul>
+          <li>
+            <router-link to="/document/switch">Switch 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/document/button">Button 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/document/dialog">Model 组件</router-link>
+          </li>
+          <li>
+            <router-link to="/document/tabs">Tabs 组件</router-link>
+          </li>
+        </ul>
+      </aside>
+      <div class="main">
+        <router-view></router-view>
       </div>
     </div>
-  </transition>
+  </div>
 
 </template>
 
@@ -120,14 +116,6 @@ export default {
       }
     }
   }
-}
-
-.aside-enter-active, .aside-leave-active {
-  transition: margin-left .25s ease;
-}
-
-.aside-enter-from, .aside-leave-to {
-  margin-left: -200px;
 }
 
 .router-link-active {
