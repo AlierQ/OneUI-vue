@@ -1,18 +1,11 @@
 <template>
-  <div>
-    <article class="markdown-body" v-html="md"></article>
-  </div>
+  <Markdown path="../markdown/started.md"></Markdown>
 </template>
 
-
 <script lang="ts">
-import md from '../markdown/started.md';
+import Markdown from '../components/Markdown.vue';
 
 export default {
-  setup() {
-    return {
-      md
-    };
-  }
+  components: {Markdown},
 };
 </script>
