@@ -9,38 +9,37 @@
       </Tabs>
     </div>
     <h3>MenuGroup展示</h3>
-    <div>
-      <Menu class="group">
+    <div class="group">
+      <Menu checked="1-2">
         <MenuTitle name="xxx">
+          <svg style="width: 24px; height: 24px; vertical-align: middle" class="iconpark-icon"><use href="#-moxingxunlian"></use></svg>
           内容管理1
         </MenuTitle>
         <Submenu name="xxx">
-          <MenuItem>菜单项1</MenuItem>
-          <MenuItem>菜单项2</MenuItem>
+          <MenuItem name="1-1">菜单项1</MenuItem>
+          <MenuItem name="1-2">菜单项2</MenuItem>
         </Submenu>
         <MenuTitle name="yyy">
           内容管理2
         </MenuTitle>
         <Submenu name="yyy">
-          <MenuItem>菜单项4</MenuItem>
-          <MenuItem>菜单项5</MenuItem>
+          <MenuItem name="1-3">菜单项4</MenuItem>
+          <MenuItem name="1-4">菜单项5</MenuItem>
         </Submenu>
         <MenuTitle name="zzz">
           内容管理2
         </MenuTitle>
         <Submenu name="zzz">
           <MenuGroup title="菜单组1">
-            <MenuItem>菜单项1</MenuItem>
-            <MenuItem>菜单项2</MenuItem>
-          </MenuGroup><MenuGroup title="菜单组2">
-            <MenuItem>菜单项1</MenuItem>
-            <MenuItem>菜单项2</MenuItem>
+            <MenuItem name="1-5">菜单项1</MenuItem>
+            <MenuItem name="1-6">菜单项2</MenuItem>
+          </MenuGroup>
+          <MenuGroup title="菜单组2">
+            <MenuItem name="1-7">菜单项1</MenuItem>
+            <MenuItem name="1-8">菜单项2</MenuItem>
           </MenuGroup>
         </Submenu>
       </Menu>
-
-      <br>
-
     </div>
   </div>
 </template>

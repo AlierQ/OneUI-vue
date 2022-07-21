@@ -1,6 +1,8 @@
 <template>
   <div class="one-menutitle-basic" @click="toggle">
-    <slot></slot>
+    <div class="one-menutitle-text">
+      <slot></slot>
+    </div>
     <div class="one-menutitle-icon"
          :class="{toggle:isOpen}">
       <svg class="iconpark-icon">
@@ -11,16 +13,21 @@
 </template>
 
 <script lang="ts">
-import {ref} from 'vue';
+import {inject, onMounted, Ref, ref} from 'vue';
 
 export default {
-  setup() {
+  props: {
+    name: String
+  },
+  setup(props) {
     const isOpen = ref(false);
+
+    const state = inject<Ref<object>>('titles');
 
     const toggle = () => {
       isOpen.value = !isOpen.value;
+      state.value[props.name] = !state.value[props.name];
     };
-
     return {
       isOpen,
       toggle
@@ -29,7 +36,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .one-menutitle-basic {
   color: #515a6e;
   cursor: pointer;
@@ -40,6 +47,10 @@ export default {
 
   &:hover {
     color: #2d8cf0;
+  }
+
+  > .one-menutitle-text {
+    max-width: 160px;
   }
 
   > .one-menutitle-icon {

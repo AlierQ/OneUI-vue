@@ -70,7 +70,6 @@ export default {
       return defaults.find(tag => tag.props.title === props.selected);
     });
 
-    console.log(current);
     const titles = defaults.map((tag) => {
       return tag.props.title;
     });

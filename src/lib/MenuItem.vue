@@ -1,30 +1,52 @@
 <template>
-  <div class="one-menuItem-basic checked" >
+  <div class="one-menuItem-basic"
+       @click="check"
+       :class="{checked:checked===name}">
     <slot></slot>
   </div>
 
 </template>
 
 <script lang="ts">
+import {inject, Ref, ref} from 'vue';
+
 export default {
-  name: 'MenuItem'
+  props: {
+    name: String
+  },
+  setup(props) {
+
+    const checked = inject<Ref<string>>('checked');
+
+    const check = () => {
+      checked.value = props.name;
+    };
+
+    return {
+      checked,
+      check
+    };
+  }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .one-menuItem-basic {
   color: #515a6e;
   cursor: pointer;
   padding: 14px 24px 14px 43px;
-  transition: all .25s;
+  transition: all .1s;
+  position: relative;
+  border-right: 2px solid transparent;
 
   &:hover {
     color: #2d8cf0;
   }
-  &.checked{
+
+  &.checked {
     color: #2d8cf0;
     background: #f0faff;
-    border-right: 2px solid#409eff;
+    border-right: 2px solid #2d8cf0;
   }
 }
 </style>

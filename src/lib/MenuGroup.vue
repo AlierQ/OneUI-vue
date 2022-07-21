@@ -13,16 +13,12 @@ export default {
     title: {
       type: String
     }
-  },
-  setup(props, context) {
-    console.log(props.title);
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .one-menugroup-basic {
-  //border: 1px solid red;
   color: #999;
   font-size: 14px;
 
