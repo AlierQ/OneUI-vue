@@ -97,9 +97,11 @@
 
 <script lang="ts">
 import Button from '../lib/Button.vue';
+import Divider from '../lib/Divider.vue';
 
 export default {
   components: {
+    Divider,
     Button
   },
   setup() {
