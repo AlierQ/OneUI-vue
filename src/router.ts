@@ -30,18 +30,18 @@ export const router = createRouter({
           path: '',
           component: DocumentDemo,
         },
-        {
-          path: 'introduce',
-          component: createMarkdown('introduce'),
-        },
-        {
-          path: 'started',
-          component: createMarkdown('started'),
-        },
-        {
-          path: 'install',
-          component: createMarkdown('install'),
-        },
+        // {
+        //   path: 'introduce',
+        //   component: createMarkdown('introduce'),
+        // },
+        // {
+        //   path: 'started',
+        //   component: createMarkdown('started'),
+        // },
+        // {
+        //   path: 'install',
+        //   component: createMarkdown('install'),
+        // },
         {
           path: 'switch',
           component: Switch,

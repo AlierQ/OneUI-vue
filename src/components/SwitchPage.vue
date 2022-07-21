@@ -5,16 +5,19 @@
     <p>在两种状态间切换时用到的开关选择器</p>
     <h3>代码示例</h3>
     <Card>
-      <CradBody>
+      <CardBody>
         <Switch v-model:value="state1"></Switch>
         <Divider direction="left">基本</Divider>
         <p>传入一个value，开关按钮value值会改变</p>
         <Divider dashed></Divider>
         <p>这里是内容</p>
+        <CodeSection>
+          {{str}}
+        </CodeSection>
         <p>这里是内容</p>
         <p>这里是内容</p>
         <p>这里是内容</p>
-      </CradBody>
+      </CardBody>
     </Card>
     <h3>默认样式</h3>
     <Switch v-model:value="state1"></Switch>
@@ -40,28 +43,39 @@ import Switch from '../lib/Switch.vue';
 import {ref} from 'vue';
 import Card from '../lib/Card.vue';
 import CardTitle from '../lib/CardTitle.vue';
-import CradBody from '../lib/CardBody.vue';
+import CardBody from '../lib/CardBody.vue';
 import Divider from '../lib/Divider.vue';
-
+import CodeSection from './CodeSection.vue';
 export default {
   setup() {
     const state1 = ref(true);
     const state2 = ref(true);
     const state3 = ref(false);
     const state4 = ref(true);
+    const str = ref(`
+<h3>文字描述样式</h3>
+<Switch v-model:value="state3"
+        active-text="关闭"
+        inactive-text="开启"
+        text-color="#ffc0cb">
+</Switch>
+<h3>禁用样式</h3>
+    `);
     return {
       state1,
       state2,
       state3,
       state4,
+      str
     };
   },
   components: {
+    CodeSection,
     Divider,
-    CradBody,
+    CardBody,
     CardTitle,
     Card,
-    Switch
+    Switch,
   }
 };
 </script>

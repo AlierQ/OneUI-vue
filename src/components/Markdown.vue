@@ -16,11 +16,13 @@ export default {
     }
   },
   setup(props) {
-    const content = ref(null);
-    import(props.path).then(result => {
-      content.value = result.default;
-    });
-    return {content};
+    // const content = ref(null);
+    /* @vite-ignore */
+    // import(props.path).then(result => {
+    //   console.log(result);
+    //   content.value = result.default;
+    // });
+    // return {content};
   }
 };
 </script>
