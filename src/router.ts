@@ -1,16 +1,18 @@
 // 引入路由，这里使用hash模式
 import {createWebHashHistory, createRouter} from 'vue-router';
+import {h} from 'vue';
 import Home from './views/Home.vue';
 import Document from './views/Document.vue';
 import Switch from './components/SwitchPage.vue';
 import Button from './components/ButtonPage.vue';
 import Dialog from './components/ModelPage.vue';
 import Tabs from './components/TabsPage.vue';
-import Introduce from './views/Introduce.vue';
-import Started from './views/Started.vue';
-import Install from './views/Install.vue';
+import Markdown from './components/Markdown.vue';
 import DocumentDemo from './components/DocumentDemo.vue';
 
+const createMarkdown = path => {
+  return h(Markdown, {path: `../markdown/${path}.md`, key: path});
+};
 const history = createWebHashHistory();
 export const router = createRouter({
   history,
@@ -30,15 +32,15 @@ export const router = createRouter({
         },
         {
           path: 'introduce',
-          component: Introduce,
+          component: createMarkdown('introduce'),
         },
         {
           path: 'started',
-          component: Started,
+          component: createMarkdown('started'),
         },
         {
           path: 'install',
-          component: Install,
+          component: createMarkdown('install'),
         },
         {
           path: 'switch',
