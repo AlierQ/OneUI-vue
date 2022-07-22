@@ -4,7 +4,7 @@
     <div class="content">
       <transition name="aside">
         <aside v-if="asideVisible">
-          <Menu default="1-2">
+          <Menu :default="path">
             <MenuTitle name="document">
               文档
             </MenuTitle>
@@ -53,7 +53,8 @@ import MenuItem from '../lib/MenuItem.vue';
 import MenuGroup from '../lib/MenuGroup.vue';
 import Submenu from '../lib/Submenu.vue';
 import MenuTitle from '../lib/MenuTitle.vue';
-import {inject, Ref} from 'vue';
+import {inject, ref, Ref} from 'vue';
+import {useRoute} from 'vue-router';
 
 export default {
   components: {
@@ -69,7 +70,11 @@ export default {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
     console.log('Document: ' + asideVisible.value);
 
-    return {asideVisible};
+    // 获取当前路由地址进行解析，获取到name
+    const router = useRoute();
+    const tempArray = router.fullPath.split('/');
+    const path = tempArray[tempArray.length-1]
+    return {asideVisible,path};
   },
 };
 </script>
@@ -118,6 +123,7 @@ export default {
       max-width: 200px;
       z-index: 10;
       overflow: auto;
+
       &::-webkit-scrollbar {
         display: none;
       }
