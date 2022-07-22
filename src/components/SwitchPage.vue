@@ -9,7 +9,7 @@
         <CardBody>
           <Switch v-model:value="state1"></Switch>
           <Divider direction="left">基本样式</Divider>
-          <p>传入一个value，开关按钮value值会改变</p>
+          <p>向Switch传入一个 value ，当Switch开关切换状态时 value 值会改变</p>
           <Divider dashed></Divider>
           <div class="show-code">
             <Button @click="codeSectionShow1=!codeSectionShow1">查看代码</Button>
@@ -29,7 +29,7 @@
         </CardTitle>
         <CardBody>
           <Divider direction="left">自定义样式</Divider>
-          <p>你可以通过设置 "active-color"、"inactive-color"、"point-color" 设置Switch开关的激活样式、未激活样式和小圆点样式</p>
+          <p>你可以通过设置 "active-color"、"inactive-color"、"point-color" 来改变Switch开关的激活颜色、未激活颜色和小圆点颜色</p>
           <Divider dashed></Divider>
           <div class="show-code">
             <Button @click="codeSectionShow2=!codeSectionShow2">查看代码</Button>
@@ -49,7 +49,7 @@
         </CardTitle>
         <CardBody>
           <Divider direction="left">文字描述样式</Divider>
-          <p>你可以通过设置 "active-text"、"inactive-text"、"text-color" 设置Switch开关的激活状态文字、未激活状态文字及其颜色</p>
+          <p>你可以通过设置 "active-text"、"inactive-text"、"text-color" 来改变Switch开关的激活状态文字、未激活状态文字及其颜色</p>
           <Divider dashed></Divider>
           <div class="show-code">
             <Button @click="codeSectionShow3=!codeSectionShow3">查看代码</Button>
@@ -58,8 +58,24 @@
         </CardBody>
       </Card>
     </div>
-    <h3>禁用样式</h3>
-    <Switch v-model:value="state4" disabled="true"></Switch>
+    <div class="card-container">
+      <Card float>
+        <CardTitle>
+          <Switch v-model:value="state5" disabled="true"></Switch>
+          &nbsp;
+          <Switch v-model:value="state4" disabled="true"></Switch>
+        </CardTitle>
+        <CardBody>
+          <Divider direction="left">禁用样式</Divider>
+          <p>你可以通过 "disabled" 设置Switch开关是否禁用</p>
+          <Divider dashed></Divider>
+          <div class="show-code">
+            <Button @click="codeSectionShow4=!codeSectionShow4">查看代码</Button>
+          </div>
+          <CodeSection v-if="codeSectionShow4">{{ codeSection4 }}</CodeSection>
+        </CardBody>
+      </Card>
+    </div>
   </div>
 </template>
 
@@ -98,6 +114,7 @@ export default {
       });
     });
     const state4 = ref(true);
+    const state5 = ref(false);
     const codeSection1 = ref(`
 <template>
   <Switch v-model:value="state"></Switch>
@@ -113,7 +130,7 @@ export default {
 <\/script>`);
     const codeSection2 = ref(`
 <template>
-  <Switch v-model:value="state2"
+  <Switch v-model:value="state"
           active-color="#55bb8a"
           inactive-color="#f8df70"
           point-color="#f1908c">
@@ -130,7 +147,7 @@ export default {
 <\/script>`);
     const codeSection3 = ref(`
 <template>
-  <Switch v-model:value="state3"
+  <Switch v-model:value="state"
           active-text="激活文字"
           inactive-text="未激活文字"
           text-color="#68b88e">
@@ -145,21 +162,41 @@ export default {
     }
   }
 <\/script>`);
+    const codeSection4 = ref(`
+<template>
+  <Switch v-model:value="state1" disabled></Switch>
+  &nbsp;
+  <Switch v-model:value="state2" disabled="true"></Switch>
+</template>
+<script>
+  export default {
+    data(){
+      return {
+        state1:false;
+        state2:true;
+      }
+    }
+  }
+<\/script>`);
 
     const codeSectionShow1 = ref(false);
     const codeSectionShow2 = ref(false);
     const codeSectionShow3 = ref(false);
+    const codeSectionShow4 = ref(false);
     return {
       state1,
       state2,
       state3,
       state4,
+      state5,
       codeSection1,
       codeSection2,
       codeSection3,
+      codeSection4,
       codeSectionShow1,
       codeSectionShow2,
       codeSectionShow3,
+      codeSectionShow4,
     };
   },
   components: {
@@ -193,7 +230,6 @@ h3 {
 }
 
 .show-code {
-  //text-align: center;
   margin-bottom: 20px;
 }
 </style>
