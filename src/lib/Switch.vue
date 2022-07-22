@@ -1,9 +1,9 @@
 <template>
   <span class="one-switch-text"
-        v-if="activeText"
+        v-if="inactiveText"
         :class="{checked:!value}"
         :style="{'--text-color':textColor}">
-    {{ activeText }}
+    {{ inactiveText }}
   </span>
   <button class="one-switch-basic"
           :class="{
@@ -20,10 +20,10 @@
     <span class="one-switch-point"></span>
   </button>
   <span class="one-switch-text"
-        v-if="inactiveText"
+        v-if="activeText"
         :class="{checked:value}"
         :style="{'--text-color':textColor}">
-    {{ inactiveText }}
+    {{ activeText }}
   </span>
 </template>
 
