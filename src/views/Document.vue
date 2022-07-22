@@ -4,45 +4,29 @@
     <div class="content">
       <transition name="aside">
         <aside v-if="asideVisible">
-          <h2>文档</h2>
-          <ul>
-            <li>
-              <router-link to="/document/introduce">介绍</router-link>
-            </li>
-            <li>
-              <router-link to="/document/install">安装</router-link>
-            </li>
-            <li>
-              <router-link to="/document/started">开始使用</router-link>
-            </li>
-          </ul>
-          <h2>组件列表</h2>
-          <ul>
-            <li>
-              <router-link to="/document/switch">Switch 开关</router-link>
-            </li>
-            <li>
-              <router-link to="/document/button">Button 按钮</router-link>
-            </li>
-            <li>
-              <router-link to="/document/model">Model 对话框</router-link>
-            </li>
-            <li>
-              <router-link to="/document/message">Message 全局提示</router-link>
-            </li>
-            <li>
-              <router-link to="/document/tabs">Tabs 标签页</router-link>
-            </li>
-            <li>
-              <router-link to="/document/menu">Menu 菜单</router-link>
-            </li>
-            <li>
-              <router-link to="/document/card">Card 卡片</router-link>
-            </li>
-            <li>
-              <router-link to="/document/divider">Divider 分割线</router-link>
-            </li>
-          </ul>
+          <Menu default="1-2">
+            <MenuTitle name="document">
+              文档
+            </MenuTitle>
+            <Submenu name="document">
+              <MenuItem name="introduce" to="/document/introduce">介绍</MenuItem>
+              <MenuItem name="install" to="/document/install">安装</MenuItem>
+              <MenuItem name="started" to="/document/started">开始使用</MenuItem>
+            </Submenu>
+            <MenuTitle name="component">
+              组件列表
+            </MenuTitle>
+            <Submenu name="component">
+              <MenuItem name="switch" to="/document/switch">Switch 开关</MenuItem>
+              <MenuItem name="button" to="/document/button">Button 按钮</MenuItem>
+              <MenuItem name="model" to="/document/model">Model 对话框</MenuItem>
+              <MenuItem name="message" to="/document/message">Message 全局提示</MenuItem>
+              <MenuItem name="tabs" to="/document/tabs">Tabs 标签页</MenuItem>
+              <MenuItem name="menu" to="/document/menu">菜单</MenuItem>
+              <MenuItem name="card" to="/document/card">Card 卡片</MenuItem>
+              <MenuItem name="divider" to="/document/divider">Divider 分割线</MenuItem>
+            </Submenu>
+          </Menu>
         </aside>
       </transition>
       <div class="main">
@@ -55,12 +39,21 @@
 
 <script lang="ts">
 import TopNav from '../components/TopNav.vue';
+import Menu from '../lib/Menu.vue';
+import MenuItem from '../lib/MenuItem.vue';
+import MenuGroup from '../lib/MenuGroup.vue';
+import Submenu from '../lib/Submenu.vue';
+import MenuTitle from '../lib/MenuTitle.vue';
 import {inject, Ref} from 'vue';
 
 export default {
-  name: 'Document',
   components: {
-    TopNav
+    TopNav,
+    Menu,
+    MenuItem,
+    MenuGroup,
+    MenuTitle,
+    Submenu,
   },
   setup() {
     // 将祖先提供的 asideVisible 注入到当前组件中
@@ -114,18 +107,7 @@ export default {
       width: 200px;
       min-width: 200px;
       max-width: 200px;
-      padding: 16px;
       z-index: 10;
-
-      > h2 {
-        margin-bottom: 4px;
-      }
-
-      > ul {
-        > li {
-          padding: 4px 0;
-        }
-      }
 
       @media (max-width: 500px) {
         padding-top: 70px;
