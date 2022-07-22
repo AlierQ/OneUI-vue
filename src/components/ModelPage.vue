@@ -27,6 +27,11 @@
     <h3>动态加载Model</h3>
     <br> &nbsp;
     <Button type="primary" @click="show">动态加载 Model 对话框</Button>
+    <br><br>
+    <h3>全局提示框</h3>
+    <br> &nbsp;
+    <Message type="info" content="这是一条提示信息"></Message>
+    <Button type="primary" @click="message">Message 弹出框</Button>
   </div>
 </template>
 
@@ -34,11 +39,15 @@
 import Model from '../lib/Model.vue';
 import Button from '../lib/Button.vue';
 import {openModel} from '../lib/openModel.ts';
+import {$Message} from '../lib/Message.ts';
 import {ref} from 'vue';
+import Message from '../lib/Message.vue';
 
 
 export default {
-  components: {Button, Model},
+  components: {
+    Button, Model, Message
+  },
   setup() {
     const visible = ref(false);
     const ok = () => {
@@ -57,7 +66,7 @@ export default {
       openModel({
         title: '这里是动态加载对话框的标题',
         content: '这里是内容',
-        clickOverlay:false,
+        clickOverlay: false,
         // 这里传入的 onOk 和 onCancel 可以通过返回值控制model对话框是否关闭
         onOk: () => {
           console.log('点击了确定');
@@ -67,13 +76,20 @@ export default {
         }
       });
     };
+    const message = () => {
+      $Message({
+        type: 'warning',
+        content: '这里是动态加载的message' + Math.random()
+      });
+    };
 
     return {
       visible,
       ok,
       cancel,
       toggle,
-      show
+      show,
+      message
     };
   }
 };
