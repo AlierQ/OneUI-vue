@@ -8,7 +8,7 @@
             <MenuTitle name="document">
               文档
             </MenuTitle>
-            <Submenu name="document">
+            <Submenu name="document" open>
               <MenuItem name="introduce" to="/document/introduce">介绍</MenuItem>
               <MenuItem name="install" to="/document/install">安装</MenuItem>
               <MenuItem name="started" to="/document/started">开始使用</MenuItem>
@@ -16,15 +16,24 @@
             <MenuTitle name="component">
               组件列表
             </MenuTitle>
-            <Submenu name="component">
-              <MenuItem name="switch" to="/document/switch">Switch 开关</MenuItem>
-              <MenuItem name="button" to="/document/button">Button 按钮</MenuItem>
-              <MenuItem name="model" to="/document/model">Model 对话框</MenuItem>
-              <MenuItem name="message" to="/document/message">Message 全局提示</MenuItem>
-              <MenuItem name="tabs" to="/document/tabs">Tabs 标签页</MenuItem>
-              <MenuItem name="menu" to="/document/menu">菜单</MenuItem>
-              <MenuItem name="card" to="/document/card">Card 卡片</MenuItem>
-              <MenuItem name="divider" to="/document/divider">Divider 分割线</MenuItem>
+            <Submenu name="component" open>
+              <MenuGroup title="基础">
+                <MenuItem name="switch" to="/document/switch">Switch 开关</MenuItem>
+                <MenuItem name="button" to="/document/button">Button 按钮</MenuItem>
+              </MenuGroup>
+              <MenuGroup title="全局">
+                <MenuItem name="model" to="/document/model">Model 对话框</MenuItem>
+                <MenuItem name="message" to="/document/message">Message 全局提示</MenuItem>
+              </MenuGroup>
+              <MenuGroup title="导航">
+                <MenuItem name="tabs" to="/document/tabs">Tabs 标签页</MenuItem>
+                <MenuItem name="menu" to="/document/menu">Menu 菜单</MenuItem>
+              </MenuGroup>
+
+              <MenuGroup title="布局">
+                <MenuItem name="card" to="/document/card">Card 卡片</MenuItem>
+                <MenuItem name="divider" to="/document/divider">Divider 分割线</MenuItem>
+              </MenuGroup>
             </Submenu>
           </Menu>
         </aside>
@@ -108,6 +117,10 @@ export default {
       min-width: 200px;
       max-width: 200px;
       z-index: 10;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       @media (max-width: 500px) {
         padding-top: 70px;
