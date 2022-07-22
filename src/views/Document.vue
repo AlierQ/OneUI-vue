@@ -36,6 +36,9 @@
             <li>
               <router-link to="/document/menu">Menu 组件</router-link>
             </li>
+            <li>
+              <router-link to="/document/card">Card 组件</router-link>
+            </li>
           </ul>
         </aside>
       </transition>
