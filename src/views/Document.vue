@@ -4,7 +4,7 @@
     <div class="content">
       <transition name="aside">
         <aside v-if="asideVisible">
-          <Menu :default="path">
+          <Menu v-model:current="path">
             <MenuTitle name="document">
               文档
             </MenuTitle>
@@ -73,7 +73,7 @@ export default {
     // 获取当前路由地址进行解析，获取到name
     const router = useRoute();
     const tempArray = router.fullPath.split('/');
-    const path = tempArray[tempArray.length-1]
+    const path = ref(tempArray[tempArray.length-1])
     return {asideVisible,path};
   },
 };

@@ -5,19 +5,19 @@
 </template>
 
 <script lang="ts">
-import {provide, ref} from 'vue';
+import {provide, ref, watch} from 'vue';
 import MenuTitle from '../lib/MenuTitle.vue';
 
 export default {
   props: {
-    default: {
+    current: {
       type: String,
       default: null
     }
   },
   setup(props, context) {
     const titles = ref({});
-    const checked = ref(props.default);
+    const checked = ref(props.current);
     context.slots.default().forEach((el) => {
       if (el.type === MenuTitle) {
         titles.value[el.props.name] = true;
@@ -25,6 +25,11 @@ export default {
     });
     provide('titles', titles);
     provide('checked', checked);
+
+    watch(checked,(newValue)=>{
+      console.log(newValue);
+      context.emit('update:current',newValue)
+    })
     return {titles};
   }
 };

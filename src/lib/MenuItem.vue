@@ -24,7 +24,6 @@ export default {
     const check = () => {
       checked.value = props.name;
       if (props.to!==undefined){
-        console.log(props.to);
         router.push({path:props.to})
       }
     };
