@@ -38,7 +38,7 @@ export default {
     let isText = ref(false);
     // slot有传入值
     if (!!useSlots().default) {
-      if (!(context.slots.default().length === 1 && context.slots.default()[0].type.toString() === 'Symbol(Text)')) {
+      if (!(context.slots.default().length === 1 && (context.slots.default()[0].type.toString() === 'Symbol(Text)' || context.slots.default()[0].type.toString() === 'Symbol()'))) {
         throw new Error('only one string can be passed inside Divider');
       }
       isText.value = true;
