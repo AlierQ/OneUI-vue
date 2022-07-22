@@ -343,10 +343,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.show {
-  padding: 10px 0;
-  overflow: hidden;
-}
 
 h1 {
   margin: 15px 0;
