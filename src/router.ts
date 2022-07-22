@@ -10,8 +10,10 @@ import Message from './components/MessagePage.vue';
 import Tabs from './components/TabsPage.vue';
 import Menu from './components/MenuPage.vue';
 import Card from './components/CardPage.vue';
+import Divider from './components/DividerPage.vue';
 import Markdown from './components/Markdown.vue';
 import DocumentDemo from './components/DocumentDemo.vue';
+
 
 
 const createMarkdown = path => {
@@ -73,6 +75,10 @@ export const router = createRouter({
         {
           path: 'card',
           component: Card,
+        },
+        {
+          path: 'divider',
+          component: Divider,
         }
       ]
     }
