@@ -47,7 +47,7 @@ export default {
   padding: 12px 14px;
   border-radius: 4px;
   box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
-  animation: Message 2s ease;
+  animation: Message 1.5s ease;
 
   > .one-message-icon {
     display: inline-block;
