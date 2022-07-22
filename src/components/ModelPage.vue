@@ -62,7 +62,7 @@ import Divider from '../lib/Divider.vue';
 import CodeSection from '../lib/CodeSection.vue';
 import Model from '../lib/Model.vue';
 import Button from '../lib/Button.vue';
-import {$Model} from '../lib/$Model.ts';
+import {$Model} from '../lib/Model.ts';
 import {ref} from 'vue';
 
 export default {
@@ -157,11 +157,11 @@ export default {
   <Button type="primary" @click="show">动态加载 Model 对话框</Button>
 </template>
 <script>
-  import {$Model} from '../lib/Model.ts';
+  import {model} from '../lib/Model.ts';
   export default {
     methods:{
       show(){
-        $Model({
+        model({
           title: '这里是动态加载对话框的标题',
           content: '这里是动态加载的内容',
           clickOverlay: false, // 控制浮层背景能否点击关闭
