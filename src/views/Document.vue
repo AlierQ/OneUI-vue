@@ -25,7 +25,10 @@
               <router-link to="/document/button">Button 组件</router-link>
             </li>
             <li>
-              <router-link to="/document/dialog">Model 组件</router-link>
+              <router-link to="/document/model">Model 组件</router-link>
+            </li>
+            <li>
+              <router-link to="/document/message">Message 组件</router-link>
             </li>
             <li>
               <router-link to="/document/tabs">Tabs 组件</router-link>

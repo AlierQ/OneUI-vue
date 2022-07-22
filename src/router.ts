@@ -5,7 +5,8 @@ import Home from './views/Home.vue';
 import Document from './views/Document.vue';
 import Switch from './components/SwitchPage.vue';
 import Button from './components/ButtonPage.vue';
-import Dialog from './components/ModelPage.vue';
+import Model from './components/ModelPage.vue';
+import Message from './components/MessagePage.vue';
 import Tabs from './components/TabsPage.vue';
 import Markdown from './components/Markdown.vue';
 import DocumentDemo from './components/DocumentDemo.vue';
@@ -51,8 +52,12 @@ export const router = createRouter({
           component: Button,
         },
         {
-          path: 'dialog',
-          component: Dialog,
+          path: 'model',
+          component: Model,
+        },
+        {
+          path: 'message',
+          component: Message,
         },
         {
           path: 'tabs',
