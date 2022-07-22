@@ -14,9 +14,12 @@ import {inject, onMounted, ref, Ref} from 'vue';
 
 export default {
   props: {
+    open: {
+      type: String
+    },
     name: String
   },
-  setup() {
+  setup(props) {
     const titles = inject<Ref<object>>('titles');
     const subMenu = ref<HTMLDivElement>(null);
     const height = ref(null);
@@ -24,6 +27,8 @@ export default {
     onMounted(() => {
       height.value = subMenu.value.getBoundingClientRect().height;
       subMenu.value.style.height = height.value;
+      if(props.open===''||props.open==='true')
+        return;
       for (let key in titles.value) {
         titles.value[key] = false;
       }
