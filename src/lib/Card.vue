@@ -70,7 +70,7 @@ export default {
   }
 
   > .one-cardbody-basic {
-    padding: 16px 16px 6px 16px;
+    padding: 16px 16px 16px 16px;
   }
 
   &.float {
