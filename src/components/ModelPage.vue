@@ -49,10 +49,8 @@
         </CardBody>
       </Card>
     </div>
-<!--    <h3>全局提示框</h3>-->
-<!--    <br> &nbsp;-->
-<!--    <Message type="info" content="这是一条提示信息"></Message>-->
-<!--    <Button type="primary" @click="message">Message 弹出框</Button>-->
+    <!--    <Message type="info" content="这是一条提示信息"></Message>-->
+    <!--    <Button type="primary" @click="message">Message 弹出框</Button>-->
   </div>
 </template>
 
@@ -65,9 +63,7 @@ import CodeSection from '../lib/CodeSection.vue';
 import Model from '../lib/Model.vue';
 import Button from '../lib/Button.vue';
 import {$Model} from '../lib/$Model.ts';
-import {$Message} from '../lib/Message.ts';
 import {ref} from 'vue';
-import Message from '../lib/Message.vue';
 
 export default {
   data() {
@@ -78,7 +74,6 @@ export default {
   components: {
     Button,
     Model,
-    Message,
     CardBody,
     CardTitle,
     Divider,
@@ -219,21 +214,12 @@ export default {
         }
       });
     };
-
-    const message = () => {
-      $Message({
-        type: 'error',
-        content: '这里是动态加载的message' + Math.random()
-      });
-    };
-
     return {
       // visible,
       // ok,
       // cancel,
       // toggle,
       // show,
-      message,
       codeSection1,
       codeSectionShow1,
       codeSection2,
