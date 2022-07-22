@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .top-nav {
   background: #f5f6f6;
   display: flex;
@@ -48,7 +48,6 @@ export default {
   min-height: 60px;
   align-items: center;
   position: relative;
-  z-index: 10;
 
   > .logo {
     position: relative;

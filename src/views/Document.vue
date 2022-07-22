@@ -68,7 +68,7 @@ export default {
 
   .top-nav {
     box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
-    z-index: 9999;
+    z-index: 11;
   }
 
   .content {
@@ -103,7 +103,7 @@ export default {
       min-width: 200px;
       max-width: 200px;
       padding: 16px;
-      z-index: 9998;
+      z-index: 10;
 
       > h2 {
         margin-bottom: 4px;

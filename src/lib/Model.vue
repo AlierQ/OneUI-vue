@@ -98,7 +98,7 @@ export default {
     top: 12%;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 11;
+    z-index: 999;
   }
 
   &-overlay {
@@ -107,7 +107,7 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 998;
     background: rgba(55, 55, 55, .6);
   }
 
