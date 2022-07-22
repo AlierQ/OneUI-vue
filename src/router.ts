@@ -1,8 +1,10 @@
 // 引入路由，这里使用hash模式
 import {createWebHashHistory, createRouter} from 'vue-router';
-import {h} from 'vue';
 import Home from './views/Home.vue';
 import Document from './views/Document.vue';
+import Introduce from './components/IntroducePage.vue';
+import Install from './components/InstallPage.vue';
+import Started from './components/StartedPage.vue';
 import Switch from './components/SwitchPage.vue';
 import Button from './components/ButtonPage.vue';
 import Model from './components/ModelPage.vue';
@@ -11,14 +13,8 @@ import Tabs from './components/TabsPage.vue';
 import Menu from './components/MenuPage.vue';
 import Card from './components/CardPage.vue';
 import Divider from './components/DividerPage.vue';
-import Markdown from './components/Markdown.vue';
 import DocumentDemo from './components/DocumentDemo.vue';
 
-
-
-const createMarkdown = path => {
-  return h(Markdown, {path: `../markdown/${path}.md`, key: path});
-};
 const history = createWebHashHistory();
 export const router = createRouter({
   history,
@@ -36,18 +32,18 @@ export const router = createRouter({
           path: '',
           component: DocumentDemo,
         },
-        // {
-        //   path: 'introduce',
-        //   component: createMarkdown('introduce'),
-        // },
-        // {
-        //   path: 'started',
-        //   component: createMarkdown('started'),
-        // },
-        // {
-        //   path: 'install',
-        //   component: createMarkdown('install'),
-        // },
+        {
+          path: 'introduce',
+          component: Introduce,
+        },
+        {
+          path: 'install',
+          component: Install,
+        },
+        {
+          path: 'started',
+          component: Started,
+        },
         {
           path: 'switch',
           component: Switch,
