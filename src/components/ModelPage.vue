@@ -78,7 +78,7 @@ export default {
     };
     const message = () => {
       $Message({
-        type: 'warning',
+        type: 'error',
         content: '这里是动态加载的message' + Math.random()
       });
     };

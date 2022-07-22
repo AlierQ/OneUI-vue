@@ -1,10 +1,19 @@
 <template>
   <teleport to="body">
-    <div class="one-message-basic" :class="type">{{ content }}</div>
+    <div class="one-message-basic" :class="type">
+      <div class="one-message-icon">
+        <svg class="iconpark-icon">
+          <use :href="types[type]"></use>
+        </svg>
+      </div>
+      <div class="one-message-content">{{ content }}</div>
+    </div>
   </teleport>
 </template>
 
 <script lang="ts">
+import {ref} from 'vue';
+
 export default {
   props: {
     type: {
@@ -13,6 +22,15 @@ export default {
     content: {
       type: String
     }
+  },
+  setup() {
+    const types = ref({
+      info: '#info-62j03a93',
+      warning: '#attention',
+      success: '#check-one',
+      error: '#close-one'
+    });
+    return {types};
   }
 };
 </script>
@@ -31,13 +49,53 @@ export default {
   box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
   animation: Message 2s ease;
 
+  > .one-message-icon {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 10px;
+
+    > svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  > .one-message-content {
+    display: inline-block;
+  }
+
   &.info {
-    background: #2d8cf0;
+    > .one-message-icon {
+      > svg {
+        color: #2d8cf0;
+      }
+    }
   }
 
   &.warning {
-    background: #e96900;
+    > .one-message-icon {
+      > svg {
+        color: #e96900;
+      }
+    }
   }
+
+  &.success {
+    > .one-message-icon {
+      > svg {
+        color: #19be6b;
+      }
+    }
+  }
+
+  &.error {
+    > .one-message-icon {
+      > svg {
+        color: #ed4014;
+      }
+    }
+  }
+
 }
 
 @keyframes Message {
