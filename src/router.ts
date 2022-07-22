@@ -8,6 +8,7 @@ import Button from './components/ButtonPage.vue';
 import Model from './components/ModelPage.vue';
 import Message from './components/MessagePage.vue';
 import Tabs from './components/TabsPage.vue';
+import Menu from './components/MenuPage.vue';
 import Markdown from './components/Markdown.vue';
 import DocumentDemo from './components/DocumentDemo.vue';
 
@@ -62,6 +63,10 @@ export const router = createRouter({
         {
           path: 'tabs',
           component: Tabs,
+        },
+        {
+          path: 'menu',
+          component: Menu,
         }
       ]
     }

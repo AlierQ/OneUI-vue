@@ -22,50 +22,12 @@
         </CardBody>
       </Card>
     </div>
-    <!--    <h3>MenuGroup展示</h3>-->
-    <!--    <div class="group">-->
-    <!--      <Menu checked="1-2">-->
-    <!--        <MenuTitle name="xxx">-->
-    <!--          <svg style="width: 24px; height: 24px; vertical-align: middle" class="iconpark-icon"><use href="#-moxingxunlian"></use></svg>-->
-    <!--          内容管理1-->
-    <!--        </MenuTitle>-->
-    <!--        <Submenu name="xxx">-->
-    <!--          <MenuItem name="1-1">菜单项1</MenuItem>-->
-    <!--          <MenuItem name="1-2">菜单项2</MenuItem>-->
-    <!--        </Submenu>-->
-    <!--        <MenuTitle name="yyy">-->
-    <!--          内容管理2-->
-    <!--        </MenuTitle>-->
-    <!--        <Submenu name="yyy">-->
-    <!--          <MenuItem name="1-3">菜单项4</MenuItem>-->
-    <!--          <MenuItem name="1-4">菜单项5</MenuItem>-->
-    <!--        </Submenu>-->
-    <!--        <MenuTitle name="zzz">-->
-    <!--          内容管理2-->
-    <!--        </MenuTitle>-->
-    <!--        <Submenu name="zzz">-->
-    <!--          <MenuGroup title="菜单组1">-->
-    <!--            <MenuItem name="1-5">菜单项1</MenuItem>-->
-    <!--            <MenuItem name="1-6">菜单项2</MenuItem>-->
-    <!--          </MenuGroup>-->
-    <!--          <MenuGroup title="菜单组2">-->
-    <!--            <MenuItem name="1-7">菜单项1</MenuItem>-->
-    <!--            <MenuItem name="1-8">菜单项2</MenuItem>-->
-    <!--          </MenuGroup>-->
-    <!--        </Submenu>-->
-    <!--      </Menu>-->
-    <!--    </div>-->
   </div>
 </template>
 
 <script lang="ts">
 import Tabs from '../lib/Tabs.vue';
 import Tab from '../lib/Tab.vue';
-import Menu from '../lib/Menu.vue';
-import MenuItem from '../lib/MenuItem.vue';
-import MenuGroup from '../lib/MenuGroup.vue';
-import Submenu from '../lib/Submenu.vue';
-import MenuTitle from '../lib/MenuTitle.vue';
 import Card from '../lib/Card.vue';
 import CardTitle from '../lib/CardTitle.vue';
 import CardBody from '../lib/CardBody.vue';
@@ -78,11 +40,6 @@ export default {
   components: {
     Tabs,
     Tab,
-    Menu,
-    MenuItem,
-    MenuGroup,
-    MenuTitle,
-    Submenu,
     Card,
     CardTitle,
     CardBody,
@@ -128,9 +85,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.group {
-  width: 240px;
-}
 
 h1 {
   margin: 15px 0;

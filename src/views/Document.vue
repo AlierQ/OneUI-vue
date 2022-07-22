@@ -33,6 +33,9 @@
             <li>
               <router-link to="/document/tabs">Tabs 组件</router-link>
             </li>
+            <li>
+              <router-link to="/document/menu">Menu 组件</router-link>
+            </li>
           </ul>
         </aside>
       </transition>
