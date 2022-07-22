@@ -1,5 +1,6 @@
 <template>
-  <div class="one-card-basic">
+  <div class="one-card-basic"
+       :style="{'--width':width}">
     <div v-if="title" class="one-cardtitle-basic">
       <component :is="title"></component>
     </div>
@@ -16,6 +17,12 @@ import CardTitle from '../lib/CardTitle.vue';
 import CardBody from '../lib/CardBody.vue';
 
 export default {
+  props: {
+    width: {
+      type: String,
+      default: '100%'
+    }
+  },
   setup(props, context) {
     const defaults = context.slots.default();
     const title = ref(null);
@@ -35,12 +42,15 @@ export default {
 
 <style lang="scss" scoped>
 .one-card-basic {
+  $width: var(--width);
   border: 1px solid #e8eaec;
-  width: 100%;
+  width: $width;
   border-radius: 4px;
-  &:deep(*){
+
+  &:deep(*) {
     font-size: 14px;
   }
+
   line-height: 1.4;
   transition: all .25s;
 

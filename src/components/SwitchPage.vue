@@ -4,7 +4,7 @@
     <h2>描述</h2>
     <p>在两种状态间切换时用到的开关选择器</p>
     <h3>代码示例</h3>
-    <Card>
+    <Card width="80%">
       <CardBody>
         <Switch v-model:value="state1"></Switch>
         <Divider direction="left">基本样式</Divider>
