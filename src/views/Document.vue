@@ -2,35 +2,37 @@
   <div class="doc">
     <TopNav class=".top-nav"></TopNav>
     <div class="content">
-      <aside v-if="asideVisible">
-        <h2>文档</h2>
-        <ul>
-          <li>
-            <router-link to="/document/introduce">介绍</router-link>
-          </li>
-          <li>
-            <router-link to="/document/install">安装</router-link>
-          </li>
-          <li>
-            <router-link to="/document/started">开始使用</router-link>
-          </li>
-        </ul>
-        <h2>组件列表</h2>
-        <ul>
-          <li>
-            <router-link to="/document/switch">Switch 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/document/button">Button 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/document/dialog">Model 组件</router-link>
-          </li>
-          <li>
-            <router-link to="/document/tabs">Tabs 组件</router-link>
-          </li>
-        </ul>
-      </aside>
+      <transition name="aside">
+        <aside v-if="asideVisible">
+          <h2>文档</h2>
+          <ul>
+            <li>
+              <router-link to="/document/introduce">介绍</router-link>
+            </li>
+            <li>
+              <router-link to="/document/install">安装</router-link>
+            </li>
+            <li>
+              <router-link to="/document/started">开始使用</router-link>
+            </li>
+          </ul>
+          <h2>组件列表</h2>
+          <ul>
+            <li>
+              <router-link to="/document/switch">Switch 组件</router-link>
+            </li>
+            <li>
+              <router-link to="/document/button">Button 组件</router-link>
+            </li>
+            <li>
+              <router-link to="/document/dialog">Model 组件</router-link>
+            </li>
+            <li>
+              <router-link to="/document/tabs">Tabs 组件</router-link>
+            </li>
+          </ul>
+        </aside>
+      </transition>
       <div class="main">
         <router-view></router-view>
       </div>
@@ -66,6 +68,7 @@ export default {
 
   .top-nav {
     box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+    z-index: 9999;
   }
 
   .content {
@@ -100,6 +103,7 @@ export default {
       min-width: 200px;
       max-width: 200px;
       padding: 16px;
+      z-index: 9998;
 
       > h2 {
         margin-bottom: 4px;
@@ -125,5 +129,14 @@ export default {
 .router-link-active {
   color: #409eff;
   text-decoration: underline;
+}
+
+.aside-enter-active, .aside-leave-active {
+  transition: all .5s ease;
+}
+
+.aside-enter-from, .aside-leave-to {
+  margin-left: -200px;
+  opacity: 0;
 }
 </style>
