@@ -20,14 +20,12 @@
     </div>
     <div class="card-container">
       <Card float>
-        <CardTitle>
+        <CardBody>
           <Switch v-model:value="state2"
                   active-color="#55bb8a"
                   inactive-color="#f8df70"
                   point-color="#f1908c">
           </Switch>
-        </CardTitle>
-        <CardBody>
           <Divider direction="left">自定义样式</Divider>
           <p>你可以通过设置 "active-color"、"inactive-color"、"point-color" 来改变Switch开关的激活颜色、未激活颜色和小圆点颜色</p>
           <Divider dashed></Divider>
@@ -40,14 +38,12 @@
     </div>
     <div class="card-container">
       <Card float>
-        <CardTitle>
+        <CardBody>
           <Switch v-model:value="state3"
                   active-text="激活文字"
                   inactive-text="未激活文字"
                   text-color="#68b88e">
           </Switch>
-        </CardTitle>
-        <CardBody>
           <Divider direction="left">文字描述样式</Divider>
           <p>你可以通过设置 "active-text"、"inactive-text"、"text-color" 来改变Switch开关的激活状态文字、未激活状态文字及其颜色</p>
           <Divider dashed></Divider>
@@ -60,12 +56,10 @@
     </div>
     <div class="card-container">
       <Card float>
-        <CardTitle>
+        <CardBody>
           <Switch v-model:value="state5" disabled="true"></Switch>
           &nbsp;
           <Switch v-model:value="state4" disabled="true"></Switch>
-        </CardTitle>
-        <CardBody>
           <Divider direction="left">禁用样式</Divider>
           <p>你可以通过 "disabled" 设置Switch开关是否禁用</p>
           <Divider dashed></Divider>
