@@ -19,28 +19,28 @@
           <h2>组件列表</h2>
           <ul>
             <li>
-              <router-link to="/document/switch">Switch 组件</router-link>
+              <router-link to="/document/switch">Switch 开关</router-link>
             </li>
             <li>
-              <router-link to="/document/button">Button 组件</router-link>
+              <router-link to="/document/button">Button 按钮</router-link>
             </li>
             <li>
-              <router-link to="/document/model">Model 组件</router-link>
+              <router-link to="/document/model">Model 对话框</router-link>
             </li>
             <li>
-              <router-link to="/document/message">Message 组件</router-link>
+              <router-link to="/document/message">Message 全局提示</router-link>
             </li>
             <li>
-              <router-link to="/document/tabs">Tabs 组件</router-link>
+              <router-link to="/document/tabs">Tabs 标签页</router-link>
             </li>
             <li>
-              <router-link to="/document/menu">Menu 组件</router-link>
+              <router-link to="/document/menu">Menu 菜单</router-link>
             </li>
             <li>
-              <router-link to="/document/card">Card 组件</router-link>
+              <router-link to="/document/card">Card 卡片</router-link>
             </li>
             <li>
-              <router-link to="/document/divider">Divider 组件</router-link>
+              <router-link to="/document/divider">Divider 分割线</router-link>
             </li>
           </ul>
         </aside>
