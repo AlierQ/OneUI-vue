@@ -10,14 +10,14 @@ import MenuTitle from '../lib/MenuTitle.vue';
 
 export default {
   props: {
-    checked: {
+    default: {
       type: String,
       default: null
     }
   },
   setup(props, context) {
     const titles = ref({});
-    const checked = ref(props.checked);
+    const checked = ref(props.default);
     context.slots.default().forEach((el) => {
       if (el.type === MenuTitle) {
         titles.value[el.props.name] = true;
