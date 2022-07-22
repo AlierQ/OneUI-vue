@@ -98,6 +98,7 @@ export default {
 
     &.center {
       left: 50%;
+      transform: translateX(-50%);
     }
 
     &.left {
