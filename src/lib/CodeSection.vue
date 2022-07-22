@@ -1,6 +1,5 @@
 <template>
   <div class="one-codesection-basic">
-
     <div @click="copyCode" class="one-codesection-copy">
       <transition name="copy" mode="out-in">
         <svg v-if="!isCopy" class="iconpark-icon">

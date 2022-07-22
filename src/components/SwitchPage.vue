@@ -4,32 +4,60 @@
     <h2>描述</h2>
     <p>在两种状态间切换时用到的开关选择器</p>
     <h3>代码示例</h3>
-    <Card width="100%" float="true">
-      <CardBody>
-        <Switch v-model:value="state1"></Switch>
-        <Divider direction="left">基本样式</Divider>
-        <p>传入一个value，开关按钮value值会改变</p>
-        <Divider dashed></Divider>
-        <div class="show-code">
-          <Button @click="codeSectionShow1=!codeSectionShow1">查看代码</Button>
-        </div>
-        <CodeSection v-if="codeSectionShow1">{{ codeSection1 }}</CodeSection>
-      </CardBody>
-    </Card>
-    <h3>默认样式</h3>
-    <Switch v-model:value="state1"></Switch>
-    <h3>自定义样式</h3>
-    <Switch v-model:value="state2"
-            active-color="#fb5430"
-            inactive-color="#add8e6"
-            point-color="#499c54">
-    </Switch>
-    <h3>文字描述样式</h3>
-    <Switch v-model:value="state3"
-            active-text="关闭"
-            inactive-text="开启"
-            text-color="#ffc0cb">
-    </Switch>
+    <div class="card-container">
+      <Card width="100%" float="true">
+        <CardBody>
+          <Switch v-model:value="state1"></Switch>
+          <Divider direction="left">基本样式</Divider>
+          <p>传入一个value，开关按钮value值会改变</p>
+          <Divider dashed></Divider>
+          <div class="show-code">
+            <Button @click="codeSectionShow1=!codeSectionShow1">查看代码</Button>
+          </div>
+          <CodeSection v-if="codeSectionShow1">{{ codeSection1 }}</CodeSection>
+        </CardBody>
+      </Card>
+    </div>
+    <div class="card-container">
+      <Card float>
+        <CardTitle>
+          <Switch v-model:value="state2"
+                  active-color="#55bb8a"
+                  inactive-color="#f8df70"
+                  point-color="#f1908c">
+          </Switch>
+        </CardTitle>
+        <CardBody>
+          <Divider direction="left">自定义样式</Divider>
+          <p>你可以通过设置 "active-color"、"inactive-color"、"point-color" 设置Switch开关的激活样式、未激活样式和小圆点样式</p>
+          <Divider dashed></Divider>
+          <div class="show-code">
+            <Button @click="codeSectionShow2=!codeSectionShow2">查看代码</Button>
+          </div>
+          <CodeSection v-if="codeSectionShow2">{{ codeSection2 }}</CodeSection>
+        </CardBody>
+      </Card>
+    </div>
+    <div class="card-container">
+      <Card float>
+        <CardTitle>
+          <Switch v-model:value="state3"
+                  active-text="激活文字"
+                  inactive-text="未激活文字"
+                  text-color="#68b88e">
+          </Switch>
+        </CardTitle>
+        <CardBody>
+          <Divider direction="left">文字描述样式</Divider>
+          <p>你可以通过设置 "active-text"、"inactive-text"、"text-color" 设置Switch开关的激活状态文字、未激活状态文字及其颜色</p>
+          <Divider dashed></Divider>
+          <div class="show-code">
+            <Button @click="codeSectionShow3=!codeSectionShow3">查看代码</Button>
+          </div>
+          <CodeSection v-if="codeSectionShow3">{{ codeSection3 }}</CodeSection>
+        </CardBody>
+      </Card>
+    </div>
     <h3>禁用样式</h3>
     <Switch v-model:value="state4" disabled="true"></Switch>
   </div>
@@ -37,19 +65,38 @@
 
 <script lang="ts">
 import Switch from '../lib/Switch.vue';
-import {ref} from 'vue';
+import {ref, watch} from 'vue';
 import Card from '../lib/Card.vue';
 import CardTitle from '../lib/CardTitle.vue';
 import CardBody from '../lib/CardBody.vue';
 import Divider from '../lib/Divider.vue';
 import CodeSection from '../lib/CodeSection.vue';
 import Button from '../lib/Button.vue';
+import {$Message} from '../lib/Message.ts';
 
 export default {
   setup() {
     const state1 = ref(true);
-    const state2 = ref(true);
-    const state3 = ref(false);
+    watch(state1, (newValue, oldValue) => {
+      $Message({
+        type: 'info',
+        content: '开关状态：' + newValue
+      });
+    });
+    const state2 = ref(false);
+    watch(state2, (newValue, oldValue) => {
+      $Message({
+        type: 'info',
+        content: '开关状态：' + newValue
+      });
+    });
+    const state3 = ref(true);
+    watch(state3, (newValue, oldValue) => {
+      $Message({
+        type: 'info',
+        content: '开关状态：' + newValue
+      });
+    });
     const state4 = ref(true);
     const codeSection1 = ref(`
 <template>
@@ -64,14 +111,55 @@ export default {
     }
   }
 <\/script>`);
+    const codeSection2 = ref(`
+<template>
+  <Switch v-model:value="state2"
+          active-color="#55bb8a"
+          inactive-color="#f8df70"
+          point-color="#f1908c">
+  </Switch>
+</template>
+<script>
+  export default {
+    data(){
+      return {
+        state:true;
+      }
+    }
+  }
+<\/script>`);
+    const codeSection3 = ref(`
+<template>
+  <Switch v-model:value="state3"
+          active-text="激活文字"
+          inactive-text="未激活文字"
+          text-color="#68b88e">
+  </Switch>
+</template>
+<script>
+  export default {
+    data(){
+      return {
+        state:true;
+      }
+    }
+  }
+<\/script>`);
+
     const codeSectionShow1 = ref(false);
+    const codeSectionShow2 = ref(false);
+    const codeSectionShow3 = ref(false);
     return {
       state1,
       state2,
       state3,
       state4,
       codeSection1,
-      codeSectionShow1
+      codeSection2,
+      codeSection3,
+      codeSectionShow1,
+      codeSectionShow2,
+      codeSectionShow3,
     };
   },
   components: {
@@ -98,6 +186,10 @@ h2 {
 
 h3 {
   margin: 10px 0;
+}
+
+.card-container {
+  margin-bottom: 24px;
 }
 
 .show-code {
