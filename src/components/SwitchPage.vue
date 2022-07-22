@@ -7,16 +7,13 @@
     <Card>
       <CardBody>
         <Switch v-model:value="state1"></Switch>
-        <Divider direction="left">基本</Divider>
+        <Divider direction="left">基本样式</Divider>
         <p>传入一个value，开关按钮value值会改变</p>
         <Divider dashed></Divider>
-        <p>这里是内容</p>
-        <CodeSection>
-          {{str}}
-        </CodeSection>
-        <p>这里是内容</p>
-        <p>这里是内容</p>
-        <p>这里是内容</p>
+        <div class="show-code">
+          <Button @click="codeSectionShow1=!codeSectionShow1">查看代码</Button>
+        </div>
+        <CodeSection v-if="codeSectionShow1">{{ codeSection1 }}</CodeSection>
       </CardBody>
     </Card>
     <h3>默认样式</h3>
@@ -45,31 +42,40 @@ import Card from '../lib/Card.vue';
 import CardTitle from '../lib/CardTitle.vue';
 import CardBody from '../lib/CardBody.vue';
 import Divider from '../lib/Divider.vue';
-import CodeSection from './CodeSection.vue';
+import CodeSection from '../lib/CodeSection.vue';
+import Button from '../lib/Button.vue';
+
 export default {
   setup() {
     const state1 = ref(true);
     const state2 = ref(true);
     const state3 = ref(false);
     const state4 = ref(true);
-    const str = ref(`
-<h3>文字描述样式</h3>
-<Switch v-model:value="state3"
-        active-text="关闭"
-        inactive-text="开启"
-        text-color="#ffc0cb">
-</Switch>
-<h3>禁用样式</h3>
-    `);
+    const codeSection1 = ref(`
+<template>
+  <Switch v-model:value="state"></Switch>
+</template>
+<script>
+  export default {
+    data(){
+      return {
+        state:true;
+      }
+    }
+  }
+<\/script>`);
+    const codeSectionShow1 = ref(false);
     return {
       state1,
       state2,
       state3,
       state4,
-      str
+      codeSection1,
+      codeSectionShow1
     };
   },
   components: {
+    Button,
     CodeSection,
     Divider,
     CardBody,
@@ -94,4 +100,8 @@ h3 {
   margin: 10px 0;
 }
 
+.show-code {
+  //text-align: center;
+  margin-bottom: 20px;
+}
 </style>

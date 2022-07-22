@@ -86,6 +86,10 @@ export default {
         padding: 32px;
         background: #ffffff;
         overflow: auto;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
       }
     }
 

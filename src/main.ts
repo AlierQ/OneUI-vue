@@ -6,7 +6,8 @@ import Markdown from './components/Markdown.vue';
 import {createApp} from 'vue';
 import './index.scss';
 import App from './App.vue';
-import 'highlight.js/styles/atom-one-dark.css';
+// import 'highlight.js/styles/vs.css';
+import './lib/codeStyle.css'
 import 'highlight.js/lib/common';
 import hljsVuePlugin from '@highlightjs/vue-plugin';
 

@@ -72,7 +72,7 @@ export default {
 .one-divider-notext-basic {
   background: none;
   border-top: 1px solid #e8eaec;
-  margin: 24px 0;
+  margin: 20px 0;
   position: relative;
 
   &.one-divider-notext-dashed {
@@ -81,7 +81,7 @@ export default {
 }
 
 .one-divider-text-basic {
-  padding: 24px 0;
+  padding: 20px 0;
   position: relative;
 
   > .one-divider-text {
