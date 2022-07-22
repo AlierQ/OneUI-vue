@@ -1,5 +1,6 @@
 <template>
   <div class="one-card-basic"
+       :class="{float:isFloat}"
        :style="{'--width':width}">
     <div v-if="title" class="one-cardtitle-basic">
       <component :is="title"></component>
@@ -12,7 +13,7 @@
 
 <script lang="ts">
 
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
 import CardTitle from '../lib/CardTitle.vue';
 import CardBody from '../lib/CardBody.vue';
 
@@ -21,12 +22,19 @@ export default {
     width: {
       type: String,
       default: '100%'
+    },
+    float: {
+      type: String,
     }
   },
   setup(props, context) {
     const defaults = context.slots.default();
     const title = ref(null);
     const body = ref(null);
+
+    const isFloat = computed(() => {
+      return props.float === '' || props.float === 'true';
+    });
 
     defaults.forEach((tag) => {
       if (tag.type === CardTitle) {
@@ -35,17 +43,19 @@ export default {
         body.value = tag;
       }
     });
-    return {title, body};
+    return {title, body, isFloat};
   }
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .one-card-basic {
   $width: var(--width);
   border: 1px solid #e8eaec;
   width: $width;
   border-radius: 4px;
+
+  margin: 0 0;
 
   &:deep(*) {
     font-size: 14px;
@@ -63,10 +73,13 @@ export default {
     padding: 16px 16px 6px 16px;
   }
 
-  &:hover {
-    box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
-    border-color: #eee;
+  &.float {
+    &:hover {
+      box-shadow: 0 1px 6px rgb(0 0 0 / 20%);
+      border-color: #eee;
+    }
   }
+
 }
 
 </style>
