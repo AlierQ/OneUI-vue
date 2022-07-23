@@ -10,7 +10,7 @@
         </svg>
       </transition>
     </div>
-    <highlightjs autodetect theme="vs" :code="codeString"/>
+    <highlightjs autodetect :code="codeString"/>
   </div>
   <slot v-if="false"></slot>
 </template>
