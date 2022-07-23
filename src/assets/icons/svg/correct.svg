@@ -1,1 +1,5 @@
-<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path data-follow-stroke="#515a6e" clip-rule="evenodd" d="m4 24 5-5 10 10L39 9l5 5-25 25L4 24Z" stroke="#515a6e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path data-follow-stroke="#515a6e" clip-rule="evenodd" d="m4 24 5-5 10 10L39 9l5 5-25 25L4 24Z"
+          stroke="currentColor"
+          stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

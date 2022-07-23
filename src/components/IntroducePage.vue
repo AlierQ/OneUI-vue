@@ -3,7 +3,12 @@
     <Icon v-for="icon in svgNameList"
           :key="icon"
           :icon-class="icon"
-    size="50" ></Icon>
+    size="60" color="#409eff" ></Icon>
+    <hr>
+    <Icon v-for="icon in svgNameList"
+          :key="icon"
+          :icon-class="icon"
+    size="60" ></Icon>
   </div>
 </template>
 
