@@ -3,7 +3,7 @@
           :class="classes"
           :disabled="isDisabled || isLoading">
     <span v-if="isLoading" class="one-button-loading-indicator"></span>
-    <slot></slot>
+    <slot ></slot>
   </button>
 </template>
 
@@ -61,9 +61,15 @@ export default {
   border-radius: 4px;
   padding: 0 15px;
   cursor: pointer;
-  vertical-align: middle;
+  line-height: 1.5;
   white-space: nowrap;
   transition: all .4s;
+
+  & > svg{
+    margin-top: -4px;
+    margin-right: 4px;
+    vertical-align:middle;
+  }
 
   &.one-button-size-big {
     height: 36px;
