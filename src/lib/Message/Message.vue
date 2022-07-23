@@ -11,9 +11,10 @@
 
 <script lang="ts">
 import {ref} from 'vue';
-import Icon from '../Icon/Icon.vue'
+import Icon from '../Icon/Icon.vue';
+
 export default {
-  components:{
+  components: {
     Icon
   },
   props: {
@@ -37,7 +38,7 @@ export default {
       success: '#19be6b',
       error: '#ed4014'
     });
-    return {types,colors};
+    return {types, colors};
   }
 };
 </script>

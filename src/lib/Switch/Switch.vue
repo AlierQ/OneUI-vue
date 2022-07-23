@@ -89,10 +89,10 @@ $span-height: $button-height - 4px;
 .one-switch-basic {
   vertical-align: middle;
   height: $button-height;
-  width: $button-height*2;
+  width: $button-height * 2;
   border: none;
   background: $inactive-color;
-  border-radius: $button-height / 2;
+  border-radius: calc($button-height / 2);
   position: relative;
   transition: all .5s ease;
 
@@ -103,7 +103,7 @@ $span-height: $button-height - 4px;
     height: $span-height;
     width: $span-height;
     background: $point-color;
-    border-radius: $span-height / 2;
+    border-radius: calc($button-height / 2);
     right: 2px;
     transition: all .2s ease;
   }
