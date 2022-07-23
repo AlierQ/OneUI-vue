@@ -5,7 +5,6 @@ export {default as CardTitle} from './Card/CardTitle.vue';
 export {default as CardBody} from './Card/CardBody.vue';
 export {default as CodeSection} from './Code/CodeSection.vue';
 export {default as Divider} from './Divider/Divider.vue';
-export {default as Icon} from './Icon/Icon.vue';
 export {default as Menu} from './Menu/Menu.vue';
 export {default as MenuTitle} from './Menu/MenuTitle.vue';
 export {default as SubMenu} from './Menu/SubMenu.vue';
