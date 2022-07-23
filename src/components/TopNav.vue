@@ -1,7 +1,7 @@
 <template>
   <div class="top-nav">
     <span class="toggle-menu" @click="toggleMenu">
-      <svg class="iconpark-icon"><use href="#hamburger-button"></use></svg>
+      <Icon icon-class="line-menu" size="32"></Icon>
     </span>
     <router-link class="logo" to="/">
       <span class="color-lump"></span>
@@ -91,16 +91,12 @@ export default {
 
   > .toggle-menu {
     display: none;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     position: absolute;
     left: 16px;
     top: 50%;
     transform: translateY(-50%);
-    > svg{
-      width: 30px;
-      height: 30px;
-    }
   }
 
   @media (max-width: 500px) {

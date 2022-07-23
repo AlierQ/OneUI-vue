@@ -18,9 +18,7 @@
       <div class="feature">
         <div class="feature-item">
           <div class="feature-icon">
-            <svg  class="iconpark-icon">
-              <use href="#Vue"></use>
-            </svg>
+            <Icon icon-class="vue" size="100"></Icon>
           </div>
           <div class="feature-content">
             <h2 class="feature-title">基于 Vue3</h2>
@@ -29,9 +27,7 @@
         </div>
         <div class="feature-item">
           <div class="feature-icon">
-            <svg class="iconpark-icon">
-              <use href="#typescript"></use>
-            </svg>
+            <Icon icon-class="typescript" size="100"></Icon>
           </div>
           <div class="feature-content">
             <h2 class="feature-title">使用 TypeScript</h2>
@@ -40,9 +36,7 @@
         </div>
         <div class="feature-item">
           <div class="feature-icon">
-            <svg class="iconpark-icon">
-              <use href="#yidu-icon"></use>
-            </svg>
+            <Icon icon-class="yidu-icon" size="100"></Icon>
           </div>
           <div class="feature-content">
             <h2 class="feature-title">代码易读、使用简单</h2>
@@ -135,13 +129,6 @@ export default {
       margin: 0 20px;
       align-items: center;
 
-      > .feature-icon {
-        > svg {
-          width: 100px;
-          height: 100px;
-        }
-      }
-
       > .feature-content {
         margin-left: 20px;
       }
@@ -156,13 +143,6 @@ export default {
         display: flex;
         margin: 0 20px;
         flex-direction: column;
-
-        > .feature-icon {
-          > svg {
-            width: 80px;
-            height: 80px;
-          }
-        }
 
         > .feature-content {
           display: flex;
