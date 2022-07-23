@@ -18,7 +18,7 @@
       <div class="feature">
         <div class="feature-item">
           <div class="feature-icon">
-            <svg class="iconpark-icon">
+            <svg  class="iconpark-icon">
               <use href="#Vue"></use>
             </svg>
           </div>
@@ -41,7 +41,7 @@
         <div class="feature-item">
           <div class="feature-icon">
             <svg class="iconpark-icon">
-              <use href="#-wulijilijisuan"></use>
+              <use href="#yidu-icon"></use>
             </svg>
           </div>
           <div class="feature-content">
