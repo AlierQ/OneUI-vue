@@ -1,6 +1,6 @@
 {
   "name": "one-ui-alierq",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "files": ["dist/*"],
   "main": "dist/lib/one-ui.es.js",
   "type": "module",
