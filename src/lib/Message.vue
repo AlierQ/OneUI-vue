@@ -2,9 +2,7 @@
   <teleport to="body">
     <div class="one-message-basic" :class="type">
       <div class="one-message-icon">
-        <svg class="iconpark-icon">
-          <use :href="types[type]"></use>
-        </svg>
+        <Icon :icon-class="types[type]" size="16" :color="colors[type]"></Icon>
       </div>
       <div class="one-message-content">{{ content }}</div>
     </div>
@@ -13,8 +11,11 @@
 
 <script lang="ts">
 import {ref} from 'vue';
-
+import Icon from '../lib/Icon.vue'
 export default {
+  components:{
+    Icon
+  },
   props: {
     type: {
       type: String
@@ -25,12 +26,18 @@ export default {
   },
   setup() {
     const types = ref({
-      info: '#info-62j03a93',
-      warning: '#attention',
-      success: '#check-one',
-      error: '#close-one'
+      info: 'info-fill',
+      warning: 'attention-fill',
+      success: 'check-fill',
+      error: 'close-fill'
     });
-    return {types};
+    const colors = ref({
+      info: '#2d8cf0',
+      warning: '#e96900',
+      success: '#19be6b',
+      error: '#ed4014'
+    });
+    return {types,colors};
   }
 };
 </script>
@@ -53,47 +60,10 @@ export default {
     display: inline-block;
     vertical-align: middle;
     padding-right: 10px;
-
-    > svg {
-      width: 16px;
-      height: 16px;
-    }
   }
 
   > .one-message-content {
     display: inline-block;
-  }
-
-  &.info {
-    > .one-message-icon {
-      > svg {
-        color: #2d8cf0;
-      }
-    }
-  }
-
-  &.warning {
-    > .one-message-icon {
-      > svg {
-        color: #e96900;
-      }
-    }
-  }
-
-  &.success {
-    > .one-message-icon {
-      > svg {
-        color: #19be6b;
-      }
-    }
-  }
-
-  &.error {
-    > .one-message-icon {
-      > svg {
-        color: #ed4014;
-      }
-    }
   }
 
 }
