@@ -1,14 +1,6 @@
 <template>
   <div>
-    <Icon v-for="icon in svgNameList"
-          :key="icon"
-          :icon-class="icon"
-    size="60" color="#409eff" ></Icon>
-    <hr>
-    <Icon v-for="icon in svgNameList"
-          :key="icon"
-          :icon-class="icon"
-    size="60" ></Icon>
+    介绍页面，暂未制作
   </div>
 </template>
 

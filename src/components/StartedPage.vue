@@ -1,5 +1,5 @@
 <template>
-  <div>开始使用</div>
+  <div>开始使用页面，暂未制作</div>
 </template>
 
 <script lang="ts">

@@ -1,5 +1,5 @@
 <template>
-  <div>安装</div>
+  <div>安装页面，暂未制作</div>
 </template>
 
 <script lang="ts">

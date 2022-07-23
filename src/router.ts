@@ -13,7 +13,6 @@ import Tabs from './components/TabsPage.vue';
 import Menu from './components/MenuPage.vue';
 import Card from './components/CardPage.vue';
 import Divider from './components/DividerPage.vue';
-import DocumentDemo from './components/DocumentDemo.vue';
 
 const history = createWebHashHistory();
 export const router = createRouter({
@@ -30,7 +29,7 @@ export const router = createRouter({
       children: [
         {
           path: '',
-          component: DocumentDemo,
+          component: Introduce,
         },
         {
           path: 'introduce',

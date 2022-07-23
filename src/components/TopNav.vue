@@ -10,7 +10,7 @@
     <div class="menu">
       <ul>
         <li>
-          <router-link to="/document">文档</router-link>
+          <router-link to="/document/switch">文档</router-link>
         </li>
         <li></li>
       </ul>
