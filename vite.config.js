@@ -4,6 +4,7 @@ import {resolve} from 'path'
 import {createSvgIconsPlugin} from 'vite-plugin-svg-icons'
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [
     vue(),
     // svg插件

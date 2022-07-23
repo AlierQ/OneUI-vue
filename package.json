@@ -17,6 +17,9 @@
     "vue-router": "^4.1.2"
   },
   "devDependencies": {
+    "@highlightjs/vue-plugin": "^2.1.0",
+    "github-markdown-css": "^5.1.0",
+    "highlight.js": "^11.6.0",
     "@vitejs/plugin-vue": "^3.0.0",
     "@vue/compiler-sfc": "^3.0.0-rc.1",
     "fast-glob": "3.x",
