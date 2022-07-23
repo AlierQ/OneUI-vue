@@ -114,12 +114,12 @@
 </template>
 
 <script lang="ts">
-import Card from '../lib/Card.vue';
-import CardTitle from '../lib/CardTitle.vue';
-import CardBody from '../lib/CardBody.vue';
-import Divider from '../lib/Divider.vue';
-import CodeSection from '../lib/CodeSection.vue';
-import Button from '../lib/Button.vue';
+import Card from '../lib/Card/Card.vue';
+import CardTitle from '../lib/Card/CardTitle.vue';
+import CardBody from '../lib/Card/CardBody.vue';
+import Divider from '../lib/Divider/Divider.vue';
+import CodeSection from '../lib/Code/CodeSection.vue';
+import Button from '../lib/Button/Button.vue';
 import {ref} from 'vue';
 
 export default {

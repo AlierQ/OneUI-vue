@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <h1>Switch 开关</h1>
     <h2>描述</h2>
     <p>在两种状态间切换时用到的开关选择器</p>
@@ -75,35 +74,35 @@
 </template>
 
 <script lang="ts">
-import Switch from '../lib/Switch.vue';
+import Switch from '../lib/Switch/Switch.vue';
 import {ref, watch} from 'vue';
-import Card from '../lib/Card.vue';
-import CardTitle from '../lib/CardTitle.vue';
-import CardBody from '../lib/CardBody.vue';
-import Divider from '../lib/Divider.vue';
-import CodeSection from '../lib/CodeSection.vue';
-import Button from '../lib/Button.vue';
-import {$Message} from '../lib/Message.ts';
+import Card from '../lib/Card/Card.vue';
+import CardTitle from '../lib/Card/CardTitle.vue';
+import CardBody from '../lib/Card/CardBody.vue';
+import Divider from '../lib/Divider/Divider.vue';
+import CodeSection from '../lib/Code/CodeSection.vue';
+import Button from '../lib/Button/Button.vue';
+import {useMessage} from '../lib/Message/useMessage.ts';
 
 export default {
   setup() {
     const state1 = ref(true);
     watch(state1, (newValue, oldValue) => {
-      $Message({
+      useMessage({
         type: 'info',
         content: '开关状态：' + newValue
       });
     });
     const state2 = ref(false);
     watch(state2, (newValue, oldValue) => {
-      $Message({
+      useMessage({
         type: 'info',
         content: '开关状态：' + newValue
       });
     });
     const state3 = ref(true);
     watch(state3, (newValue, oldValue) => {
-      $Message({
+      useMessage({
         type: 'info',
         content: '开关状态：' + newValue
       });

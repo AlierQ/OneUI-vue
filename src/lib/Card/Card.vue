@@ -14,8 +14,8 @@
 <script lang="ts">
 
 import {computed, ref} from 'vue';
-import CardTitle from '../lib/CardTitle.vue';
-import CardBody from '../lib/CardBody.vue';
+import CardTitle from './CardTitle.vue';
+import CardBody from './CardBody.vue';
 
 export default {
   props: {

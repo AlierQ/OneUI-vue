@@ -52,17 +52,17 @@
 </template>
 
 <script lang="ts">
-import Menu from '../lib/Menu.vue';
-import MenuItem from '../lib/MenuItem.vue';
-import MenuGroup from '../lib/MenuGroup.vue';
-import Submenu from '../lib/Submenu.vue';
-import MenuTitle from '../lib/MenuTitle.vue';
-import Card from '../lib/Card.vue';
-import CardTitle from '../lib/CardTitle.vue';
-import CardBody from '../lib/CardBody.vue';
-import Divider from '../lib/Divider.vue';
-import CodeSection from '../lib/CodeSection.vue';
-import Button from '../lib/Button.vue';
+import Menu from '../lib/Menu/Menu.vue';
+import MenuItem from '../lib/Menu/MenuItem.vue';
+import MenuGroup from '../lib/Menu/MenuGroup.vue';
+import Submenu from '../lib/Menu/SubMenu.vue';
+import MenuTitle from '../lib/Menu/MenuTitle.vue';
+import Card from '../lib/Card/Card.vue';
+import CardTitle from '../lib/Card/CardTitle.vue';
+import CardBody from '../lib/Card/CardBody.vue';
+import Divider from '../lib/Divider/Divider.vue';
+import CodeSection from '../lib/Code/CodeSection.vue';
+import Button from '../lib/Button/Button.vue';
 import {ref} from 'vue';
 
 export default {

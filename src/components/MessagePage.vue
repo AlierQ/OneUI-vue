@@ -38,38 +38,38 @@
 </template>
 
 <script lang="ts">
-import Card from '../lib/Card.vue';
-import CardTitle from '../lib/CardTitle.vue';
-import CardBody from '../lib/CardBody.vue';
-import Divider from '../lib/Divider.vue';
-import CodeSection from '../lib/CodeSection.vue';
-import Button from '../lib/Button.vue';
-import {$Message} from '../lib/Message.ts';
-import Message from '../lib/Message.vue';
+import Card from '../lib/Card/Card.vue';
+import CardTitle from '../lib/Card/CardTitle.vue';
+import CardBody from '../lib/Card/CardBody.vue';
+import Divider from '../lib/Divider/Divider.vue';
+import CodeSection from '../lib/Code/CodeSection.vue';
+import Button from '../lib/Button/Button.vue';
+import {useMessage} from '../lib/Message/useMessage.ts';
+import Message from '../lib/Message/Message.vue';
 import {ref} from 'vue';
 
 export default {
   methods: {
     popMessage() {
-      $Message({
+      useMessage({
         type: 'info',
         content: '这里是 Message 全局提示组件'
       });
     },
     popMessage1() {
-      $Message({
+      useMessage({
         type: 'success',
         content: '这里是 Success 提示'
       });
     },
     popMessage2() {
-      $Message({
+      useMessage({
         type: 'warning',
         content: '这里是 Warning 提示'
       });
     },
     popMessage3() {
-      $Message({
+      useMessage({
         type: 'error',
         content: '这里是 Error 提示'
       });
@@ -93,7 +93,7 @@ export default {
   export default {
     methods:{
       popMessage(){
-        $Message({
+        useMessage({
           type: 'info',
           content: '这里是 Message 全局提示组件'
         });
@@ -111,19 +111,19 @@ export default {
   export default {
     methods:{
       popMessage1(){
-        $Message({
+        useMessage({
           type: 'success',
           content: '这里是 Success 提示'
         });
       },
       popMessage2(){
-        $Message({
+        useMessage({
           type: 'warning',
           content: '这里是 Warning 提示'
         });
       },
       popMessage3(){
-        $Message({
+        useMessage({
           type: 'error',
           content: '这里是 Error 提示'
         });

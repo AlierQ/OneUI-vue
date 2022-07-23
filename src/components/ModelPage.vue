@@ -55,14 +55,14 @@
 </template>
 
 <script lang="ts">
-import Card from '../lib/Card.vue';
-import CardTitle from '../lib/CardTitle.vue';
-import CardBody from '../lib/CardBody.vue';
-import Divider from '../lib/Divider.vue';
-import CodeSection from '../lib/CodeSection.vue';
-import Model from '../lib/Model.vue';
-import Button from '../lib/Button.vue';
-import {$Model} from '../lib/Model.ts';
+import Card from '../lib/Card/Card.vue';
+import CardTitle from '../lib/Card/CardTitle.vue';
+import CardBody from '../lib/Card/CardBody.vue';
+import Divider from '../lib/Divider/Divider.vue';
+import CodeSection from '../lib/Code/CodeSection.vue';
+import Model from '../lib/Model/Model.vue';
+import Button from '../lib/Button/Button.vue';
+import {useModel} from '../lib/Model/useModel.ts';
 import {ref} from 'vue';
 
 export default {
@@ -93,7 +93,7 @@ export default {
       this.visible = !this.visible;
     },
     show() {
-      $Model({
+      useModel({
         title: '这里是动态加载对话框的标题',
         content: '这里是动态加载的内容',
         clickOverlay: false,
@@ -157,7 +157,7 @@ export default {
   <Button type="primary" @click="show">动态加载 Model 对话框</Button>
 </template>
 <script>
-  import {model} from '../lib/Model.ts';
+  import {model} from './useModel.ts';
   export default {
     methods:{
       show(){
@@ -198,7 +198,7 @@ export default {
     };
     const show = () => {
       console.log('动态加载 Model 对话框');
-      $Model({
+      useModel({
         title: '这里是动态加载对话框的标题',
         content: '这里是内容',
         clickOverlay: false,

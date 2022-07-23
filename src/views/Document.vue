@@ -48,11 +48,11 @@
 
 <script lang="ts">
 import TopNav from '../components/TopNav.vue';
-import Menu from '../lib/Menu.vue';
-import MenuItem from '../lib/MenuItem.vue';
-import MenuGroup from '../lib/MenuGroup.vue';
-import Submenu from '../lib/Submenu.vue';
-import MenuTitle from '../lib/MenuTitle.vue';
+import Menu from '../lib/Menu/Menu.vue';
+import MenuItem from '../lib/Menu/MenuItem.vue';
+import MenuGroup from '../lib/Menu/MenuGroup.vue';
+import Submenu from '../lib/Menu/SubMenu.vue';
+import MenuTitle from '../lib/Menu/MenuTitle.vue';
 import {inject, ref, Ref} from 'vue';
 import {useRoute} from 'vue-router';
 

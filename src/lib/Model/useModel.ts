@@ -1,7 +1,7 @@
 import Model from './Model.vue';
 import {createApp, h} from 'vue';
 
-export const $Model = (options) => {
+export const useModel = (options) => {
   const {title, content, onOk, onCancel,clickOverlay} = options;
   const div = document.createElement('div');
   document.body.appendChild(div);

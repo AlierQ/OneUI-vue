@@ -50,7 +50,7 @@
 
 <script lang="ts">
 import TopNav from '../components/TopNav.vue';
-import Button from '../lib/Button.vue';
+import Button from '../lib/Button/Button.vue';
 
 export default {
   components: {TopNav, Button}

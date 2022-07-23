@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import {provide, ref, watch} from 'vue';
-import MenuTitle from '../lib/MenuTitle.vue';
+import MenuTitle from './MenuTitle.vue';
 
 export default {
   props: {

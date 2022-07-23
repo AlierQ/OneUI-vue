@@ -11,7 +11,7 @@ import 'highlight.js/lib/common';
 import hljsVuePlugin from '@highlightjs/vue-plugin';
 
 import 'virtual:svg-icons-register'; // 引入svg注册脚本
-import Icon from './lib/Icon.vue';
+import Icon from './lib/Icon/Icon.vue';
 
 const app = createApp(App);
 app.use(router);

@@ -1,7 +1,7 @@
 import Message from './Message.vue';
 import {createApp, h} from 'vue';
 
-export const $Message = (options) => {
+export const useMessage = (options) => {
   const {type, content} = options;
   const div = document.createElement('div');
   document.body.appendChild(div);
