@@ -1,7 +1,24 @@
-# Vue 3 + Vite
+# One UI
+👋你好，欢迎使用 One UI
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+One UI 是一款简单易用的开源前端UI组件，它基于 Vue3 进行开发，使用 TypeScript 进行编写，并使用 Vite3 进行项目构建和打包。 One UI 使用了当下流行的扁平化设计使得组件的风格简洁、美观。此外 One UI 的使用方式也是极为的简单、便捷。
 
-## Recommended IDE Setup
+One UI 在编写的过程中尽可能的不使用第三方库，几乎所有组件均为手写开发。此外，One UI 组件在编写中一直秉承了简洁的原则，所有的组件源码都足够简洁易懂。并且我会在此文档中展示组件的使用效果以及示例代码，希望对你的开发有所帮助。
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+项目预览地址[传送门🚀](https://alierq.github.io/OneUI-vue-page/)
+
+关于本项目的遇到的相关问题以及解决方式，我会放在我的博客中，如果你感兴趣你也可以移步至我的博客[传送门🚀](https://alierq.space/)。
+
+最后，如果你觉得不错，欢迎 star⭐
+
+## 运行项目
+
+```
+yarn dev
+```
+
+## 构建项目
+
+```
+yarn build
+```
