@@ -131,6 +131,7 @@ export default {
   </Model>
 </template>
 <script>
+  import {Button, Model} from 'one-ui-alierq'
   export default {
     data(){
       return {
@@ -157,11 +158,11 @@ export default {
   <Button type="primary" @click="show">动态加载 Model 对话框</Button>
 </template>
 <script>
-  import {model} from './useModel.ts';
+  import {Button, useModel} from 'one-ui-alierq'
   export default {
     methods:{
       show(){
-        model({
+        useModel({
           title: '这里是动态加载对话框的标题',
           content: '这里是动态加载的内容',
           clickOverlay: false, // 控制浮层背景能否点击关闭

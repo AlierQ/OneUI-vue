@@ -87,9 +87,10 @@ export default {
   setup() {
     const codeSection1 = ref(`
 <template>
-  <Button type="primary" @click="message">弹出 Message 全局提示</Button>
+  <Button type="primary" @click="popMessage">弹出 Message 全局提示</Button>
 </template>
 <script>
+  import {Button,useMessage} from 'one-ui-alierq'
   export default {
     methods:{
       popMessage(){
@@ -108,6 +109,7 @@ export default {
   <Button @click="popMessage3">弹出 Error 提示</Button>
 </template>
 <script>
+  import {Button,useMessage} from 'one-ui-alierq'
   export default {
     methods:{
       popMessage1(){
