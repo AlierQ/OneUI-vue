@@ -21,7 +21,7 @@
       <div class="feature">
         <div class="feature-item">
           <div class="feature-icon">
-            <Icon icon-class="vue" size="100"></Icon>
+            <Icon icon-class="vue" size="60"></Icon>
           </div>
           <div class="feature-content">
             <h2 class="feature-title">基于 Vue3</h2>
@@ -30,7 +30,7 @@
         </div>
         <div class="feature-item">
           <div class="feature-icon">
-            <Icon icon-class="typescript" size="100"></Icon>
+            <Icon icon-class="typescript" size="60"></Icon>
           </div>
           <div class="feature-content">
             <h2 class="feature-title">使用 TypeScript</h2>
@@ -39,7 +39,7 @@
         </div>
         <div class="feature-item">
           <div class="feature-icon">
-            <Icon icon-class="yidu-icon" size="100"></Icon>
+            <Icon icon-class="yidu-icon" size="60"></Icon>
           </div>
           <div class="feature-content">
             <h2 class="feature-title">代码易读、使用简单</h2>
@@ -124,7 +124,7 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
+    margin-top: 20px;
     > .feature-item {
       padding: 20px 0;
       display: flex;
