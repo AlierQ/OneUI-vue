@@ -12,7 +12,7 @@
             <CardBody>
               <p>这里是卡片的内容</p>
               <p>下面给你展示我的logo</p>
-              <img src="../assets/images/logo.png" style="border-radius: 10px" alt="">
+              <img src="../assets/images/logo.png" style="border-radius: 10px;width:250px ;" alt="">
               <p>挺有设计感的吧</p>
               <p>这里是卡片的内容</p>
             </CardBody>
@@ -30,10 +30,10 @@
     <div class="card-container">
       <Card float="true">
         <CardBody>
-          <Card width="350px">
+          <Card width="300px">
             <CardBody>
-              <div style="width: 300px; margin: 0 auto;">
-                <img src="../assets/images/logo.png" style="border-radius: 10px;width: 300px;" alt="">
+              <div style="width: 100%; margin: 0 auto;">
+                <img src="../assets/images/logo.png" style="border-radius: 10px;width: 100%;" alt="">
               </div>
               <div style="text-align: center">
                 <p style="font-weight: 600">一款简洁易用的前端UI组件</p>
