@@ -68,7 +68,6 @@ export default {
   setup() {
     // 将祖先提供的 asideVisible 注入到当前组件中
     const asideVisible = inject<Ref<boolean>>('asideVisible');
-    console.log('Document: ' + asideVisible.value);
 
     // 获取当前路由地址进行解析，获取到name
     const router = useRoute();

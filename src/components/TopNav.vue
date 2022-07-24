@@ -45,7 +45,6 @@ export default {
   setup() {
     // 将祖先提供的 变量 注入到当前组件中
     const asideVisible = inject<Ref<boolean>>('asideVisible');
-    console.log('TopNav: ' + asideVisible.value);
 
     // 显示、隐藏菜单栏
     const toggleMenu = () => {

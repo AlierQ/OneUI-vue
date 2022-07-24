@@ -46,7 +46,6 @@ export default {
   },
   setup(props, content) {
     const toggle = () => {
-      console.log('切换了');
       content.emit('update:value', !props.value);
     };
     const isDisabled = computed(() => {

@@ -27,7 +27,6 @@ export default {
     provide('checked', checked);
 
     watch(checked,(newValue)=>{
-      console.log(newValue);
       context.emit('update:current',newValue)
     })
     return {titles};
