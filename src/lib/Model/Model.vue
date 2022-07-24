@@ -89,9 +89,13 @@ export default {
 <style lang="scss">
 .one-model {
   background: white;
-  width: 520px;
+
   border-radius: 6px;
   box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+
+  @media (max-width: 500px) {
+    width: 320px;
+  }
 
   &-wrapper {
     position: absolute;
