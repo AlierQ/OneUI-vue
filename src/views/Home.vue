@@ -72,7 +72,7 @@ export default {
   flex-direction: column;
   align-items: center;
   min-height: 400px;
-  padding-top: 100px;
+  padding-top: 20vh;
   overflow: hidden;
 
   > .title {
@@ -121,7 +121,6 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 50px 0;
 
     > .feature-item {
       padding: 20px 0;
