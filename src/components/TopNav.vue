@@ -10,9 +10,27 @@
     <div class="menu">
       <ul>
         <li>
-          <router-link to="/document/switch">文档</router-link>
+          <router-link to="/document/switch">
+            <div>
+              <Icon icon-class="note" size="20"></Icon>
+            </div>
+            <span>组件文档　</span>
+          </router-link>
         </li>
-        <li></li>
+        <li>
+          <a href="https://alierq.space/">
+            <div>
+              <Icon icon-class="link" size="20"></Icon>
+            </div>
+            <span>AlierQ's Blog 　</span></a>
+        </li>
+        <li>
+          <a href="https://github.com/AlierQ">
+            <div>
+              <Icon icon-class="github" size="20"></Icon>
+            </div>
+            <span>Github 　</span></a>
+        </li>
       </ul>
     </div>
   </div>
@@ -82,9 +100,24 @@ export default {
   > .menu {
     > ul {
       display: flex;
+      align-items: center;
 
       > li {
-        padding: 0 10px;
+        //padding: 0 10px;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          svg {
+            color: inherit;
+            vertical-align: middle;
+            margin-right: 6px;
+          }
+          transition: all 0.25s;
+        }
+        a:hover{
+          color: #409eff;
+        }
       }
     }
   }
