@@ -19,12 +19,11 @@ export default {
     name: String
   },
   setup(props) {
-
+    const router = useRouter();
     const checked = inject<Ref<string>>('checked');
     const check = () => {
       checked.value = props.name;
       if (props.to !== undefined) {
-        const router = useRouter();
         router.push({path: props.to});
       }
     };
