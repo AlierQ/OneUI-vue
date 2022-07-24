@@ -73,8 +73,8 @@ export default {
     // 获取当前路由地址进行解析，获取到name
     const router = useRoute();
     const tempArray = router.fullPath.split('/');
-    const path = ref(tempArray[tempArray.length-1])
-    return {asideVisible,path};
+    const path = ref(tempArray[tempArray.length - 1]);
+    return {asideVisible, path};
   },
 };
 </script>
@@ -94,6 +94,7 @@ export default {
     flex-grow: 1;
     display: flex;
     overflow: auto;
+    position: relative;
 
     .main {
       height: 100%;
@@ -121,7 +122,7 @@ export default {
       width: 200px;
       min-width: 200px;
       max-width: 200px;
-      z-index: 10;
+      z-index: 999;
       overflow: auto;
 
       &::-webkit-scrollbar {
@@ -129,11 +130,10 @@ export default {
       }
 
       @media (max-width: 500px) {
-        padding-top: 70px;
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
-        height: 100vh;
+        height: 100%;
       }
     }
   }
@@ -145,7 +145,7 @@ export default {
 }
 
 .aside-enter-active, .aside-leave-active {
-  transition: all .5s ease;
+  transition: all .25s ease;
 }
 
 .aside-enter-from, .aside-leave-to {
