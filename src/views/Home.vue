@@ -8,8 +8,11 @@
       </h1>
       <h2 class="brief">基于 Vue3 的一款简洁易用的前端UI组件</h2>
       <p>
-        <a href="">
-          <Button size="big"><Icon icon-class="github" size="20"></Icon>Github</Button>
+        <a href="https://github.com/AlierQ/OneUI-vue">
+          <Button size="big">
+            <Icon icon-class="github" size="20"></Icon>
+            Github
+          </Button>
         </a>
         <router-link to="/document">
           <Button type="primary" size="big">开始使用</Button>
