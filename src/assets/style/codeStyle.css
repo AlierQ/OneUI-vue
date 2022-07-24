@@ -17,7 +17,7 @@ code.hljs {
 }
 
 .hljs-comment, .hljs-quote, .hljs-variable {
-  color: green
+  color: #929292
 }
 
 .hljs-built_in, .hljs-keyword, .hljs-name, .hljs-selector-tag, .hljs-tag {
