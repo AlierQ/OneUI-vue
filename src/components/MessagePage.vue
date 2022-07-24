@@ -21,9 +21,9 @@
     <div class="card-container">
       <Card width="100%" float="true">
         <CardBody>
-          <Button @click="popMessage1">弹出 Success 提示</Button>&nbsp;
-          <Button @click="popMessage2">弹出 Warning 提示</Button>&nbsp;
-          <Button @click="popMessage3">弹出 Error 提示</Button>
+          <Button class="warp" @click="popMessage1">Success 提示</Button>&nbsp;
+          <Button class="warp" @click="popMessage2">Warning 提示</Button>&nbsp;
+          <Button class="warp" @click="popMessage3">Error 提示</Button>
           <Divider direction="left">不同状态的提示</Divider>
           <p>其他状态的提示：成功、警告、失败</p>
           <Divider dashed></Divider>
@@ -162,5 +162,10 @@ h3 {
 
 .show-code {
   margin-bottom: 20px;
+}
+@media (max-width: 500px) {
+    .warp{
+      margin-bottom: 6px;
+    }
 }
 </style>
