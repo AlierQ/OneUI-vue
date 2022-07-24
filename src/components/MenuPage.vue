@@ -8,18 +8,18 @@
       <Card width="100%" float="true">
         <CardBody>
           <div class="group">
-            <Menu default="1-2">
+            <Menu current="1-1">
               <MenuTitle name="xxx">
                 内容管理1
               </MenuTitle>
-              <Submenu name="xxx">
+              <Submenu name="xxx" >
                 <MenuItem name="1-1">菜单项1</MenuItem>
                 <MenuItem name="1-2">菜单项2</MenuItem>
               </Submenu>
               <MenuTitle name="yyy">
                 内容管理2
               </MenuTitle>
-              <Submenu name="yyy">
+              <Submenu name="yyy" open>
                 <MenuItem name="1-3">菜单项4</MenuItem>
                 <MenuItem name="1-4">菜单项5</MenuItem>
               </Submenu>
@@ -82,7 +82,7 @@ export default {
   setup() {
     const codeSection1 = ref(`
 <template>
-  <Menu checked="1-2">
+  <Menu default="1-2">
     <MenuTitle name="xxx">
       内容管理1
     </MenuTitle>

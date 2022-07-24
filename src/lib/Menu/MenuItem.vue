@@ -9,22 +9,22 @@
 
 <script lang="ts">
 import {inject, Ref} from 'vue';
-import { useRouter } from "vue-router";
+import {useRouter} from 'vue-router';
+
 export default {
   props: {
-    to:{
-      type:String
+    to: {
+      type: String
     },
     name: String
   },
   setup(props) {
     const router = useRouter();
     const checked = inject<Ref<string>>('checked');
-
     const check = () => {
       checked.value = props.name;
-      if (props.to!==undefined){
-        router.push({path:props.to})
+      if (props.to !== undefined) {
+        router.push({path: props.to});
       }
     };
 

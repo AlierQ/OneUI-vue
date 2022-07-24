@@ -29,9 +29,7 @@ export default {
       subMenu.value.style.height = height.value;
       if(props.open===''||props.open==='true')
         return;
-      for (let key in titles.value) {
-        titles.value[key] = false;
-      }
+      titles.value[props.name] = false;
     });
 
     return {
