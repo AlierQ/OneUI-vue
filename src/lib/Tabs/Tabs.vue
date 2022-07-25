@@ -52,7 +52,7 @@ export default {
         indicator.value.style.width = width + 'px';
         // 设置位置
         indicator.value.style.left = site + 'px';
-      });
+      },);
     });
 
     // context.slots.default() 存放的时Tabs内部放的所有组件

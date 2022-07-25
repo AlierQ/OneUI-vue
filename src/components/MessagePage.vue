@@ -92,6 +92,9 @@ export default {
 <script>
   import {Button,useMessage} from 'one-ui-alierq'
   export default {
+    components:{
+      Button
+    },
     methods:{
       popMessage(){
         useMessage({
@@ -111,6 +114,9 @@ export default {
 <script>
   import {Button,useMessage} from 'one-ui-alierq'
   export default {
+    components:{
+      Button
+    },
     methods:{
       popMessage1(){
         useMessage({

@@ -85,8 +85,11 @@ export default {
   <Divider direction="right" dashed="true">嗨，我是分割线</Divider>
 </template>
 <script>
+  import {Divider} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Divider
+    }
   }
 <\/script>`);
 

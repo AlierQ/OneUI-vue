@@ -114,7 +114,11 @@ export default {
   <Switch v-model:value="state"></Switch>
 </template>
 <script>
+  import {Switch} from 'one-ui-alierq'
   export default {
+    components:{
+      Switch
+    }
     data(){
       return {
         state:true;
@@ -131,7 +135,11 @@ export default {
   </Switch>
 </template>
 <script>
+  import {Switch} from 'one-ui-alierq'
   export default {
+    components:{
+      Switch
+    },
     data(){
       return {
         state:true;
@@ -148,7 +156,11 @@ export default {
   </Switch>
 </template>
 <script>
+  import {Switch} from 'one-ui-alierq'
   export default {
+    components:{
+      Switch
+    },
     data(){
       return {
         state:true;
@@ -163,7 +175,11 @@ export default {
   <Switch v-model:value="state2" disabled="true"></Switch>
 </template>
 <script>
+  import {Switch} from 'one-ui-alierq'
   export default {
+    components:{
+      Switch
+    },
     data(){
       return {
         state1:false;

@@ -146,8 +146,13 @@ export default {
   </Card>
 </template>
 <script>
+  import {Card,CardTitle,CardBody} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Card,
+      CardTitle,
+      CardBody
+    }
   }
 <\/script>`);
     const codeSection2 = ref(`
@@ -165,8 +170,12 @@ export default {
   </Card>
 </template>
 <script>
+  import {Card,CardBody} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Card,
+      CardBody
+    }
   }
 <\/script>`);
     const codeSection3 = ref(`
@@ -193,8 +202,13 @@ export default {
   </Card>
 </template>
 <script>
+  import {Card,CardTitle,CardBody} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Card,
+      CardTitle,
+      CardBody
+    }
   }
 <\/script>`);
     const codeSection4 = ref(`
@@ -213,8 +227,13 @@ export default {
   </Card>
 </template>
 <script>
+  import {Card,CardTitle,CardBody} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Card,
+      CardTitle,
+      CardBody
+    }
   }
 <\/script>`);
 

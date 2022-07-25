@@ -133,6 +133,10 @@ export default {
 <script>
   import {Button, Model} from 'one-ui-alierq'
   export default {
+    components:{
+      Button,
+      Model
+    }
     data(){
       return {
         state:true;
@@ -160,6 +164,9 @@ export default {
 <script>
   import {Button, useModel} from 'one-ui-alierq'
   export default {
+    components:{
+      Button
+    },
     methods:{
       show(){
         useModel({

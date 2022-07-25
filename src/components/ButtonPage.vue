@@ -197,8 +197,11 @@ export default {
   <Button type="text">Text</Button> &nbsp;
 </template>
 <script>
+  import {Button} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Button
+    }
   }
 <\/script>`);
     const codeSection2 = ref(`
@@ -209,8 +212,11 @@ export default {
   <Button type="error">Error</Button>&nbsp;
 </template>
 <script>
+  import {Button} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Button
+    }
   }
 <\/script>`);
     const codeSection3 = ref(`
@@ -226,8 +232,11 @@ export default {
   <Button type="error" transparent>Error</Button>
 </template>
 <script>
+  import {Button} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Button
+    }
   }
 <\/script>`);
     const codeSection4 = ref(`
@@ -244,8 +253,11 @@ export default {
   <Button type="error" disabled="true">Error</Button>
 </template>
 <script>
+  import {Button} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Button
+    }
   }
 <\/script>`);
     const codeSection5 = ref(`
@@ -261,8 +273,11 @@ export default {
   <Button type="error" transparent disabled>Error</Button>
 </template>
 <script>
+  import {Button} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Button
+    }
   }
 <\/script>`);
     const codeSection6 = ref(`
@@ -277,8 +292,11 @@ export default {
   <Button type="error" size="big" transparent>Error</Button>
 </template>
 <script>
+  import {Button} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Button
+    }
   }
 <\/script>`);
     const codeSection7 = ref(`
@@ -304,8 +322,11 @@ export default {
   <Button loading type="error" transparent>Error</Button>
 </template>
 <script>
+  import {Button} from 'one-ui-alierq'
   export default {
-
+    components:{
+      Button
+    }
   }
 <\/script>`);
 

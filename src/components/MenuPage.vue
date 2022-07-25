@@ -113,12 +113,19 @@ export default {
   </Menu>
 </template>
 <script>
-  import {Menu,SubMenu,MenuGroup,MenuItem} from 'one-ui-alierq'
-  export default {}
+  import {Menu,SubMenu,MenuGroup,MenuItem,MenuTitle} from 'one-ui-alierq'
+  export default {
+    components: {
+      Menu,
+      MenuItem,
+      MenuGroup,
+      MenuTitle,
+      Submenu,
+    },
+  }
 <\/script>`);
 
     const codeSectionShow1 = ref(false);
-
     return {
       codeSection1,
       codeSectionShow1

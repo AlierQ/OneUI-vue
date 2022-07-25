@@ -64,7 +64,12 @@ export default {
   </Tabs>
 </template>
 <script>
+  import {Tabs,Tab} from 'one-ui-alierq'
   export default {
+    components: {
+      Tabs,
+      Tab
+    },
     data(){
       return {
         selected:'导航2'
