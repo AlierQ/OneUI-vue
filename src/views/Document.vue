@@ -121,7 +121,7 @@ export default {
       width: 200px;
       min-width: 200px;
       max-width: 200px;
-      z-index: 999;
+      z-index: 11;
       overflow: auto;
 
       &::-webkit-scrollbar {
