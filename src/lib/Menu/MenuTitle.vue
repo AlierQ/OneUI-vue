@@ -14,10 +14,13 @@
 </template>
 
 <script lang="ts">
-import {inject, Ref, ref} from 'vue';
+import {inject, onMounted, Ref, ref} from 'vue';
 
 export default {
   props: {
+    open: {
+      type: String
+    },
     name: String
   },
   setup(props) {
@@ -29,6 +32,14 @@ export default {
       isOpen.value = !isOpen.value;
       state.value[props.name] = !state.value[props.name];
     };
+
+    onMounted(()=>{
+      if(props.open===''||props.open==='true'){
+        isOpen.value = !isOpen.value;
+        state.value[props.name] = true;
+      }
+    })
+
     return {
       isOpen,
       toggle

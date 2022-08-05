@@ -16,10 +16,10 @@
                 <MenuItem name="1-1">菜单项1</MenuItem>
                 <MenuItem name="1-2">菜单项2</MenuItem>
               </Submenu>
-              <MenuTitle name="yyy">
+              <MenuTitle name="yyy" open>
                 内容管理2
               </MenuTitle>
-              <Submenu name="yyy" open>
+              <Submenu name="yyy" >
                 <MenuItem name="1-3">菜单项4</MenuItem>
                 <MenuItem name="1-4">菜单项5</MenuItem>
               </Submenu>
@@ -90,10 +90,10 @@ export default {
       <MenuItem name="1-1">菜单项1</MenuItem>
       <MenuItem name="1-2">菜单项2</MenuItem>
     </Submenu>
-    <MenuTitle name="yyy">
+    <MenuTitle name="yyy" open>
       内容管理2
     </MenuTitle>
-    <Submenu name="yyy" open>
+    <Submenu name="yyy">
       <MenuItem name="1-3">菜单项4</MenuItem>
       <MenuItem name="1-4">菜单项5</MenuItem>
     </Submenu>

@@ -14,7 +14,7 @@
             Github
           </Button>
         </a>
-        <router-link to="/document">
+        <router-link to="/document/introduce">
           <Button type="primary" size="big">开始使用</Button>
         </router-link>
       </p>

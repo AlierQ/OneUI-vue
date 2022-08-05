@@ -5,18 +5,18 @@
       <transition name="aside">
         <aside v-if="asideVisible">
           <Menu v-model:current="path">
-            <MenuTitle name="document">
+            <MenuTitle name="document" open>
               文档
             </MenuTitle>
-            <Submenu name="document" open>
+            <Submenu name="document" >
               <MenuItem name="introduce" to="/document/introduce">介绍</MenuItem>
               <MenuItem name="install" to="/document/install">安装</MenuItem>
               <MenuItem name="started" to="/document/started">开始使用</MenuItem>
             </Submenu>
-            <MenuTitle name="component">
+            <MenuTitle name="component" open>
               组件列表
             </MenuTitle>
-            <Submenu name="component" open>
+            <Submenu name="component" >
               <MenuGroup title="基础">
                 <MenuItem name="switch" to="/document/switch">Switch 开关</MenuItem>
                 <MenuItem name="button" to="/document/button">Button 按钮</MenuItem>

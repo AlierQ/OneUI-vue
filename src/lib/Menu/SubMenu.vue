@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <transition name="fade" @before-enter="beforeEnter">
     <div ref="subMenu"
          class="one-submenu-basic"
          :style="{'--height':height + 'px'}"
@@ -10,13 +10,10 @@
 </template>
 
 <script lang="ts">
-import {inject, onMounted, ref, Ref} from 'vue';
+import {inject, ref, Ref, nextTick} from 'vue';
 
 export default {
   props: {
-    open: {
-      type: String
-    },
     name: String
   },
   setup(props) {
@@ -24,18 +21,17 @@ export default {
     const subMenu = ref<HTMLDivElement>(null);
     const height = ref(null);
 
-    onMounted(() => {
-      height.value = subMenu.value.getBoundingClientRect().height;
-      subMenu.value.style.height = height.value;
-      if(props.open===''||props.open==='true')
-        return;
-      titles.value[props.name] = false;
-    });
+    const beforeEnter = (el) => {
+      nextTick(() => {
+        height.value = el.scrollHeight;
+      });
+    };
 
     return {
       state: titles,
       subMenu,
       height,
+      beforeEnter
     };
   }
 };
@@ -49,7 +45,7 @@ export default {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: all .15s ease;
+  transition: all .25s ease;
 }
 
 .fade-enter-from, .fade-leave-to {

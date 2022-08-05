@@ -20,15 +20,15 @@ export default {
     const checked = ref(props.current);
     context.slots.default().forEach((el) => {
       if (el.type === MenuTitle) {
-        titles.value[el.props.name] = true;
+        titles.value[el.props.name] = false;
       }
     });
     provide('titles', titles);
     provide('checked', checked);
 
-    watch(checked,(newValue)=>{
-      context.emit('update:current',newValue)
-    })
+    watch(checked, (newValue) => {
+      context.emit('update:current', newValue);
+    });
     return {titles};
   }
 };
