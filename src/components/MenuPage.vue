@@ -12,14 +12,14 @@
               <MenuTitle name="xxx">
                 内容管理1
               </MenuTitle>
-              <Submenu name="xxx" >
+              <Submenu name="xxx">
                 <MenuItem name="1-1">菜单项1</MenuItem>
                 <MenuItem name="1-2">菜单项2</MenuItem>
               </Submenu>
               <MenuTitle name="yyy" open>
                 内容管理2
               </MenuTitle>
-              <Submenu name="yyy" >
+              <Submenu name="yyy">
                 <MenuItem name="1-3">菜单项4</MenuItem>
                 <MenuItem name="1-4">菜单项5</MenuItem>
               </Submenu>
@@ -39,7 +39,7 @@
             </Menu>
           </div>
           <Divider direction="left">基本用法</Divider>
-          <p>垂直导航菜单，可以内嵌子菜单</p>
+          <p>垂直导航菜单，可以内嵌子菜单，在 MenuTitle 中使用 open 关键字可以控制 SubMenu 的默认展开状态。</p>
           <Divider dashed></Divider>
           <div class="show-code">
             <Button @click="codeSectionShow1=!codeSectionShow1">查看代码</Button>
@@ -48,6 +48,29 @@
         </CardBody>
       </Card>
     </div>
+    <Card width="100%" float="true">
+      <CardBody>
+        <div class="group">
+          <Menu current="1-4">
+            <MenuTitle name="menu" open>
+              跳转菜单
+            </MenuTitle>
+            <Submenu name="menu">
+              <MenuItem name="model" to="/document/model">去 Model 组件页面</MenuItem>
+              <MenuItem name="switch" to="/document/switch">去 Switch 组件页面</MenuItem>
+            </Submenu>
+          </Menu>
+        </div>
+        <Divider direction="left">路由跳转菜单</Divider>
+        <p>需要配合 vue-router 进行使用，在 MenuItem 中使用 to 属性，传入你想要跳转的路径，点击菜单就可以进行路由跳转。</p>
+        <p>ps:你所看到的文档页面的菜单跳转就是这样实现的。</p>
+        <Divider dashed></Divider>
+        <div class="show-code">
+          <Button @click="codeSectionShow2=!codeSectionShow2">查看代码</Button>
+        </div>
+        <CodeSection v-if="codeSectionShow2">{{ codeSection2 }}</CodeSection>
+      </CardBody>
+    </Card>
   </div>
 </template>
 
@@ -124,11 +147,37 @@ export default {
     },
   }
 <\/script>`);
+    const codeSection2 = ref(`
+<template>
+  <Menu current="">
+    <MenuTitle name="menu" open>
+      跳转菜单
+    </MenuTitle>
+    <Submenu name="menu">
+      <MenuItem name="model" to="/document/model">去 Model 组件页面</MenuItem>
+      <MenuItem name="switch" to="/document/switch">去 Switch 组件页面</MenuItem>
+    </Submenu>
+  </Menu>
+</template>
+<script>
+  import {Menu,SubMenu,MenuItem,MenuTitle} from 'one-ui-alierq'
+  export default {
+    components: {
+      Menu,
+      MenuItem,
+      MenuTitle,
+      Submenu,
+    },
+  }
+<\/script>`);
 
     const codeSectionShow1 = ref(false);
+    const codeSectionShow2 = ref(false);
     return {
       codeSection1,
-      codeSectionShow1
+      codeSectionShow1,
+      codeSection2,
+      codeSectionShow2
     };
   }
 };
