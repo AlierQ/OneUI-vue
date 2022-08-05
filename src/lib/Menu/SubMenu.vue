@@ -2,7 +2,7 @@
   <transition name="fade" @before-enter="beforeEnter">
     <div ref="subMenu"
          class="one-submenu-basic"
-         :style="{'--height':height + 'px'}"
+         :style="{'--height':height}"
          v-show="state[name]">
       <slot></slot>
     </div>
@@ -16,14 +16,14 @@ export default {
   props: {
     name: String
   },
-  setup(props) {
+  setup() {
     const titles = inject<Ref<object>>('titles');
     const subMenu = ref<HTMLDivElement>(null);
     const height = ref(null);
 
     const beforeEnter = (el) => {
       nextTick(() => {
-        height.value = el.scrollHeight;
+        height.value = el.scrollHeight + 'px';
       });
     };
 
@@ -31,7 +31,7 @@ export default {
       state: titles,
       subMenu,
       height,
-      beforeEnter
+      beforeEnter,
     };
   }
 };
@@ -45,7 +45,7 @@ export default {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: all .25s ease;
+  transition: all .5s ease;
 }
 
 .fade-enter-from, .fade-leave-to {
