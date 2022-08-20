@@ -51,7 +51,7 @@
     <Card width="100%" float="true">
       <CardBody>
         <div class="group">
-          <Menu current="1-4">
+          <Menu current="">
             <MenuTitle name="menu" open>
               跳转菜单
             </MenuTitle>
